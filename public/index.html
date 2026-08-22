@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Practice</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Math Practice</h1>
+    <p class="subtitle">Learn the idea, then practice it.</p>
+    <nav class="tabs">
+      <button class="tab-btn active" data-topic="arithmetic">Arithmetic</button>
+      <button class="tab-btn" data-topic="fractions">Fractions</button>
+      <button class="tab-btn" data-topic="algebra">Basic Algebra</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ARITHMETIC -->
+    <section id="arithmetic" class="topic active">
+      <h2>Arithmetic: Addition, Subtraction &amp; Multiplication</h2>
+      <div class="explanation">
+        <p>
+          Arithmetic is the foundation of math: combining numbers using
+          <strong>+</strong>, <strong>&minus;</strong>, and <strong>&times;</strong>.
+        </p>
+        <ul>
+          <li><strong>Addition (a + b):</strong> combine two amounts into one total.</li>
+          <li><strong>Subtraction (a &minus; b):</strong> find the difference, or what's left after taking b away from a.</li>
+          <li><strong>Multiplication (a &times; b):</strong> repeated addition of a, b times.</li>
+        </ul>
+        <p class="example">Example: 7 + 5 = 12, 9 &minus; 4 = 5, 6 &times; 3 = 18.</p>
+      </div>
+
+      <div class="practice" data-practice="arithmetic">
+        <div class="practice-controls">
+          <button class="generate-btn" data-topic="arithmetic">New Problems</button>
+          <span class="score"></span>
+        </div>
+        <div class="problem-list"></div>
+      </div>
+    </section>
+
+    <!-- FRACTIONS -->
+    <section id="fractions" class="topic">
+      <h2>Fractions: Adding Fractions</h2>
+      <div class="explanation">
+        <p>
+          A fraction like <strong>a/b</strong> means a parts out of b equal parts.
+          To add two fractions, first give them a <strong>common denominator</strong>,
+          then add the numerators.
+        </p>
+        <p class="example">
+          Example: 1/4 + 1/6 &rarr; common denominator 12 &rarr; 3/12 + 2/12 = 5/12.
+        </p>
+        <p>
+          Always simplify your answer to lowest terms if possible
+          (e.g. 2/4 simplifies to 1/2).
+        </p>
+      </div>
+
+      <div class="practice" data-practice="fractions">
+        <div class="practice-controls">
+          <button class="generate-btn" data-topic="fractions">New Problems</button>
+          <span class="score"></span>
+        </div>
+        <div class="problem-list"></div>
+        <p class="hint">Enter answers as a fraction, like <code>3/4</code>, or a whole number if it simplifies to one.</p>
+      </div>
+    </section>
+
+    <!-- ALGEBRA -->
+    <section id="algebra" class="topic">
+      <h2>Basic Algebra: Solving for x</h2>
+      <div class="explanation">
+        <p>
+          An equation like <strong>ax + b = c</strong> says "some number x, multiplied by a
+          and then increased by b, equals c." To solve for x, undo the operations in reverse
+          order: first subtract b from both sides, then divide by a.
+        </p>
+        <p class="example">
+          Example: 2x + 3 = 11 &rarr; subtract 3: 2x = 8 &rarr; divide by 2: x = 4.
+        </p>
+      </div>
+
+      <div class="practice" data-practice="algebra">
+        <div class="practice-controls">
+          <button class="generate-btn" data-topic="algebra">New Problems</button>
+          <span class="score"></span>
+        </div>
+        <div class="problem-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Practice runs entirely in your browser — no account, no server storage.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

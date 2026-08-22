@@ -1,0 +1,14 @@
+{
+  "name": "math-project",
+  "version": "1.0.0",
+  "description": "A small math practice + explanation website (static HTML/CSS/JS served locally).",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
