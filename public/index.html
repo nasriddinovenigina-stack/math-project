@@ -3,102 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Math Practice</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Math Practice — Learn Math Step by Step</title>
+  <meta name="description" content="Simple, step-by-step math explanations and practice problems: arithmetic, algebra, quadratic equations, and more." />
+  <link rel="canonical" href="https://example-placeholder.com/" />
+  <link rel="alternate" hreflang="en" href="https://example-placeholder.com/" />
+  <link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/" />
+  <link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
-  <header>
-    <h1>Math Practice</h1>
-    <p class="subtitle">Learn the idea, then practice it.</p>
-    <nav class="tabs">
-      <button class="tab-btn active" data-topic="arithmetic">Arithmetic</button>
-      <button class="tab-btn" data-topic="fractions">Fractions</button>
-      <button class="tab-btn" data-topic="algebra">Basic Algebra</button>
-    </nav>
-  </header>
+<body data-topic="">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><a class="site-title" href="/">Math Practice</a></h1>
+        <p class="subtitle">Learn the idea, then practice it.</p>
+        <div class="lang-switch">
+          <a class="lang-link active" href="/">EN</a>
+          <a class="lang-link" href="/ru/">RU</a>
+        </div>
+      </div>
+      <nav class="topic-nav">
+        <a class="tab-btn" href="/arithmetic">Arithmetic</a>
+        <a class="tab-btn" href="/negative-numbers">Negative Numbers</a>
+        <a class="tab-btn" href="/order-of-operations">Order of Operations</a>
+        <a class="tab-btn" href="/fractions">Fractions</a>
+        <a class="tab-btn" href="/gcf">GCF</a>
+        <a class="tab-btn" href="/lcm">LCM</a>
+        <a class="tab-btn" href="/percentages">Percentages</a>
+        <a class="tab-btn" href="/average">Average (Mean)</a>
+        <a class="tab-btn" href="/algebra">Basic Algebra</a>
+        <a class="tab-btn" href="/functions">Functions</a>
+        <a class="tab-btn" href="/slope">Slope of a Line</a>
+        <a class="tab-btn" href="/quadratic">Quadratic Equations</a>
+        <a class="tab-btn" href="/parabola">Parabola</a>
+        <a class="tab-btn" href="/pythagorean">Pythagorean Theorem</a>
+        <a class="tab-btn" href="/exponents">Exponents</a>
+        <a class="tab-btn" href="/square-roots">Square Roots</a>
+        <a class="tab-btn" href="/absolute-value">Absolute Value</a>
+      </nav>
+    </aside>
 
-  <main>
-    <!-- ARITHMETIC -->
-    <section id="arithmetic" class="topic active">
-      <h2>Arithmetic: Addition, Subtraction &amp; Multiplication</h2>
-      <div class="explanation">
-        <p>
-          Arithmetic is the foundation of math: combining numbers using
-          <strong>+</strong>, <strong>&minus;</strong>, and <strong>&times;</strong>.
-        </p>
-        <ul>
-          <li><strong>Addition (a + b):</strong> combine two amounts into one total.</li>
-          <li><strong>Subtraction (a &minus; b):</strong> find the difference, or what's left after taking b away from a.</li>
-          <li><strong>Multiplication (a &times; b):</strong> repeated addition of a, b times.</li>
+    <main class="content">
+      <section class="topic active">
+        <h2>Math Practice</h2>
+        <p class="home-intro">Pick a topic below to learn the idea, then practice it with instant feedback.</p>
+        <ul class="topic-list">
+          <li><a href="/arithmetic">Arithmetic</a></li>
+          <li><a href="/negative-numbers">Negative Numbers</a></li>
+          <li><a href="/order-of-operations">Order of Operations</a></li>
+          <li><a href="/fractions">Fractions</a></li>
+          <li><a href="/gcf">GCF</a></li>
+          <li><a href="/lcm">LCM</a></li>
+          <li><a href="/percentages">Percentages</a></li>
+          <li><a href="/average">Average (Mean)</a></li>
+          <li><a href="/algebra">Basic Algebra</a></li>
+          <li><a href="/functions">Functions</a></li>
+          <li><a href="/slope">Slope of a Line</a></li>
+          <li><a href="/quadratic">Quadratic Equations</a></li>
+          <li><a href="/parabola">Parabola</a></li>
+          <li><a href="/pythagorean">Pythagorean Theorem</a></li>
+          <li><a href="/exponents">Exponents</a></li>
+          <li><a href="/square-roots">Square Roots</a></li>
+          <li><a href="/absolute-value">Absolute Value</a></li>
         </ul>
-        <p class="example">Example: 7 + 5 = 12, 9 &minus; 4 = 5, 6 &times; 3 = 18.</p>
-      </div>
+      </section>
 
-      <div class="practice" data-practice="arithmetic">
-        <div class="practice-controls">
-          <button class="generate-btn" data-topic="arithmetic">New Problems</button>
-          <span class="score"></span>
-        </div>
-        <div class="problem-list"></div>
-      </div>
-    </section>
-
-    <!-- FRACTIONS -->
-    <section id="fractions" class="topic">
-      <h2>Fractions: Adding Fractions</h2>
-      <div class="explanation">
-        <p>
-          A fraction like <strong>a/b</strong> means a parts out of b equal parts.
-          To add two fractions, first give them a <strong>common denominator</strong>,
-          then add the numerators.
-        </p>
-        <p class="example">
-          Example: 1/4 + 1/6 &rarr; common denominator 12 &rarr; 3/12 + 2/12 = 5/12.
-        </p>
-        <p>
-          Always simplify your answer to lowest terms if possible
-          (e.g. 2/4 simplifies to 1/2).
-        </p>
-      </div>
-
-      <div class="practice" data-practice="fractions">
-        <div class="practice-controls">
-          <button class="generate-btn" data-topic="fractions">New Problems</button>
-          <span class="score"></span>
-        </div>
-        <div class="problem-list"></div>
-        <p class="hint">Enter answers as a fraction, like <code>3/4</code>, or a whole number if it simplifies to one.</p>
-      </div>
-    </section>
-
-    <!-- ALGEBRA -->
-    <section id="algebra" class="topic">
-      <h2>Basic Algebra: Solving for x</h2>
-      <div class="explanation">
-        <p>
-          An equation like <strong>ax + b = c</strong> says "some number x, multiplied by a
-          and then increased by b, equals c." To solve for x, undo the operations in reverse
-          order: first subtract b from both sides, then divide by a.
-        </p>
-        <p class="example">
-          Example: 2x + 3 = 11 &rarr; subtract 3: 2x = 8 &rarr; divide by 2: x = 4.
-        </p>
-      </div>
-
-      <div class="practice" data-practice="algebra">
-        <div class="practice-controls">
-          <button class="generate-btn" data-topic="algebra">New Problems</button>
-          <span class="score"></span>
-        </div>
-        <div class="problem-list"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>Practice runs entirely in your browser — no account, no server storage.</p>
-  </footer>
-
-  <script src="script.js"></script>
+      <footer>
+        <p>Practice runs entirely in your browser — no account, no server storage.</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
