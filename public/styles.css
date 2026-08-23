@@ -12,6 +12,8 @@
   --correct-bg: #16301f;
   --wrong: #ff7a7a;
   --wrong-bg: #3a1c1e;
+  --warning: #e0a63c;
+  --warning-bg: #3a2f18;
   --border: #333c54;
   --radius: 10px;
 }
@@ -205,6 +207,38 @@ body {
   border-radius: 4px;
   font-style: italic;
   color: var(--text);
+}
+
+.hook {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text);
+  margin-top: 0;
+}
+
+.one-liner {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.trap {
+  background: var(--warning-bg);
+  border-left: 4px solid var(--warning);
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  margin-top: 1rem;
+}
+
+.why-it-matters {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .steps {

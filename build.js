@@ -96,10 +96,14 @@ ${sidebarHtml(lang, topic.slug)}
       <section class="topic active">
         <h2>${t.h1}</h2>
         <div class="explanation">
+          <p class="hook">${t.hookHtml}</p>
           <p>${t.ruleHtml}</p>
+          <p class="one-liner">${t.oneLinerHtml}</p>
           <div class="steps">
 ${stepsHtml(t.steps)}
           </div>
+          <p class="trap">${t.trapHtml}</p>
+          <p class="why-it-matters">${t.whyItMattersHtml}</p>
         </div>
 
         <div class="practice" data-practice="${topic.slug}">
