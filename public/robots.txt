@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example-placeholder.com/sitemap.xml
+Sitemap: https://mathpractise.netlify.app/sitemap.xml

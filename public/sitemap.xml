@@ -1,219 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example-placeholder.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/"/>
+    <loc>https://mathpractise.netlify.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/"/>
+    <loc>https://mathpractise.netlify.app/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/arithmetic</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/arithmetic"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/arithmetic"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/arithmetic"/>
+    <loc>https://mathpractise.netlify.app/arithmetic</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/arithmetic"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/arithmetic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/arithmetic"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/arithmetic</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/arithmetic"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/arithmetic"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/arithmetic"/>
+    <loc>https://mathpractise.netlify.app/ru/arithmetic</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/arithmetic"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/arithmetic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/arithmetic"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/negative-numbers</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/negative-numbers"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/negative-numbers"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/negative-numbers"/>
+    <loc>https://mathpractise.netlify.app/negative-numbers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/negative-numbers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/negative-numbers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/negative-numbers"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/negative-numbers</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/negative-numbers"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/negative-numbers"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/negative-numbers"/>
+    <loc>https://mathpractise.netlify.app/ru/negative-numbers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/negative-numbers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/negative-numbers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/negative-numbers"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/order-of-operations</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/order-of-operations"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/order-of-operations"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/order-of-operations"/>
+    <loc>https://mathpractise.netlify.app/order-of-operations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/order-of-operations"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/order-of-operations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/order-of-operations"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/order-of-operations</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/order-of-operations"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/order-of-operations"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/order-of-operations"/>
+    <loc>https://mathpractise.netlify.app/ru/order-of-operations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/order-of-operations"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/order-of-operations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/order-of-operations"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/fractions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/fractions"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/fractions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/fractions"/>
+    <loc>https://mathpractise.netlify.app/fractions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/fractions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/fractions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/fractions"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/fractions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/fractions"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/fractions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/fractions"/>
+    <loc>https://mathpractise.netlify.app/ru/fractions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/fractions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/fractions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/fractions"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/gcf</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/gcf"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/gcf"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/gcf"/>
+    <loc>https://mathpractise.netlify.app/gcf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/gcf"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/gcf"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/gcf"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/gcf</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/gcf"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/gcf"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/gcf"/>
+    <loc>https://mathpractise.netlify.app/ru/gcf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/gcf"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/gcf"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/gcf"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/lcm</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/lcm"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/lcm"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/lcm"/>
+    <loc>https://mathpractise.netlify.app/lcm</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/lcm"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/lcm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/lcm"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/lcm</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/lcm"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/lcm"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/lcm"/>
+    <loc>https://mathpractise.netlify.app/ru/lcm</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/lcm"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/lcm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/lcm"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/percentages</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/percentages"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/percentages"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/percentages"/>
+    <loc>https://mathpractise.netlify.app/percentages</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/percentages"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/percentages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/percentages"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/percentages</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/percentages"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/percentages"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/percentages"/>
+    <loc>https://mathpractise.netlify.app/ru/percentages</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/percentages"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/percentages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/percentages"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/average</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/average"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/average"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/average"/>
+    <loc>https://mathpractise.netlify.app/average</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/average"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/average"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/average"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/average</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/average"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/average"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/average"/>
+    <loc>https://mathpractise.netlify.app/ru/average</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/average"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/average"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/average"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/algebra</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/algebra"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/algebra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/algebra"/>
+    <loc>https://mathpractise.netlify.app/algebra</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/algebra"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/algebra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/algebra"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/algebra</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/algebra"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/algebra"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/algebra"/>
+    <loc>https://mathpractise.netlify.app/ru/algebra</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/algebra"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/algebra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/algebra"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/functions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/functions"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/functions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/functions"/>
+    <loc>https://mathpractise.netlify.app/functions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/functions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/functions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/functions"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/functions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/functions"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/functions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/functions"/>
+    <loc>https://mathpractise.netlify.app/ru/functions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/functions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/functions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/functions"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/slope</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/slope"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/slope"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/slope"/>
+    <loc>https://mathpractise.netlify.app/slope</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/slope"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/slope"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/slope"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/slope</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/slope"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/slope"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/slope"/>
+    <loc>https://mathpractise.netlify.app/ru/slope</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/slope"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/slope"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/slope"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/quadratic</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/quadratic"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/quadratic"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/quadratic"/>
+    <loc>https://mathpractise.netlify.app/quadratic</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/quadratic"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/quadratic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/quadratic"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/quadratic</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/quadratic"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/quadratic"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/quadratic"/>
+    <loc>https://mathpractise.netlify.app/ru/quadratic</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/quadratic"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/quadratic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/quadratic"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/parabola</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/parabola"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/parabola"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/parabola"/>
+    <loc>https://mathpractise.netlify.app/parabola</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/parabola"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/parabola"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/parabola"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/parabola</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/parabola"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/parabola"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/parabola"/>
+    <loc>https://mathpractise.netlify.app/ru/parabola</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/parabola"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/parabola"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/parabola"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/pythagorean</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/pythagorean"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/pythagorean"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/pythagorean"/>
+    <loc>https://mathpractise.netlify.app/pythagorean</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/pythagorean"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/pythagorean"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/pythagorean"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/pythagorean</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/pythagorean"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/pythagorean"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/pythagorean"/>
+    <loc>https://mathpractise.netlify.app/ru/pythagorean</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/pythagorean"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/pythagorean"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/pythagorean"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/exponents</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/exponents"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/exponents"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/exponents"/>
+    <loc>https://mathpractise.netlify.app/exponents</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/exponents"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/exponents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/exponents"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/exponents</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/exponents"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/exponents"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/exponents"/>
+    <loc>https://mathpractise.netlify.app/ru/exponents</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/exponents"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/exponents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/exponents"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/square-roots</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/square-roots"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/square-roots"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/square-roots"/>
+    <loc>https://mathpractise.netlify.app/square-roots</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/square-roots"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/square-roots"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/square-roots"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/square-roots</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/square-roots"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/square-roots"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/square-roots"/>
+    <loc>https://mathpractise.netlify.app/ru/square-roots</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/square-roots"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/square-roots"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/square-roots"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/absolute-value</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/absolute-value"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/absolute-value"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/absolute-value"/>
+    <loc>https://mathpractise.netlify.app/absolute-value</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/absolute-value"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/absolute-value"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/absolute-value"/>
   </url>
   <url>
-    <loc>https://example-placeholder.com/ru/absolute-value</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example-placeholder.com/absolute-value"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example-placeholder.com/ru/absolute-value"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example-placeholder.com/absolute-value"/>
+    <loc>https://mathpractise.netlify.app/ru/absolute-value</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/absolute-value"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/absolute-value"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/absolute-value"/>
   </url>
 </urlset>

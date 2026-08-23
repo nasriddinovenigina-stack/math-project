@@ -1,10 +1,9 @@
 // Content data for the math practice site, in English and Russian.
 // build.js reads this file and generates one static HTML page per topic per language.
 //
-// IMPORTANT: SITE_URL is a placeholder until this site is deployed to a real domain.
-// Update it (and re-run `npm run build`) once a real domain exists — it's used for
-// canonical URLs, hreflang alternates, and the sitemap.
-const SITE_URL = "https://example-placeholder.com";
+// SITE_URL is used for canonical URLs, hreflang alternates, and the sitemap.
+// Update it (and re-run `npm run build`) if the domain ever changes.
+const SITE_URL = "https://mathpractise.netlify.app";
 
 const TOPICS = [
   {
