@@ -157,6 +157,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/mean-median-mode"/>
   </url>
   <url>
+    <loc>https://mathpractise.netlify.app/like-terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/like-terms"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/like-terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/like-terms"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/like-terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/like-terms"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/like-terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/like-terms"/>
+  </url>
+  <url>
     <loc>https://mathpractise.netlify.app/algebra</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/algebra"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/algebra"/>
@@ -179,6 +191,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/inequalities"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/inequalities"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/inequalities"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/coordinate-plane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/coordinate-plane"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/coordinate-plane"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/coordinate-plane"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/coordinate-plane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/coordinate-plane"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/coordinate-plane"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/coordinate-plane"/>
   </url>
   <url>
     <loc>https://mathpractise.netlify.app/functions</loc>
@@ -229,6 +253,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/quadratic"/>
   </url>
   <url>
+    <loc>https://mathpractise.netlify.app/polynomials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/polynomials"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/polynomials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/polynomials"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/polynomials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/polynomials"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/polynomials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/polynomials"/>
+  </url>
+  <url>
     <loc>https://mathpractise.netlify.app/parabola</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/parabola"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/parabola"/>
@@ -253,6 +289,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/perimeter-area"/>
   </url>
   <url>
+    <loc>https://mathpractise.netlify.app/volume</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/volume"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/volume"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/volume"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/volume</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/volume"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/volume"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/volume"/>
+  </url>
+  <url>
     <loc>https://mathpractise.netlify.app/pythagorean</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/pythagorean"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/pythagorean"/>
@@ -275,6 +323,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/circles"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/circles"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/circles"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/scientific-notation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/scientific-notation"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/scientific-notation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/scientific-notation"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/scientific-notation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/scientific-notation"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/scientific-notation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/scientific-notation"/>
   </url>
   <url>
     <loc>https://mathpractise.netlify.app/exponents</loc>

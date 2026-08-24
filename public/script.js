@@ -975,6 +975,195 @@
     return problems;
   }
 
+  function generateLikeTermsProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const a = randInt(1, 9);
+      const b = randInt(1, 9);
+      const c = randInt(1, 9);
+      const d = randInt(1, 9);
+      const sumX = a + c;
+      const sumY = b + d;
+
+      problems.push({
+        question: `${a}x + ${b}y + ${c}x + ${d}y = ?`,
+        checkAnswer(raw) {
+          const text = String(raw).trim().replace(/\s+/g, "");
+          const xMatch = text.match(/([+-]?\d*)x/i);
+          const yMatch = text.match(/([+-]?\d*)y/i);
+          if (!xMatch || !yMatch) return false;
+          const parseCoef = (s) => {
+            if (s === "" || s === "+") return 1;
+            if (s === "-") return -1;
+            return Number(s);
+          };
+          const xCoef = parseCoef(xMatch[1]);
+          const yCoef = parseCoef(yMatch[1]);
+          return Number.isFinite(xCoef) && Number.isFinite(yCoef) && xCoef === sumX && yCoef === sumY;
+        },
+        correctAnswerText: `${sumX}x + ${sumY}y`,
+      });
+    }
+    return problems;
+  }
+
+  function generateCoordinatePlaneProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const x = randInt(-10, 10);
+      const y = randInt(-10, 10);
+      const xSteps = Math.abs(x);
+      const ySteps = Math.abs(y);
+      const xDirWord = lang === "ru" ? (x >= 0 ? "вправо" : "влево") : x >= 0 ? "right" : "left";
+      const yDirWord = lang === "ru" ? (y >= 0 ? "вверх" : "вниз") : y >= 0 ? "up" : "down";
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Точка сдвинута от начала координат на ${xSteps} (${xDirWord}) по оси x и на ${ySteps} (${yDirWord}) по оси y. Найдите её координаты (x, y).`
+            : `A point is ${xSteps} steps ${xDirWord} and ${ySteps} steps ${yDirWord} from the origin. What are its coordinates (x, y)?`,
+        checkAnswer(raw) {
+          const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
+          if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+          return parts[0] === x && parts[1] === y;
+        },
+        correctAnswerText: `(${x}, ${y})`,
+      });
+    }
+    return problems;
+  }
+
+  function generatePolynomialsProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const isAdd = Math.random() < 0.5;
+      let a1, a2, sumA;
+      do {
+        a1 = randInt(1, 9);
+        a2 = randInt(1, 9);
+        sumA = isAdd ? a1 + a2 : a1 - a2;
+      } while (sumA === 0);
+      const b1 = randInt(-10, 10);
+      const b2 = randInt(-10, 10);
+      const sumB = isAdd ? b1 + b2 : b1 - b2;
+      const b1Text = b1 >= 0 ? `+ ${b1}` : `− ${Math.abs(b1)}`;
+      const b2Text = b2 >= 0 ? `+ ${b2}` : `− ${Math.abs(b2)}`;
+      const sumBText = sumB >= 0 ? `+ ${sumB}` : `− ${Math.abs(sumB)}`;
+
+      problems.push({
+        question: `(${a1}x ${b1Text}) ${isAdd ? "+" : "−"} (${a2}x ${b2Text}) = ?`,
+        checkAnswer(raw) {
+          const text = String(raw).trim().replace(/\s+/g, "").replace(/−/g, "-");
+          const xMatch = text.match(/([+-]?\d*)x/i);
+          if (!xMatch) return false;
+          const parseCoef = (s) => {
+            if (s === "" || s === "+") return 1;
+            if (s === "-") return -1;
+            return Number(s);
+          };
+          const xCoef = parseCoef(xMatch[1]);
+          if (!Number.isFinite(xCoef) || xCoef !== sumA) return false;
+          const rest = (text.slice(0, xMatch.index) + text.slice(xMatch.index + xMatch[0].length)).trim();
+          if (rest === "") return sumB === 0;
+          const constMatch = rest.match(/^([+-]?\d+)$/);
+          if (!constMatch) return false;
+          return Number(constMatch[1]) === sumB;
+        },
+        correctAnswerText: `${sumA}x ${sumBText}`,
+      });
+    }
+    return problems;
+  }
+
+  function generateVolumeProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const isBox = Math.random() < 0.5;
+      let question, answer;
+      if (isBox) {
+        const l = randInt(2, 15);
+        const w = randInt(2, 15);
+        const h = randInt(2, 15);
+        answer = l * w * h;
+        question =
+          lang === "ru"
+            ? `Прямоугольный параллелепипед имеет длину ${l}, ширину ${w} и высоту ${h}. Найдите его объём.`
+            : `A box has length ${l}, width ${w}, and height ${h}. Find its volume.`;
+      } else {
+        const side = randInt(2, 12);
+        answer = side * side * side;
+        question =
+          lang === "ru"
+            ? `Куб имеет длину стороны ${side}. Найдите его объём.`
+            : `A cube has a side length of ${side}. Find its volume.`;
+      }
+
+      problems.push({
+        question,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
+  function generateScientificNotationProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const d1 = randInt(1, 9);
+      const d2 = randInt(0, 9);
+      const mantissa = d1 + d2 / 10;
+      const n = randInt(3, 9);
+      const number = Math.round(mantissa * Math.pow(10, n));
+      const isNumberToNotation = Math.random() < 0.5;
+
+      if (isNumberToNotation) {
+        problems.push({
+          question:
+            lang === "ru" ? `Запишите ${number} в научной нотации.` : `Write ${number} in scientific notation.`,
+          checkAnswer(raw) {
+            const text = String(raw).trim().replace(/\s+/g, "").toLowerCase();
+            let m = NaN;
+            let exp = NaN;
+            let match = text.match(/^(-?\d+(?:\.\d+)?)e(-?\d+)$/);
+            if (match) {
+              m = Number(match[1]);
+              exp = Number(match[2]);
+            } else {
+              match = text.match(/^(-?\d+(?:\.\d+)?)[×x*]10\^?(-?\d+)$/);
+              if (match) {
+                m = Number(match[1]);
+                exp = Number(match[2]);
+              }
+            }
+            if (!Number.isFinite(m) || !Number.isFinite(exp)) return false;
+            return Math.abs(m - mantissa) < 1e-9 && exp === n;
+          },
+          correctAnswerText: `${mantissa} × 10^${n}`,
+        });
+      } else {
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Запишите ${mantissa} × 10^${n} обычным числом.`
+              : `Write ${mantissa} × 10^${n} as a plain number.`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === number;
+          },
+          correctAnswerText: String(number),
+        });
+      }
+    }
+    return problems;
+  }
+
   const GENERATORS = {
     arithmetic: generateArithmeticProblems,
     "negative-numbers": generateNegativeNumbersProblems,
@@ -988,16 +1177,21 @@
     probability: generateProbabilityProblems,
     average: generateAverageProblems,
     "mean-median-mode": generateMeanMedianModeProblems,
+    "like-terms": generateLikeTermsProblems,
     algebra: generateAlgebraProblems,
     inequalities: generateInequalitiesProblems,
+    "coordinate-plane": generateCoordinatePlaneProblems,
     functions: generateFunctionsProblems,
     systems: generateSystemsProblems,
     slope: generateSlopeProblems,
     quadratic: generateQuadraticProblems,
+    polynomials: generatePolynomialsProblems,
     parabola: generateParabolaProblems,
     "perimeter-area": generatePerimeterAreaProblems,
+    volume: generateVolumeProblems,
     pythagorean: generatePythagoreanProblems,
     circles: generateCirclesProblems,
+    "scientific-notation": generateScientificNotationProblems,
     exponents: generateExponentsProblems,
     "square-roots": generateSquareRootsProblems,
     "absolute-value": generateAbsoluteValueProblems,

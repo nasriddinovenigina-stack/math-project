@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Арифметика: сложение, вычитание и умножение (5 класс) — Практика по математике</title>
-  <meta name="description" content="5 класс: Изучите сложение, вычитание и умножение на простом примере, а затем потренируйтесь с мгновенной проверкой ответов." />
-  <link rel="canonical" href="https://mathpractise.netlify.app/ru/arithmetic" />
-  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/arithmetic" />
-  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/arithmetic" />
-  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/arithmetic" />
+  <title>Сложение и вычитание многочленов (8 класс) — Практика по математике</title>
+  <meta name="description" content="8 класс: Узнайте, как складывать и вычитать многочлены шаг за шагом, а затем потренируйтесь." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/ru/polynomials" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/polynomials" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/polynomials" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/polynomials" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/styles.css" />
   <meta name="application-name" content="Практика по математике" />
   <meta property="og:site_name" content="Практика по математике" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Арифметика: сложение, вычитание и умножение (5 класс) — Практика по математике" />
-  <meta property="og:description" content="5 класс: Изучите сложение, вычитание и умножение на простом примере, а затем потренируйтесь с мгновенной проверкой ответов." />
-  <meta property="og:url" content="https://mathpractise.netlify.app/ru/arithmetic" />
+  <meta property="og:title" content="Сложение и вычитание многочленов (8 класс) — Практика по математике" />
+  <meta property="og:description" content="8 класс: Узнайте, как складывать и вычитать многочлены шаг за шагом, а затем потренируйтесь." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/ru/polynomials" />
   <meta property="og:locale" content="ru_RU" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNDQEKH5SK"></script>
   <script>
@@ -26,19 +26,19 @@
     gtag('config', 'G-VNDQEKH5SK');
   </script>
 </head>
-<body data-topic="arithmetic">
+<body data-topic="polynomials">
   <div class="app">
     <aside class="sidebar">
       <div class="sidebar-header">
         <h1><a class="site-title" href="/ru/">Практика по математике</a></h1>
         <p class="subtitle">Изучи идею — затем закрепи её на практике.</p>
         <div class="lang-switch">
-          <a class="lang-link" href="/arithmetic">EN</a>
-          <a class="lang-link active" href="/ru/arithmetic">RU</a>
+          <a class="lang-link" href="/polynomials">EN</a>
+          <a class="lang-link active" href="/ru/polynomials">RU</a>
         </div>
       </div>
       <nav class="topic-nav">
-        <a class="tab-btn active" href="/ru/arithmetic">Арифметика</a>
+        <a class="tab-btn" href="/ru/arithmetic">Арифметика</a>
         <a class="tab-btn" href="/ru/negative-numbers">Отрицательные числа</a>
         <a class="tab-btn" href="/ru/order-of-operations">Порядок действий</a>
         <a class="tab-btn" href="/ru/fractions">Дроби</a>
@@ -58,7 +58,7 @@
         <a class="tab-btn" href="/ru/systems">Системы уравнений</a>
         <a class="tab-btn" href="/ru/slope">Наклон прямой</a>
         <a class="tab-btn" href="/ru/quadratic">Квадратные уравнения</a>
-        <a class="tab-btn" href="/ru/polynomials">Многочлены</a>
+        <a class="tab-btn active" href="/ru/polynomials">Многочлены</a>
         <a class="tab-btn" href="/ru/parabola">Парабола</a>
         <a class="tab-btn" href="/ru/perimeter-area">Периметр и площадь</a>
         <a class="tab-btn" href="/ru/volume">Объём</a>
@@ -73,8 +73,8 @@
 
     <main class="content">
       <section class="topic active">
-        <span class="grade-badge">5 класс</span>
-        <h2>Арифметика: сложение, вычитание и умножение</h2>
+        <span class="grade-badge">8 класс</span>
+        <h2>Сложение и вычитание многочленов</h2>
       <div class="explanation-block">
         <div class="view-toggle">
           <button class="view-toggle-btn active" data-view="slides">Слайды</button>
@@ -83,28 +83,29 @@
         <div class="explanation slideshow" data-slideshow>
           <div class="slide active">
             <p class="slide-label">Вопрос</p>
-            <p class="hook">Вы на базаре. Берёте 7 помидоров, потом ещё 5 &mdash; сколько теперь? У вас было 9 луковиц, 4 ушли в суп &mdash; сколько осталось? И вы покупаете 3 лотка по 6 яиц &mdash; сколько яиц всего?</p>
+            <p class="hook">Вы складываете стоимость двух покупок, каждая записана как выражение: (3x + 5) и (2x &minus; 1), где x — цена одной тетради. Какова общая сумма?</p>
           </div>
           <div class="slide">
             <p class="slide-label">Идея</p>
-            <p><strong>Сложение</strong> объединяет числа, <strong>вычитание</strong> находит разницу, <strong>умножение</strong> — это многократное сложение.</p>
-            <p class="one-liner">Одной фразой: сложение объединяет, вычитание убирает, умножение — это многократное сложение.</p>
+            <p>Чтобы сложить или вычесть многочлены, объедините подобные слагаемые — так же, как в простом выражении, но теперь в каждой группе может быть несколько членов. При вычитании сначала поменяйте знак каждого члена второго многочлена.</p>
+            <p class="one-liner">Одной фразой: сгруппируйте подобные слагаемые, затем сложите или вычтите каждую пару.</p>
           </div>
           <div class="slide">
             <p class="slide-label">Смотрим решение</p>
             <div class="steps">
-            <p>7 + 5 = 12</p>
-            <p>9 &minus; 4 = 5</p>
-            <p>6 &times; 3 = 18</p>
+            <p>(3x + 5) + (2x &minus; 1)</p>
+            <p class="steps-note">объединяем члены с x, затем обычные числа</p>
+            <p>(3x + 2x) + (5 &minus; 1)</p>
+            <p class="steps-result">5x + 4</p>
             </div>
           </div>
           <div class="slide">
             <p class="slide-label">Осторожно</p>
-            <p class="trap">Частая ошибка — перепутать порядок при вычитании: 9 &minus; 4 не то же самое, что 4 &minus; 9. Всегда вычитайте второе число из первого, а не наоборот.</p>
+            <p class="trap">Частая ошибка при ВЫЧИТАНИИ многочленов — забыть поменять знак каждого члена во втором многочлене: (3x + 5) − (2x − 1) — это НЕ 3x + 5 − 2x − 1, а 3x + 5 − 2x + 1 (−1 превращается в +1).</p>
           </div>
           <div class="slide">
             <p class="slide-label">Почему это важно</p>
-            <p class="why-it-matters">Эти три действия — основа всех остальных тем на этом сайте: они пригодятся везде, от покупок до готовки по рецепту.</p>
+            <p class="why-it-matters">Сложение и вычитание многочленов — способ упростить суммы, разности и формулы в алгебре, физике и инженерии — везде, где объединяются несколько выражений.</p>
           </div>
           <div class="slideshow-controls">
             <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
@@ -114,12 +115,13 @@
         </div>
       </div>
 
-        <div class="practice" data-practice="arithmetic">
+        <div class="practice" data-practice="polynomials">
           <div class="practice-controls">
-            <button class="generate-btn" data-topic="arithmetic">Новые примеры</button>
+            <button class="generate-btn" data-topic="polynomials">Новые примеры</button>
             <span class="score"></span>
           </div>
           <div class="problem-list"></div>
+          <p class="hint">Введите ответ в виде 5x + 4 (или 5x − 4, если отрицательное).</p>
         </div>
       </section>
 
