@@ -70,11 +70,24 @@
       <section class="topic active">
         <span class="grade-badge">5 класс</span>
         <h2>Периметр и площадь</h2>
-        <div class="explanation">
-          <p class="hook">Прямоугольная комната имеет ширину 4 метра и длину 6 метров. Сколько нужно напольного покрытия (площадь) и сколько плинтуса вокруг стен (периметр)?</p>
-          <p><strong>Периметр</strong> — это расстояние вокруг фигуры: сложите все стороны. <strong>Площадь</strong> — это пространство внутри фигуры: для прямоугольника умножьте длину на ширину.</p>
-          <p class="one-liner">Одной фразой: периметр = сложите все стороны, площадь = длина &times; ширина (для прямоугольника).</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">Прямоугольная комната имеет ширину 4 метра и длину 6 метров. Сколько нужно напольного покрытия (площадь) и сколько плинтуса вокруг стен (периметр)?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p><strong>Периметр</strong> — это расстояние вокруг фигуры: сложите все стороны. <strong>Площадь</strong> — это пространство внутри фигуры: для прямоугольника умножьте длину на ширину.</p>
+            <p class="one-liner">Одной фразой: периметр = сложите все стороны, площадь = длина &times; ширина (для прямоугольника).</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>длина = 6 м, ширина = 4 м</p>
             <p class="steps-note">периметр = сложите все 4 стороны &rarr; 2&times;длина + 2&times;ширина</p>
             <p>P = 2(6) + 2(4)</p>
@@ -83,10 +96,23 @@
             <p class="steps-note">площадь = длина &times; ширина</p>
             <p>S = 6 &times; 4</p>
             <p class="steps-result">S = 24 м&sup2;</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — перепутать периметр и площадь: периметр — это просто расстояние (например, в метрах), а площадь измеряется в квадратных единицах (например, м&sup2;), потому что она покрывает двумерное пространство. Если в ответе нет знака "&sup2;", проверьте, не перепутали ли вы их.</p>
-          <p class="why-it-matters">Периметр и площадь нужны при установке забора, укладке пола, изготовлении рамок для картин — везде, где надо измерить край или пространство чего-либо.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — перепутать периметр и площадь: периметр — это просто расстояние (например, в метрах), а площадь измеряется в квадратных единицах (например, м&sup2;), потому что она покрывает двумерное пространство. Если в ответе нет знака "&sup2;", проверьте, не перепутали ли вы их.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Периметр и площадь нужны при установке забора, укладке пола, изготовлении рамок для картин — везде, где надо измерить край или пространство чего-либо.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="perimeter-area">
           <div class="practice-controls">

@@ -70,19 +70,45 @@
       <section class="topic active">
         <span class="grade-badge">5 класс</span>
         <h2>Порядок действий</h2>
-        <div class="explanation">
-          <p class="hook">У вас есть 2 000 сум, и вы отработали 3 смены по 4 000 сум каждая. Сколько у вас денег всего?</p>
-          <p>Если в примере несколько действий, выполняйте их в таком порядке: <strong>сначала скобки</strong>, потом <strong>умножение</strong>, потом <strong>сложение/вычитание</strong>.</p>
-          <p class="one-liner">Одной фразой: умножение (и скобки) выполняются раньше сложения и вычитания.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">У вас есть 2 000 сум, и вы отработали 3 смены по 4 000 сум каждая. Сколько у вас денег всего?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p>Если в примере несколько действий, выполняйте их в таком порядке: <strong>сначала скобки</strong>, потом <strong>умножение</strong>, потом <strong>сложение/вычитание</strong>.</p>
+            <p class="one-liner">Одной фразой: умножение (и скобки) выполняются раньше сложения и вычитания.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>2 + 3 &times; 4</p>
             <p class="steps-note">сначала умножаем &rarr; 3 &times; 4 = 12</p>
             <p>2 + 12</p>
             <p class="steps-result">= 14</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — считать строго слева направо: 2 + 3 = 5, потом 5 &times; 4 = 20. Это неверно — умножение всегда выполняется раньше сложения, независимо от порядка записи.</p>
-          <p class="why-it-matters">Без единого правила одно и то же выражение можно было бы понять по-разному — этот порядок делает математику одинаковой для всех.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — считать строго слева направо: 2 + 3 = 5, потом 5 &times; 4 = 20. Это неверно — умножение всегда выполняется раньше сложения, независимо от порядка записи.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Без единого правила одно и то же выражение можно было бы понять по-разному — этот порядок делает математику одинаковой для всех.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="order-of-operations">
           <div class="practice-controls">

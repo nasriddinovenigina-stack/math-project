@@ -70,12 +70,25 @@
       <section class="topic active">
         <span class="grade-badge">7th Grade</span>
         <h2>Basic Algebra: Solving for x</h2>
-        <div class="explanation">
-          <h3 class="section-title">Solving ax + b = c</h3>
-          <p class="hook">You buy 3 identical notebooks, use a 5,000 so'm discount coupon, and pay 10,000 so'm total. How much was one notebook before the discount?</p>
-          <p>To solve for x, get all the x terms on one side and all the plain numbers on the other. When a term crosses the equals sign, it changes to the <strong>opposite sign</strong> (+ becomes &minus;, and &minus; becomes +). Once only the x term is left, divide by the number in front of x.</p>
-          <p class="one-liner">In one line: move it across, flip the sign, then divide.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Solving ax + b = c</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">You buy 3 identical notebooks, use a 5,000 so'm discount coupon, and pay 10,000 so'm total. How much was one notebook before the discount?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>To solve for x, get all the x terms on one side and all the plain numbers on the other. When a term crosses the equals sign, it changes to the <strong>opposite sign</strong> (+ becomes &minus;, and &minus; becomes +). Once only the x term is left, divide by the number in front of x.</p>
+            <p class="one-liner">In one line: move it across, flip the sign, then divide.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>3x &minus; 5 = 10</p>
             <p class="steps-note">move &minus;5 to the other side &rarr; it becomes +5</p>
             <p>3x = 10 + 5</p>
@@ -83,17 +96,43 @@
             <p class="steps-note">divide both sides by 3</p>
             <p>x = 15 / 3</p>
             <p class="steps-result">x = 5 (so'm, in thousands)</p>
+            </div>
           </div>
-          <p class="trap">The #1 mistake is forgetting to flip the sign &mdash; writing 3x = 10 &minus; 5 instead of 3x = 10 + 5. The moment a term crosses the equals sign, its sign flips.</p>
-          <p class="why-it-matters">This move is behind almost every word problem &mdash; splitting bills, adjusting prices, figuring out how many of something you can afford.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">The #1 mistake is forgetting to flip the sign &mdash; writing 3x = 10 &minus; 5 instead of 3x = 10 + 5. The moment a term crosses the equals sign, its sign flips.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">This move is behind almost every word problem &mdash; splitting bills, adjusting prices, figuring out how many of something you can afford.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
-        <div class="explanation">
-          <h3 class="section-title">Variables on Both Sides</h3>
-          <p class="hook">You have 2 bags with x marbles each, plus 3 loose marbles. Your friend has 1 bag with x marbles, plus 7 loose marbles. You both have the exact same total. How many marbles are in each bag?</p>
-          <p>When x appears on both sides, first move the smaller x term across so there's only one x term left &mdash; then solve like before.</p>
-          <p class="one-liner">In one line: get all the x's on one side first, then solve as usual.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Variables on Both Sides</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">You have 2 bags with x marbles each, plus 3 loose marbles. Your friend has 1 bag with x marbles, plus 7 loose marbles. You both have the exact same total. How many marbles are in each bag?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>When x appears on both sides, first move the smaller x term across so there's only one x term left &mdash; then solve like before.</p>
+            <p class="one-liner">In one line: get all the x's on one side first, then solve as usual.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>2x + 3 = x + 7</p>
             <p class="steps-note">move x to the left &rarr; subtract x from both sides</p>
             <p>2x &minus; x + 3 = 7</p>
@@ -101,10 +140,23 @@
             <p class="steps-note">move +3 to the other side &rarr; it becomes &minus;3</p>
             <p>x = 7 &minus; 3</p>
             <p class="steps-result">x = 4</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is only moving the numbers and forgetting the x term is still on both sides &mdash; you have to clear the x from one side first, before you touch the plain numbers.</p>
-          <p class="why-it-matters">Comparing two equal totals like this is exactly how you solve &quot;break-even&quot; problems &mdash; like figuring out when two phone plans cost the same.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is only moving the numbers and forgetting the x term is still on both sides &mdash; you have to clear the x from one side first, before you touch the plain numbers.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">Comparing two equal totals like this is exactly how you solve &quot;break-even&quot; problems &mdash; like figuring out when two phone plans cost the same.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="algebra">
           <div class="practice-controls">

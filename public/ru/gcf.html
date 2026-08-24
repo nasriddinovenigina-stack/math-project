@@ -70,20 +70,46 @@
       <section class="topic active">
         <span class="grade-badge">6 класс</span>
         <h2>НОД: наибольший общий делитель</h2>
-        <div class="explanation">
-          <p class="hook">У вас 12 самсы и 18 пирожков, и вы хотите разложить их на одинаковые подносы без остатка, используя подносы самого большого возможного размера. Сколько должно быть на каждом подносе?</p>
-          <p><strong>НОД</strong> двух чисел — это самое большое число, на которое оба числа делятся без остатка.</p>
-          <p class="one-liner">Одной фразой: выпишите делители обоих чисел и возьмите самый большой общий.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">У вас 12 самсы и 18 пирожков, и вы хотите разложить их на одинаковые подносы без остатка, используя подносы самого большого возможного размера. Сколько должно быть на каждом подносе?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p><strong>НОД</strong> двух чисел — это самое большое число, на которое оба числа делятся без остатка.</p>
+            <p class="one-liner">Одной фразой: выпишите делители обоих чисел и возьмите самый большой общий.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>НОД(12, 18)</p>
             <p class="steps-note">делители 12: 1, 2, 3, 4, 6, 12</p>
             <p class="steps-note">делители 18: 1, 2, 3, 6, 9, 18</p>
             <p class="steps-note">самый большой общий делитель &rarr; 6</p>
             <p class="steps-result">НОД(12, 18) = 6</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — взять общий делитель, но не самый большой: у 12 и 18 есть общие делители 2 и 3, но НОД — это 6, самый большой из них.</p>
-          <p class="why-it-matters">НОД помогает сокращать дроби и делить предметы на самые ровные и малочисленные группы.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — взять общий делитель, но не самый большой: у 12 и 18 есть общие делители 2 и 3, но НОД — это 6, самый большой из них.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">НОД помогает сокращать дроби и делить предметы на самые ровные и малочисленные группы.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="gcf">
           <div class="practice-controls">

@@ -70,19 +70,45 @@
       <section class="topic active">
         <span class="grade-badge">8th Grade</span>
         <h2>Square Roots</h2>
-        <div class="explanation">
-          <p class="hook">You want to build a square garden with an area of 49 square meters. How long should each side be?</p>
-          <p>A <strong>square root</strong> asks &quot;what number, times itself, gives this?&quot; The symbol is &radic;.</p>
-          <p class="one-liner">In one line: ask what number times itself gives you this.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">You want to build a square garden with an area of 49 square meters. How long should each side be?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>A <strong>square root</strong> asks &quot;what number, times itself, gives this?&quot; The symbol is &radic;.</p>
+            <p class="one-liner">In one line: ask what number times itself gives you this.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>&radic;49 = ?</p>
             <p class="steps-note">what number times itself is 49?</p>
             <p>7 &times; 7 = 49</p>
             <p class="steps-result">&radic;49 = 7</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is dividing by 2 instead &mdash; thinking &radic;49 means 49 &divide; 2. A square root is about multiplication, not division: find the number that multiplies by itself to reach 49.</p>
-          <p class="why-it-matters">Square roots undo squaring, and they're the tool behind the Pythagorean theorem and the quadratic formula.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is dividing by 2 instead &mdash; thinking &radic;49 means 49 &divide; 2. A square root is about multiplication, not division: find the number that multiplies by itself to reach 49.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">Square roots undo squaring, and they're the tool behind the Pythagorean theorem and the quadratic formula.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="square-roots">
           <div class="practice-controls">

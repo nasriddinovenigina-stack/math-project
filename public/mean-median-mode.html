@@ -70,11 +70,24 @@
       <section class="topic active">
         <span class="grade-badge">7th Grade</span>
         <h2>Mean, Median & Mode</h2>
-        <div class="explanation">
-          <p class="hook">Your test scores this month are 80, 90, 70, 90, 85. What's the mean, median, and mode?</p>
-          <p><strong>Mean</strong> is the average (add them up, divide by how many). <strong>Median</strong> is the middle value when they're sorted in order. <strong>Mode</strong> is the value that appears most often.</p>
-          <p class="one-liner">In one line: mean = add &amp; divide, median = sort &amp; find the middle, mode = the most frequent value.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">Your test scores this month are 80, 90, 70, 90, 85. What's the mean, median, and mode?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p><strong>Mean</strong> is the average (add them up, divide by how many). <strong>Median</strong> is the middle value when they're sorted in order. <strong>Mode</strong> is the value that appears most often.</p>
+            <p class="one-liner">In one line: mean = add &amp; divide, median = sort &amp; find the middle, mode = the most frequent value.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>Scores: 80, 90, 70, 90, 85</p>
             <p class="steps-note">mean: add them all, divide by 5</p>
             <p>(80+90+70+90+85) &divide; 5 = 415 &divide; 5</p>
@@ -83,10 +96,23 @@
             <p class="steps-result">median = 85</p>
             <p class="steps-note">mode: which score appears most often?</p>
             <p class="steps-result">mode = 90</p>
+            </div>
           </div>
-          <p class="trap">A common mistake with median is forgetting to sort the numbers first &mdash; the middle of the ORIGINAL list isn't the median unless it's already in order. Always sort from smallest to largest first.</p>
-          <p class="why-it-matters">These three numbers summarize a whole data set in different ways &mdash; mean is best for typical size, median resists being skewed by extreme outliers, and mode shows what's most common.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake with median is forgetting to sort the numbers first &mdash; the middle of the ORIGINAL list isn't the median unless it's already in order. Always sort from smallest to largest first.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">These three numbers summarize a whole data set in different ways &mdash; mean is best for typical size, median resists being skewed by extreme outliers, and mode shows what's most common.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="mean-median-mode">
           <div class="practice-controls">

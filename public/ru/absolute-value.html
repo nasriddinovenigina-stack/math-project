@@ -70,34 +70,86 @@
       <section class="topic active">
         <span class="grade-badge">6 класс</span>
         <h2>Модуль числа</h2>
-        <div class="explanation">
-          <h3 class="section-title">Что означает модуль числа</h3>
-          <p class="hook">Температура на 7 градусов ниже нуля (&minus;7&deg;). На сколько это отличается от 0 градусов, независимо от направления?</p>
-          <p><strong>Модуль числа</strong> означает «расстояние до нуля» — поэтому он всегда положительный (или равен нулю), независимо от знака числа внутри.</p>
-          <p class="one-liner">Одной фразой: модуль — это просто расстояние до нуля, всегда положительное.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Что означает модуль числа</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">Температура на 7 градусов ниже нуля (&minus;7&deg;). На сколько это отличается от 0 градусов, независимо от направления?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p><strong>Модуль числа</strong> означает «расстояние до нуля» — поэтому он всегда положительный (или равен нулю), независимо от знака числа внутри.</p>
+            <p class="one-liner">Одной фразой: модуль — это просто расстояние до нуля, всегда положительное.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>|&minus;7| = ?</p>
             <p class="steps-note">расстояние от 0 до &minus;7 равно 7</p>
             <p class="steps-result">|&minus;7| = 7</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — оставить ответ отрицательным: писать |&minus;7| = &minus;7. Модуль означает «расстояние», а расстояние не бывает отрицательным.</p>
-          <p class="why-it-matters">Модуль числа используется там, где важно не направление, а величина — насколько промахнулись мимо цели, какая погрешность, насколько ниже нуля.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — оставить ответ отрицательным: писать |&minus;7| = &minus;7. Модуль означает «расстояние», а расстояние не бывает отрицательным.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Модуль числа используется там, где важно не направление, а величина — насколько промахнулись мимо цели, какая погрешность, насколько ниже нуля.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
-        <div class="explanation">
-          <h3 class="section-title">Решаем уравнения с модулем</h3>
-          <p class="hook">Вы стоите в точке 3 на числовой прямой. Вы хотите найти все точки, которые находятся ровно в 5 шагах от вас — в любом направлении. Где они?</p>
-          <p>Уравнение вида |x &minus; k| = n означает «x находится ровно на расстоянии n от k». Так как расстояние работает в обе стороны, обычно есть <strong>два</strong> решения: k + n и k &minus; n.</p>
-          <p class="one-liner">Одной фразой: раскройте модуль в два уравнения — одно с +n, другое с &minus;n.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Решаем уравнения с модулем</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">Вы стоите в точке 3 на числовой прямой. Вы хотите найти все точки, которые находятся ровно в 5 шагах от вас — в любом направлении. Где они?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p>Уравнение вида |x &minus; k| = n означает «x находится ровно на расстоянии n от k». Так как расстояние работает в обе стороны, обычно есть <strong>два</strong> решения: k + n и k &minus; n.</p>
+            <p class="one-liner">Одной фразой: раскройте модуль в два уравнения — одно с +n, другое с &minus;n.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>|x &minus; 3| = 5</p>
             <p class="steps-note">x &minus; 3 = 5 &nbsp; или &nbsp; x &minus; 3 = &minus;5</p>
             <p>x = 3 + 5 &nbsp; или &nbsp; x = 3 &minus; 5</p>
             <p class="steps-result">x = 8 &nbsp; или &nbsp; x = &minus;2</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — решить только x &minus; 3 = 5 и остановиться, упустив второе решение. Уравнения с модулем почти всегда имеют два ответа — не забывайте про отрицательный случай.</p>
-          <p class="why-it-matters">Это пригодится, когда нужен диапазон вокруг цели — допустимая погрешность, допуск в производстве, диапазон температур.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — решить только x &minus; 3 = 5 и остановиться, упустив второе решение. Уравнения с модулем почти всегда имеют два ответа — не забывайте про отрицательный случай.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Это пригодится, когда нужен диапазон вокруг цели — допустимая погрешность, допуск в производстве, диапазон температур.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="absolute-value">
           <div class="practice-controls">

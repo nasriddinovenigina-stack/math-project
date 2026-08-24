@@ -1035,4 +1035,73 @@
     generateBtn.addEventListener("click", renderProblems);
     renderProblems();
   });
+
+  // ---------- slideshow explanations ----------
+
+  function initSlideshow(container) {
+    const slides = Array.from(container.querySelectorAll(":scope > .slide"));
+    const dots = Array.from(container.querySelectorAll(".dot"));
+    const prevBtn = container.querySelector(".slide-prev");
+    const nextBtn = container.querySelector(".slide-next");
+    let current = 0;
+
+    function render() {
+      slides.forEach((s, i) => s.classList.toggle("active", i === current));
+      dots.forEach((d, i) => d.classList.toggle("active", i === current));
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === slides.length - 1;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (current > 0) {
+        current -= 1;
+        render();
+      }
+    });
+    nextBtn.addEventListener("click", () => {
+      if (current < slides.length - 1) {
+        current += 1;
+        render();
+      }
+    });
+    dots.forEach((d, i) => {
+      d.addEventListener("click", () => {
+        current = i;
+        render();
+      });
+    });
+
+    container.addEventListener("keydown", (e) => {
+      if (container.classList.contains("text-mode")) return;
+      if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "ArrowLeft") prevBtn.click();
+    });
+
+    render();
+  }
+
+  function initViewToggle(block) {
+    const toggleBtns = Array.from(block.querySelectorAll(".view-toggle-btn"));
+    const slideshow = block.querySelector("[data-slideshow]");
+    if (!toggleBtns.length || !slideshow) return;
+
+    toggleBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        toggleBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        slideshow.classList.toggle("text-mode", btn.dataset.view === "text");
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".explanation-block").forEach((block) => {
+      initViewToggle(block);
+      const slideshow = block.querySelector("[data-slideshow]");
+      if (slideshow) {
+        slideshow.setAttribute("tabindex", "0");
+        initSlideshow(slideshow);
+      }
+    });
+  });
 })();

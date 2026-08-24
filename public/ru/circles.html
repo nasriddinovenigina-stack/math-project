@@ -70,20 +70,46 @@
       <section class="topic active">
         <span class="grade-badge">9 класс</span>
         <h2>Окружность: площадь и длина</h2>
-        <div class="explanation">
-          <p class="hook">Круглый сад имеет радиус 5 метров. Сколько потребуется забора, чтобы огородить его целиком?</p>
-          <p><strong>Длина окружности</strong> (расстояние по кругу) равна C = 2&pi;r, а <strong>площадь</strong> круга равна A = &pi;r&sup2;, где r — радиус. Используйте &pi; &asymp; 3,14.</p>
-          <p class="one-liner">Одной фразой: длина окружности = 2&pi;r, площадь = &pi;r&sup2;.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">Круглый сад имеет радиус 5 метров. Сколько потребуется забора, чтобы огородить его целиком?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p><strong>Длина окружности</strong> (расстояние по кругу) равна C = 2&pi;r, а <strong>площадь</strong> круга равна A = &pi;r&sup2;, где r — радиус. Используйте &pi; &asymp; 3,14.</p>
+            <p class="one-liner">Одной фразой: длина окружности = 2&pi;r, площадь = &pi;r&sup2;.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>радиус = 5 метров</p>
             <p>C = 2 &times; &pi; &times; 5</p>
             <p class="steps-note">используем &pi; &asymp; 3,14</p>
             <p>C = 2 &times; 3,14 &times; 5</p>
             <p class="steps-result">C &asymp; 31,4 метра</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — перепутать радиус и диаметр: если дан диаметр, сначала разделите его на 2, чтобы получить радиус. Также не путайте формулы: для длины окружности используется просто r, а для площади — r&sup2; (r, умноженное само на себя).</p>
-          <p class="why-it-matters">Формулы окружности встречаются в колёсах, трубах, часах и размерах пиццы — везде, где есть что-то круглое.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — перепутать радиус и диаметр: если дан диаметр, сначала разделите его на 2, чтобы получить радиус. Также не путайте формулы: для длины окружности используется просто r, а для площади — r&sup2; (r, умноженное само на себя).</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Формулы окружности встречаются в колёсах, трубах, часах и размерах пиццы — везде, где есть что-то круглое.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="circles">
           <div class="practice-controls">

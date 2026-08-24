@@ -70,19 +70,45 @@
       <section class="topic active">
         <span class="grade-badge">7th Grade</span>
         <h2>Probability</h2>
-        <div class="explanation">
-          <p class="hook">A bag has 3 red marbles and 2 blue marbles. If you pick one without looking, what's the probability it's red?</p>
-          <p><strong>Probability</strong> measures how likely something is, from 0 (impossible) to 1 (certain). P(event) = number of favorable outcomes &divide; total number of outcomes.</p>
-          <p class="one-liner">In one line: probability = favorable outcomes &divide; total outcomes.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">A bag has 3 red marbles and 2 blue marbles. If you pick one without looking, what's the probability it's red?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p><strong>Probability</strong> measures how likely something is, from 0 (impossible) to 1 (certain). P(event) = number of favorable outcomes &divide; total number of outcomes.</p>
+            <p class="one-liner">In one line: probability = favorable outcomes &divide; total outcomes.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>3 red marbles, 2 blue marbles &rarr; 5 total</p>
             <p class="steps-note">P(red) = favorable &divide; total</p>
             <p>P(red) = 3 &divide; 5</p>
             <p class="steps-result">P(red) = 0.6 (or 3/5, or 60%)</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is dividing by the number of OTHER outcomes instead of the TOTAL &mdash; for example, writing 3/2 (red vs blue) instead of 3/5 (red out of everything). Always divide by the total number of possible outcomes, not just the other category.</p>
-          <p class="why-it-matters">Probability is behind weather forecasts, game odds, insurance, and predicting outcomes in everyday decisions.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is dividing by the number of OTHER outcomes instead of the TOTAL &mdash; for example, writing 3/2 (red vs blue) instead of 3/5 (red out of everything). Always divide by the total number of possible outcomes, not just the other category.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">Probability is behind weather forecasts, game odds, insurance, and predicting outcomes in everyday decisions.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="probability">
           <div class="practice-controls">

@@ -70,19 +70,45 @@
       <section class="topic active">
         <span class="grade-badge">6th Grade</span>
         <h2>LCM: Least Common Multiple</h2>
-        <div class="explanation">
-          <p class="hook">One bus leaves every 4 minutes, another every 6 minutes. They just left together &mdash; how many minutes until they leave together again?</p>
-          <p>The <strong>LCM</strong> of two numbers is the smallest number that both of them divide into evenly. You can find it with: LCM = (a &times; b) &divide; GCF(a, b).</p>
-          <p class="one-liner">In one line: multiply the numbers, then divide by their GCF.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">One bus leaves every 4 minutes, another every 6 minutes. They just left together &mdash; how many minutes until they leave together again?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>The <strong>LCM</strong> of two numbers is the smallest number that both of them divide into evenly. You can find it with: LCM = (a &times; b) &divide; GCF(a, b).</p>
+            <p class="one-liner">In one line: multiply the numbers, then divide by their GCF.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>LCM(4, 6)</p>
             <p class="steps-note">GCF(4, 6) = 2</p>
             <p>LCM = (4 &times; 6) &divide; 2</p>
             <p class="steps-result">= 12</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is just multiplying the two numbers (4 &times; 6 = 24) and stopping there &mdash; that's a common multiple, but not the smallest one. Always divide by the GCF to shrink it down.</p>
-          <p class="why-it-matters">The LCM is exactly how you find a common denominator when adding fractions, or figure out when repeating events line up.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is just multiplying the two numbers (4 &times; 6 = 24) and stopping there &mdash; that's a common multiple, but not the smallest one. Always divide by the GCF to shrink it down.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">The LCM is exactly how you find a common denominator when adding fractions, or figure out when repeating events line up.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="lcm">
           <div class="practice-controls">

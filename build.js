@@ -27,6 +27,14 @@ const FOOTER_TEXT = {
   ru: `Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.`,
 };
 const NEW_PROBLEMS_LABEL = { en: `New Problems`, ru: `Новые примеры` };
+const SLIDE_LABELS = {
+  en: [`The Question`, `The Idea`, `Watch It Solved`, `Watch Out`, `Why It Matters`],
+  ru: [`Вопрос`, `Идея`, `Смотрим решение`, `Осторожно`, `Почему это важно`],
+};
+const VIEW_TOGGLE_LABELS = {
+  en: { slides: `Slides`, text: `Text` },
+  ru: { slides: `Слайды`, text: `Текст` },
+};
 
 function gradeLabel(lang, grade) {
   return lang === "ru" ? `${grade} класс` : `${grade}th Grade`;
@@ -108,27 +116,60 @@ function stepsHtml(steps) {
     .join("\n");
 }
 
-function explanationSectionHtml(entry, sectionTitle) {
-  const titleHtml = sectionTitle ? `          <h3 class="section-title">${sectionTitle}</h3>\n` : "";
-  return `        <div class="explanation">
-${titleHtml}          <p class="hook">${entry.hookHtml}</p>
-          <p>${entry.ruleHtml}</p>
-          <p class="one-liner">${entry.oneLinerHtml}</p>
-          <div class="steps">
-${stepsHtml(entry.steps)}
+function explanationSectionHtml(lang, entry, sectionTitle) {
+  const titleHtml = sectionTitle ? `        <h3 class="section-title">${sectionTitle}</h3>\n` : "";
+  const labels = SLIDE_LABELS[lang];
+  const toggle = VIEW_TOGGLE_LABELS[lang];
+
+  const dots = [0, 1, 2, 3, 4]
+    .map((i) => `<button class="dot${i === 0 ? " active" : ""}" data-goto="${i}" aria-label="Slide ${i + 1}"></button>`)
+    .join("");
+
+  return `      <div class="explanation-block">
+${titleHtml}        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">${toggle.slides}</button>
+          <button class="view-toggle-btn" data-view="text">${toggle.text}</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">${labels[0]}</p>
+            <p class="hook">${entry.hookHtml}</p>
           </div>
-          <p class="trap">${entry.trapHtml}</p>
-          <p class="why-it-matters">${entry.whyItMattersHtml}</p>
-        </div>`;
+          <div class="slide">
+            <p class="slide-label">${labels[1]}</p>
+            <p>${entry.ruleHtml}</p>
+            <p class="one-liner">${entry.oneLinerHtml}</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">${labels[2]}</p>
+            <div class="steps">
+${stepsHtml(entry.steps)}
+            </div>
+          </div>
+          <div class="slide">
+            <p class="slide-label">${labels[3]}</p>
+            <p class="trap">${entry.trapHtml}</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">${labels[4]}</p>
+            <p class="why-it-matters">${entry.whyItMattersHtml}</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots">${dots}</div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
+        </div>
+      </div>`;
 }
 
 function topicPageHtml(lang, topic) {
   const t = topic[lang];
   const hintBlock = t.hintHtml ? `\n          <p class="hint">${t.hintHtml}</p>` : "";
   const primaryTitle = t.secondary ? t.title : null;
-  let explanationHtml = explanationSectionHtml(t, primaryTitle);
+  let explanationHtml = explanationSectionHtml(lang, t, primaryTitle);
   if (t.secondary) {
-    explanationHtml += `\n\n` + explanationSectionHtml(t.secondary, t.secondary.title);
+    explanationHtml += `\n\n` + explanationSectionHtml(lang, t.secondary, t.secondary.title);
   }
 
   const label = gradeLabel(lang, topic.grade);

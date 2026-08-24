@@ -70,34 +70,86 @@
       <section class="topic active">
         <span class="grade-badge">6th Grade</span>
         <h2>Absolute Value</h2>
-        <div class="explanation">
-          <h3 class="section-title">What Absolute Value Means</h3>
-          <p class="hook">The temperature is 7 degrees below freezing (&minus;7&deg;). How far is that from 0 degrees, regardless of direction?</p>
-          <p><strong>Absolute value</strong> means &quot;distance from 0&quot; &mdash; so it's always positive (or zero), no matter the sign of the number inside.</p>
-          <p class="one-liner">In one line: absolute value is just the distance from zero &mdash; always positive.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">What Absolute Value Means</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">The temperature is 7 degrees below freezing (&minus;7&deg;). How far is that from 0 degrees, regardless of direction?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p><strong>Absolute value</strong> means &quot;distance from 0&quot; &mdash; so it's always positive (or zero), no matter the sign of the number inside.</p>
+            <p class="one-liner">In one line: absolute value is just the distance from zero &mdash; always positive.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>|&minus;7| = ?</p>
             <p class="steps-note">distance from 0 to &minus;7 is 7</p>
             <p class="steps-result">|&minus;7| = 7</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is leaving the answer negative &mdash; writing |&minus;7| = &minus;7. The bars mean "distance," and distance is never negative.</p>
-          <p class="why-it-matters">Absolute value shows up whenever direction doesn't matter, only size &mdash; how far off a target, how much error, how far below zero.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is leaving the answer negative &mdash; writing |&minus;7| = &minus;7. The bars mean "distance," and distance is never negative.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">Absolute value shows up whenever direction doesn't matter, only size &mdash; how far off a target, how much error, how far below zero.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
-        <div class="explanation">
-          <h3 class="section-title">Solving Absolute Value Equations</h3>
-          <p class="hook">You're standing at position 3 on a number line. You want to know every point that's exactly 5 steps away from you &mdash; in either direction. Where are they?</p>
-          <p>An equation like |x &minus; k| = n means &quot;x is exactly n away from k.&quot; Since distance works both ways, there are usually <strong>two</strong> solutions: k + n and k &minus; n.</p>
-          <p class="one-liner">In one line: drop the bars into two equations, one with +n and one with &minus;n.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Solving Absolute Value Equations</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">You're standing at position 3 on a number line. You want to know every point that's exactly 5 steps away from you &mdash; in either direction. Where are they?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>An equation like |x &minus; k| = n means &quot;x is exactly n away from k.&quot; Since distance works both ways, there are usually <strong>two</strong> solutions: k + n and k &minus; n.</p>
+            <p class="one-liner">In one line: drop the bars into two equations, one with +n and one with &minus;n.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>|x &minus; 3| = 5</p>
             <p class="steps-note">x &minus; 3 = 5 &nbsp; or &nbsp; x &minus; 3 = &minus;5</p>
             <p>x = 3 + 5 &nbsp; or &nbsp; x = 3 &minus; 5</p>
             <p class="steps-result">x = 8 &nbsp; or &nbsp; x = &minus;2</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is only solving x &minus; 3 = 5 and stopping, missing the second solution entirely. Absolute value equations almost always have two answers &mdash; don't forget the negative case.</p>
-          <p class="why-it-matters">This shows up whenever you need a range around a target &mdash; an acceptable margin of error, a tolerance in manufacturing, a temperature range.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is only solving x &minus; 3 = 5 and stopping, missing the second solution entirely. Absolute value equations almost always have two answers &mdash; don't forget the negative case.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">This shows up whenever you need a range around a target &mdash; an acceptable margin of error, a tolerance in manufacturing, a temperature range.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="absolute-value">
           <div class="practice-controls">

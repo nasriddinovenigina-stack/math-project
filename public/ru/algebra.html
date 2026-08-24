@@ -70,12 +70,25 @@
       <section class="topic active">
         <span class="grade-badge">7 класс</span>
         <h2>Основы алгебры: решаем уравнения с x</h2>
-        <div class="explanation">
-          <h3 class="section-title">Решаем ax + b = c</h3>
-          <p class="hook">Вы покупаете 3 одинаковых тетради, используете купон на скидку 5 000 сум и платите 10 000 сум. Сколько стоила одна тетрадь до скидки?</p>
-          <p>Чтобы найти x, соберите все члены с x на одной стороне, а обычные числа — на другой. Когда член переходит через знак равенства, он меняет знак на <strong>противоположный</strong> (+ становится &minus;, а &minus; становится +). Когда останется только член с x, разделите на число перед x.</p>
-          <p class="one-liner">Одной фразой: переносим — знак меняется, затем делим.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Решаем ax + b = c</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">Вы покупаете 3 одинаковых тетради, используете купон на скидку 5 000 сум и платите 10 000 сум. Сколько стоила одна тетрадь до скидки?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p>Чтобы найти x, соберите все члены с x на одной стороне, а обычные числа — на другой. Когда член переходит через знак равенства, он меняет знак на <strong>противоположный</strong> (+ становится &minus;, а &minus; становится +). Когда останется только член с x, разделите на число перед x.</p>
+            <p class="one-liner">Одной фразой: переносим — знак меняется, затем делим.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>3x &minus; 5 = 10</p>
             <p class="steps-note">переносим &minus;5 на другую сторону &rarr; он становится +5</p>
             <p>3x = 10 + 5</p>
@@ -83,17 +96,43 @@
             <p class="steps-note">делим обе части на 3</p>
             <p>x = 15 / 3</p>
             <p class="steps-result">x = 5 (тысяч сум)</p>
+            </div>
           </div>
-          <p class="trap">Самая частая ошибка — забыть поменять знак при переносе: писать 3x = 10 &minus; 5 вместо 3x = 10 + 5. В момент, когда член переходит через знак равенства, его знак меняется на противоположный.</p>
-          <p class="why-it-matters">Этот приём лежит в основе почти любой текстовой задачи — деление счёта, изменение цены, расчёт того, сколько вы можете себе позволить.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Самая частая ошибка — забыть поменять знак при переносе: писать 3x = 10 &minus; 5 вместо 3x = 10 + 5. В момент, когда член переходит через знак равенства, его знак меняется на противоположный.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Этот приём лежит в основе почти любой текстовой задачи — деление счёта, изменение цены, расчёт того, сколько вы можете себе позволить.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
-        <div class="explanation">
-          <h3 class="section-title">Переменная в обеих частях</h3>
-          <p class="hook">У вас 2 мешка по x шариков в каждом, плюс 3 шарика россыпью. У вашего друга 1 мешок с x шариками, плюс 7 шариков россыпью. У вас поровну шариков. Сколько шариков в одном мешке?</p>
-          <p>Если x есть в обеих частях уравнения, сначала перенесите меньший член с x на другую сторону, чтобы остался только один член с x — а затем решайте как обычно.</p>
-          <p class="one-liner">Одной фразой: сначала соберите все x на одной стороне, потом решайте как обычно.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Переменная в обеих частях</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">У вас 2 мешка по x шариков в каждом, плюс 3 шарика россыпью. У вашего друга 1 мешок с x шариками, плюс 7 шариков россыпью. У вас поровну шариков. Сколько шариков в одном мешке?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p>Если x есть в обеих частях уравнения, сначала перенесите меньший член с x на другую сторону, чтобы остался только один член с x — а затем решайте как обычно.</p>
+            <p class="one-liner">Одной фразой: сначала соберите все x на одной стороне, потом решайте как обычно.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>2x + 3 = x + 7</p>
             <p class="steps-note">переносим x влево &rarr; вычитаем x из обеих частей</p>
             <p>2x &minus; x + 3 = 7</p>
@@ -101,10 +140,23 @@
             <p class="steps-note">переносим +3 на другую сторону &rarr; он становится &minus;3</p>
             <p>x = 7 &minus; 3</p>
             <p class="steps-result">x = 4</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — перенести только числа и забыть, что x всё ещё есть в обеих частях. Сначала нужно убрать x с одной стороны, и только потом заниматься обычными числами.</p>
-          <p class="why-it-matters">Сравнение двух равных итогов — это именно то, как решают задачи «когда выгоднее» — например, когда два тарифа на телефон стоят одинаково.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — перенести только числа и забыть, что x всё ещё есть в обеих частях. Сначала нужно убрать x с одной стороны, и только потом заниматься обычными числами.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Сравнение двух равных итогов — это именно то, как решают задачи «когда выгоднее» — например, когда два тарифа на телефон стоят одинаково.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="algebra">
           <div class="practice-controls">

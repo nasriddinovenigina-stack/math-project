@@ -70,11 +70,24 @@
       <section class="topic active">
         <span class="grade-badge">8 класс</span>
         <h2>Решение неравенств</h2>
-        <div class="explanation">
-          <p class="hook">У вас есть 60 000 сум на тетради по 10 000 сум каждая. Сколько тетрадей вы можете купить?</p>
-          <p><strong>Неравенство</strong> решается так же, как уравнение — делайте одно и то же с обеими частями. Единственная особенность: если вы умножаете или делите обе части на <strong>отрицательное</strong> число, знак неравенства меняется на противоположный.</p>
-          <p class="one-liner">Одной фразой: решайте как уравнение, но меняйте знак, если умножаете или делите на отрицательное число.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">У вас есть 60 000 сум на тетради по 10 000 сум каждая. Сколько тетрадей вы можете купить?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p><strong>Неравенство</strong> решается так же, как уравнение — делайте одно и то же с обеими частями. Единственная особенность: если вы умножаете или делите обе части на <strong>отрицательное</strong> число, знак неравенства меняется на противоположный.</p>
+            <p class="one-liner">Одной фразой: решайте как уравнение, но меняйте знак, если умножаете или делите на отрицательное число.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
             <p>10 000x &le; 60 000</p>
             <p class="steps-note">делим обе части на 10 000 (число положительное, знак не меняется)</p>
             <p>x &le; 60 000 &divide; 10 000</p>
@@ -82,10 +95,23 @@
             <p class="steps-note">а теперь посмотрим, что будет с отрицательным числом: &minus;2x &gt; 8</p>
             <p class="steps-note">делим обе части на &minus;2 — раз число отрицательное, знак меняется</p>
             <p class="steps-result">x &lt; &minus;4</p>
+            </div>
           </div>
-          <p class="trap">Частая ошибка — забыть поменять знак при умножении или делении на отрицательное число: написать x &gt; &minus;4 вместо x &lt; &minus;4, как выше. Всегда меняйте знак, если число, на которое вы умножаете или делите, отрицательное.</p>
-          <p class="why-it-matters">Неравенства описывают границы и диапазоны — бюджеты, ограничения скорости, минимальные баллы — везде, где есть граница, а не одно точное число.</p>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — забыть поменять знак при умножении или делении на отрицательное число: написать x &gt; &minus;4 вместо x &lt; &minus;4, как выше. Всегда меняйте знак, если число, на которое вы умножаете или делите, отрицательное.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Неравенства описывают границы и диапазоны — бюджеты, ограничения скорости, минимальные баллы — везде, где есть граница, а не одно точное число.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="inequalities">
           <div class="practice-controls">

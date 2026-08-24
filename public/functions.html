@@ -70,28 +70,67 @@
       <section class="topic active">
         <span class="grade-badge">7th Grade</span>
         <h2>Functions: Evaluating f(x) & Finding f(x) from Two Points</h2>
-        <div class="explanation">
-          <h3 class="section-title">Evaluating a Function</h3>
-          <p class="hook">A taxi charges a 3,000 so'm base fee plus 2,000 so'm per kilometer. If f(x) = 2x + 3 gives the fare (in thousands) for x kilometers, what's the fare for a 4 km ride?</p>
-          <p>A <strong>function</strong> f(x) is just a rule for turning an input x into an output. To evaluate it, put the given number everywhere you see x, then work it out.</p>
-          <p class="one-liner">In one line: swap x for the given number, then simplify.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Evaluating a Function</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">A taxi charges a 3,000 so'm base fee plus 2,000 so'm per kilometer. If f(x) = 2x + 3 gives the fare (in thousands) for x kilometers, what's the fare for a 4 km ride?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>A <strong>function</strong> f(x) is just a rule for turning an input x into an output. To evaluate it, put the given number everywhere you see x, then work it out.</p>
+            <p class="one-liner">In one line: swap x for the given number, then simplify.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>f(x) = 2x + 3</p>
             <p class="steps-note">find f(4) &rarr; put 4 in place of x</p>
             <p>f(4) = 2(4) + 3</p>
             <p>f(4) = 8 + 3</p>
             <p class="steps-result">f(4) = 11</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is only replacing x in one spot when it appears more than once, or adding before multiplying. Replace every x first, then follow the order of operations.</p>
-          <p class="why-it-matters">Functions describe how one thing depends on another &mdash; like how a taxi fare depends on distance, or how your pay depends on hours worked.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is only replacing x in one spot when it appears more than once, or adding before multiplying. Replace every x first, then follow the order of operations.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">Functions describe how one thing depends on another &mdash; like how a taxi fare depends on distance, or how your pay depends on hours worked.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
-        <div class="explanation">
-          <h3 class="section-title">Finding a Function from Two Points</h3>
-          <p class="hook">That same taxi company won't tell you the formula this time. You just know a 1 km ride costs 5,000 so'm and a 4 km ride costs 11,000 so'm. Can you figure out the fare formula yourself?</p>
-          <p>Given two points (x&#8321;, y&#8321;) and (x&#8322;, y&#8322;) on a line, you can rebuild the whole function f(x) = ax + b. First find the slope a (how fast y changes), then use one point to find b (the starting value).</p>
-          <p class="one-liner">In one line: find the slope between the points, then plug one point back in to find b.</p>
-          <div class="steps">
+      <div class="explanation-block">
+        <h3 class="section-title">Finding a Function from Two Points</h3>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">That same taxi company won't tell you the formula this time. You just know a 1 km ride costs 5,000 so'm and a 4 km ride costs 11,000 so'm. Can you figure out the fare formula yourself?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>Given two points (x&#8321;, y&#8321;) and (x&#8322;, y&#8322;) on a line, you can rebuild the whole function f(x) = ax + b. First find the slope a (how fast y changes), then use one point to find b (the starting value).</p>
+            <p class="one-liner">In one line: find the slope between the points, then plug one point back in to find b.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
             <p>Points: (1, 5) and (4, 11)</p>
             <p class="steps-note">find the slope (a) first &rarr; a = (11 &minus; 5) &divide; (4 &minus; 1)</p>
             <p>a = 6 &divide; 3</p>
@@ -99,10 +138,23 @@
             <p class="steps-note">use one point to find b &rarr; 5 = 2(1) + b</p>
             <p>5 = 2 + b</p>
             <p class="steps-result">b = 3, so f(x) = 2x + 3</p>
+            </div>
           </div>
-          <p class="trap">A common mistake is finding a and stopping there. a only tells you the rate of change &mdash; without b, you don't know the starting fare (the value at x = 0). Always plug a point back in to solve for b.</p>
-          <p class="why-it-matters">This is exactly how pricing plans and taxi fares get built from real data &mdash; a company measures two data points and works backward to the formula.</p>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is finding a and stopping there. a only tells you the rate of change &mdash; without b, you don't know the starting fare (the value at x = 0). Always plug a point back in to solve for b.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">This is exactly how pricing plans and taxi fares get built from real data &mdash; a company measures two data points and works backward to the formula.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
         </div>
+      </div>
 
         <div class="practice" data-practice="functions">
           <div class="practice-controls">
