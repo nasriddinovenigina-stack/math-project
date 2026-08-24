@@ -156,6 +156,23 @@ body {
   margin-top: 0;
 }
 
+.grade-badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+
+.grade-badge-inline {
+  margin-bottom: 0;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

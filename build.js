@@ -28,6 +28,16 @@ const FOOTER_TEXT = {
 };
 const NEW_PROBLEMS_LABEL = { en: `New Problems`, ru: `Новые примеры` };
 
+function gradeLabel(lang, grade) {
+  return lang === "ru" ? `${grade} класс` : `${grade}th Grade`;
+}
+
+function insertGradeIntoTitle(title, label) {
+  const idx = title.lastIndexOf(" — ");
+  if (idx === -1) return `${title} (${label})`;
+  return `${title.slice(0, idx)} (${label})${title.slice(idx)}`;
+}
+
 function pagePath(lang, slug) {
   if (lang === "en") return slug ? `/${slug}` : `/`;
   return slug ? `/ru/${slug}` : `/ru/`;
@@ -121,10 +131,14 @@ function topicPageHtml(lang, topic) {
     explanationHtml += `\n\n` + explanationSectionHtml(t.secondary, t.secondary.title);
   }
 
+  const label = gradeLabel(lang, topic.grade);
+  const gradedTitle = insertGradeIntoTitle(t.pageTitle, label);
+  const gradedDescription = `${label}: ${t.metaDescription}`;
+
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
-  ${headHtml(lang, topic.slug, t.pageTitle, t.metaDescription)}
+  ${headHtml(lang, topic.slug, gradedTitle, gradedDescription)}
 </head>
 <body data-topic="${topic.slug}">
   <div class="app">
@@ -132,6 +146,7 @@ ${sidebarHtml(lang, topic.slug)}
 
     <main class="content">
       <section class="topic active">
+        <span class="grade-badge">${label}</span>
         <h2>${t.h1}</h2>
 ${explanationHtml}
 
@@ -161,7 +176,8 @@ function homePageHtml(lang) {
   const title = `${SITE_TITLES[lang]}${lang === "en" ? " — Learn Math Step by Step" : " — изучай математику шаг за шагом"}`;
   const links = TOPICS.map((t) => {
     const tt = t[lang];
-    return `          <li><a href="${pagePath(lang, t.slug)}">${tt.navLabel}</a></li>`;
+    const label = gradeLabel(lang, t.grade);
+    return `          <li><a href="${pagePath(lang, t.slug)}">${tt.navLabel}</a> <span class="grade-badge grade-badge-inline">${label}</span></li>`;
   }).join("\n");
 
   return `<!DOCTYPE html>

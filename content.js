@@ -8,6 +8,7 @@ const SITE_URL = "https://mathpractise.netlify.app";
 const TOPICS = [
   {
     slug: "arithmetic",
+    grade: 5,
     en: {
       navLabel: `Arithmetic`,
       pageTitle: `Arithmetic: Addition, Subtraction & Multiplication — Math Practice`,
@@ -45,6 +46,7 @@ const TOPICS = [
   },
   {
     slug: "negative-numbers",
+    grade: 6,
     en: {
       navLabel: `Negative Numbers`,
       pageTitle: `Negative Numbers — Math Practice`,
@@ -114,6 +116,7 @@ const TOPICS = [
   },
   {
     slug: "order-of-operations",
+    grade: 5,
     en: {
       navLabel: `Order of Operations`,
       pageTitle: `Order of Operations (PEMDAS) — Math Practice`,
@@ -153,6 +156,7 @@ const TOPICS = [
   },
   {
     slug: "fractions",
+    grade: 5,
     en: {
       navLabel: `Fractions`,
       pageTitle: `Fractions: Adding Fractions — Math Practice`,
@@ -224,6 +228,7 @@ const TOPICS = [
   },
   {
     slug: "decimals",
+    grade: 5,
     en: {
       navLabel: `Decimals`,
       pageTitle: `Adding & Subtracting Decimals — Math Practice`,
@@ -263,6 +268,7 @@ const TOPICS = [
   },
   {
     slug: "gcf",
+    grade: 6,
     en: {
       navLabel: `GCF`,
       pageTitle: `GCF: Greatest Common Factor — Math Practice`,
@@ -304,6 +310,7 @@ const TOPICS = [
   },
   {
     slug: "lcm",
+    grade: 6,
     en: {
       navLabel: `LCM`,
       pageTitle: `LCM: Least Common Multiple — Math Practice`,
@@ -343,6 +350,7 @@ const TOPICS = [
   },
   {
     slug: "percentages",
+    grade: 6,
     en: {
       navLabel: `Percentages`,
       pageTitle: `Percentages — Math Practice`,
@@ -412,6 +420,7 @@ const TOPICS = [
   },
   {
     slug: "ratios",
+    grade: 6,
     en: {
       navLabel: `Ratios & Proportions`,
       pageTitle: `Ratios & Proportions — Math Practice`,
@@ -459,6 +468,7 @@ const TOPICS = [
   },
   {
     slug: "probability",
+    grade: 7,
     en: {
       navLabel: `Probability`,
       pageTitle: `Probability — Math Practice`,
@@ -498,6 +508,7 @@ const TOPICS = [
   },
   {
     slug: "average",
+    grade: 6,
     en: {
       navLabel: `Average (Mean)`,
       pageTitle: `Average (Mean) — Math Practice`,
@@ -537,6 +548,7 @@ const TOPICS = [
   },
   {
     slug: "mean-median-mode",
+    grade: 7,
     en: {
       navLabel: `Mean, Median & Mode`,
       pageTitle: `Mean, Median & Mode — Math Practice`,
@@ -584,6 +596,7 @@ const TOPICS = [
   },
   {
     slug: "algebra",
+    grade: 7,
     en: {
       navLabel: `Basic Algebra`,
       pageTitle: `Basic Algebra: Solving for x — Math Practice`,
@@ -665,6 +678,7 @@ const TOPICS = [
   },
   {
     slug: "inequalities",
+    grade: 8,
     en: {
       navLabel: `Inequalities`,
       pageTitle: `Solving Inequalities — Math Practice`,
@@ -710,6 +724,7 @@ const TOPICS = [
   },
   {
     slug: "functions",
+    grade: 7,
     en: {
       navLabel: `Functions`,
       pageTitle: `Functions: Evaluating f(x) & Finding f(x) from Points — Math Practice`,
@@ -787,6 +802,7 @@ const TOPICS = [
   },
   {
     slug: "systems",
+    grade: 7,
     en: {
       navLabel: `Systems of Equations`,
       pageTitle: `Systems of Equations — Math Practice`,
@@ -834,6 +850,7 @@ const TOPICS = [
   },
   {
     slug: "slope",
+    grade: 7,
     en: {
       navLabel: `Slope of a Line`,
       pageTitle: `Slope of a Line — Math Practice`,
@@ -873,6 +890,7 @@ const TOPICS = [
   },
   {
     slug: "quadratic",
+    grade: 8,
     en: {
       navLabel: `Quadratic Equations`,
       pageTitle: `Quadratic Equations: Solving ax² + bx + c = 0 — Math Practice`,
@@ -950,6 +968,7 @@ const TOPICS = [
   },
   {
     slug: "parabola",
+    grade: 9,
     en: {
       navLabel: `Parabola`,
       pageTitle: `Parabola: Finding the Vertex — Math Practice`,
@@ -989,6 +1008,7 @@ const TOPICS = [
   },
   {
     slug: "perimeter-area",
+    grade: 5,
     en: {
       navLabel: `Perimeter & Area`,
       pageTitle: `Perimeter & Area — Math Practice`,
@@ -1036,6 +1056,7 @@ const TOPICS = [
   },
   {
     slug: "pythagorean",
+    grade: 8,
     en: {
       navLabel: `Pythagorean Theorem`,
       pageTitle: `Pythagorean Theorem — Math Practice`,
@@ -1105,6 +1126,7 @@ const TOPICS = [
   },
   {
     slug: "circles",
+    grade: 9,
     en: {
       navLabel: `Circles`,
       pageTitle: `Circles: Area & Circumference — Math Practice`,
@@ -1146,6 +1168,7 @@ const TOPICS = [
   },
   {
     slug: "exponents",
+    grade: 7,
     en: {
       navLabel: `Exponents`,
       pageTitle: `Exponents: Repeated Multiplication — Math Practice`,
@@ -1215,6 +1238,7 @@ const TOPICS = [
   },
   {
     slug: "square-roots",
+    grade: 8,
     en: {
       navLabel: `Square Roots`,
       pageTitle: `Square Roots — Math Practice`,
@@ -1254,6 +1278,7 @@ const TOPICS = [
   },
   {
     slug: "absolute-value",
+    grade: 6,
     en: {
       navLabel: `Absolute Value`,
       pageTitle: `Absolute Value — Math Practice`,
