@@ -7,6 +7,7 @@ const { SITE_URL, TOPICS } = require("./content.js");
 const PUBLIC_DIR = path.join(__dirname, "public");
 const RU_DIR = path.join(PUBLIC_DIR, "ru");
 
+const DISPLAY_DOMAIN = SITE_URL.replace(/^https?:\/\//, "");
 const SITE_TITLES = { en: `Math Practice`, ru: `Практика по математике` };
 const SITE_SUBTITLES = {
   en: `Learn the idea, then practice it.`,
@@ -137,6 +138,7 @@ ${explanationHtml}
 
       <footer>
         <p>${FOOTER_TEXT[lang]}</p>
+        <p class="site-domain">${DISPLAY_DOMAIN}</p>
       </footer>
     </main>
   </div>
@@ -174,6 +176,7 @@ ${links}
 
       <footer>
         <p>${FOOTER_TEXT[lang]}</p>
+        <p class="site-domain">${DISPLAY_DOMAIN}</p>
       </footer>
     </main>
   </div>
