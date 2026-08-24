@@ -16,7 +16,36 @@
   --warning-bg: #3a2f18;
   --border: #333c54;
   --radius: 10px;
+
+  --g5: #4fd1c5;
+  --g5-soft: rgba(79, 209, 197, 0.16);
+  --g6: #6ea8ff;
+  --g6-soft: rgba(110, 168, 255, 0.16);
+  --g7: #a78bfa;
+  --g7-soft: rgba(167, 139, 250, 0.16);
+  --g8: #f472b6;
+  --g8-soft: rgba(244, 114, 182, 0.16);
+  --g9: #facc15;
+  --g9-soft: rgba(250, 204, 21, 0.16);
 }
+
+.topic.grade-5 { --topic-accent: var(--g5); --topic-accent-soft: var(--g5-soft); }
+.topic.grade-6 { --topic-accent: var(--g6); --topic-accent-soft: var(--g6-soft); }
+.topic.grade-7 { --topic-accent: var(--g7); --topic-accent-soft: var(--g7-soft); }
+.topic.grade-8 { --topic-accent: var(--g8); --topic-accent-soft: var(--g8-soft); }
+.topic.grade-9 { --topic-accent: var(--g9); --topic-accent-soft: var(--g9-soft); }
+
+.grade-badge.grade-5 { --topic-accent: var(--g5); --topic-accent-soft: var(--g5-soft); }
+.grade-badge.grade-6 { --topic-accent: var(--g6); --topic-accent-soft: var(--g6-soft); }
+.grade-badge.grade-7 { --topic-accent: var(--g7); --topic-accent-soft: var(--g7-soft); }
+.grade-badge.grade-8 { --topic-accent: var(--g8); --topic-accent-soft: var(--g8-soft); }
+.grade-badge.grade-9 { --topic-accent: var(--g9); --topic-accent-soft: var(--g9-soft); }
+
+.tab-btn.grade-5:hover, .tab-btn.grade-5.active { border-left-color: var(--g5); color: var(--g5); background: var(--g5-soft); }
+.tab-btn.grade-6:hover, .tab-btn.grade-6.active { border-left-color: var(--g6); color: var(--g6); background: var(--g6-soft); }
+.tab-btn.grade-7:hover, .tab-btn.grade-7.active { border-left-color: var(--g7); color: var(--g7); background: var(--g7-soft); }
+.tab-btn.grade-8:hover, .tab-btn.grade-8.active { border-left-color: var(--g8); color: var(--g8); background: var(--g8-soft); }
+.tab-btn.grade-9:hover, .tab-btn.grade-9.active { border-left-color: var(--g9); color: var(--g9); background: var(--g9-soft); }
 
 * {
   box-sizing: border-box;
@@ -52,6 +81,7 @@ body {
 .sidebar-header {
   padding: 1.75rem 1.5rem 1.25rem;
   border-bottom: 1px solid var(--border);
+  background: linear-gradient(160deg, var(--accent-soft), transparent 70%);
 }
 
 .sidebar-header h1 {
@@ -117,12 +147,13 @@ body {
   font-size: 0.98rem;
   text-decoration: none;
   display: block;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
 .tab-btn:hover {
   background: var(--card-hover);
   color: var(--text);
+  transform: translateX(3px);
 }
 
 .tab-btn.active {
@@ -158,13 +189,14 @@ body {
 
 .grade-badge {
   display: inline-block;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--topic-accent-soft, var(--accent-soft));
+  color: var(--topic-accent, var(--accent));
   font-size: 0.78rem;
   font-weight: 700;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
   margin-bottom: 0.6rem;
+  transition: transform 0.15s ease;
 }
 
 .grade-badge-inline {
@@ -190,8 +222,14 @@ body {
 }
 
 .topic-list li {
-  padding: 0.7rem 0;
+  padding: 0.7rem 0.75rem;
   border-bottom: 1px solid var(--border);
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.topic-list li:hover {
+  background: var(--card-hover);
 }
 
 .topic-list li:last-child {
@@ -218,6 +256,12 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explanation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
 .view-toggle {
@@ -259,16 +303,33 @@ body {
 
 .slideshow .slide.active {
   display: block;
-  animation: fadeIn 0.2s ease-in;
+  animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .slide-label {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.78rem;
-  color: var(--accent);
+  color: var(--topic-accent, var(--accent));
   font-weight: 700;
   margin: 0 0 0.9rem;
+}
+
+.topic-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.tab-icon {
+  margin-right: 0.55rem;
+  display: inline-block;
 }
 
 .slideshow .slide .hook {
@@ -287,8 +348,8 @@ body {
 
 .slide-prev,
 .slide-next {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--topic-accent-soft, var(--accent-soft));
+  color: var(--topic-accent, var(--accent));
   border: none;
   width: 2.4rem;
   height: 2.4rem;
@@ -299,12 +360,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .slide-prev:hover:not(:disabled),
 .slide-next:hover:not(:disabled) {
-  background: var(--accent);
+  background: var(--topic-accent, var(--accent));
   color: #101423;
+  transform: scale(1.08);
 }
 
 .slide-prev:disabled,
@@ -326,10 +389,12 @@ body {
   border: none;
   padding: 0;
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .dot.active {
-  background: var(--accent);
+  background: var(--topic-accent, var(--accent));
+  transform: scale(1.3);
 }
 
 .slideshow.text-mode .slide {
@@ -355,7 +420,7 @@ body {
 
 .section-title {
   margin: 0 0 0.75rem;
-  color: var(--accent);
+  color: var(--topic-accent, var(--accent));
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -369,8 +434,8 @@ body {
 }
 
 .one-liner {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--topic-accent-soft, var(--accent-soft));
+  color: var(--topic-accent, var(--accent));
   font-weight: 700;
   padding: 0.6rem 0.9rem;
   border-radius: 6px;
@@ -394,8 +459,8 @@ body {
 }
 
 .steps {
-  background: var(--accent-soft);
-  border-left: 4px solid var(--accent);
+  background: var(--topic-accent-soft, var(--accent-soft));
+  border-left: 4px solid var(--topic-accent, var(--accent));
   border-radius: 4px;
   padding: 0.9rem 1.1rem;
 }
@@ -428,6 +493,12 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.practice:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
 .practice-controls {
@@ -440,7 +511,7 @@ body {
 }
 
 .generate-btn {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: #101423;
   border: none;
   padding: 0.6rem 1.1rem;
@@ -448,10 +519,12 @@ body {
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .generate-btn:hover {
-  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(110, 168, 255, 0.35);
 }
 
 .score {

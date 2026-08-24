@@ -35,6 +35,38 @@ const VIEW_TOGGLE_LABELS = {
   en: { slides: `Slides`, text: `Text` },
   ru: { slides: `Слайды`, text: `Текст` },
 };
+const TOPIC_ICONS = {
+  arithmetic: `➕`,
+  "negative-numbers": `➖`,
+  "order-of-operations": `🔢`,
+  fractions: `🍕`,
+  decimals: `🔟`,
+  gcf: `🧩`,
+  lcm: `🔗`,
+  percentages: `💯`,
+  ratios: `⚖️`,
+  probability: `🎲`,
+  average: `📊`,
+  "mean-median-mode": `📈`,
+  "like-terms": `🍎`,
+  algebra: `🧮`,
+  inequalities: `🔀`,
+  "coordinate-plane": `📍`,
+  functions: `🚕`,
+  systems: `🍏`,
+  slope: `⛰️`,
+  quadratic: `🎯`,
+  polynomials: `📚`,
+  parabola: `🛹`,
+  "perimeter-area": `📐`,
+  volume: `📦`,
+  pythagorean: `🪜`,
+  circles: `⭕`,
+  exponents: `✖️`,
+  "scientific-notation": `🔬`,
+  "square-roots": `🌱`,
+  "absolute-value": `↔️`,
+};
 
 function gradeLabel(lang, grade) {
   return lang === "ru" ? `${grade} класс` : `${grade}th Grade`;
@@ -88,7 +120,8 @@ function sidebarHtml(lang, currentSlug) {
     const label = t[lang].navLabel;
     const href = pagePath(lang, t.slug);
     const active = t.slug === currentSlug ? " active" : "";
-    return `        <a class="tab-btn${active}" href="${href}">${label}</a>`;
+    const icon = TOPIC_ICONS[t.slug] || "";
+    return `        <a class="tab-btn grade-${t.grade}${active}" href="${href}"><span class="tab-icon">${icon}</span>${label}</a>`;
   }).join("\n");
 
   return `    <aside class="sidebar">
@@ -175,6 +208,7 @@ function topicPageHtml(lang, topic) {
   const label = gradeLabel(lang, topic.grade);
   const gradedTitle = insertGradeIntoTitle(t.pageTitle, label);
   const gradedDescription = `${label}: ${t.metaDescription}`;
+  const icon = TOPIC_ICONS[topic.slug] || "";
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -186,9 +220,9 @@ function topicPageHtml(lang, topic) {
 ${sidebarHtml(lang, topic.slug)}
 
     <main class="content">
-      <section class="topic active">
+      <section class="topic active grade-${topic.grade}">
         <span class="grade-badge">${label}</span>
-        <h2>${t.h1}</h2>
+        <h2><span class="topic-icon">${icon}</span>${t.h1}</h2>
 ${explanationHtml}
 
         <div class="practice" data-practice="${topic.slug}">
@@ -218,7 +252,8 @@ function homePageHtml(lang) {
   const links = TOPICS.map((t) => {
     const tt = t[lang];
     const label = gradeLabel(lang, t.grade);
-    return `          <li><a href="${pagePath(lang, t.slug)}">${tt.navLabel}</a> <span class="grade-badge grade-badge-inline">${label}</span></li>`;
+    const icon = TOPIC_ICONS[t.slug] || "";
+    return `          <li><a href="${pagePath(lang, t.slug)}">${icon} ${tt.navLabel}</a> <span class="grade-badge grade-badge-inline grade-${t.grade}">${label}</span></li>`;
   }).join("\n");
 
   return `<!DOCTYPE html>
