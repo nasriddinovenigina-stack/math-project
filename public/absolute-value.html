@@ -55,6 +55,7 @@
       <section class="topic active">
         <h2>Absolute Value</h2>
         <div class="explanation">
+          <h3 class="section-title">What Absolute Value Means</h3>
           <p class="hook">The temperature is 7 degrees below freezing (&minus;7&deg;). How far is that from 0 degrees, regardless of direction?</p>
           <p><strong>Absolute value</strong> means &quot;distance from 0&quot; &mdash; so it's always positive (or zero), no matter the sign of the number inside.</p>
           <p class="one-liner">In one line: absolute value is just the distance from zero &mdash; always positive.</p>
@@ -67,12 +68,28 @@
           <p class="why-it-matters">Absolute value shows up whenever direction doesn't matter, only size &mdash; how far off a target, how much error, how far below zero.</p>
         </div>
 
+        <div class="explanation">
+          <h3 class="section-title">Solving Absolute Value Equations</h3>
+          <p class="hook">You're standing at position 3 on a number line. You want to know every point that's exactly 5 steps away from you &mdash; in either direction. Where are they?</p>
+          <p>An equation like |x &minus; k| = n means &quot;x is exactly n away from k.&quot; Since distance works both ways, there are usually <strong>two</strong> solutions: k + n and k &minus; n.</p>
+          <p class="one-liner">In one line: drop the bars into two equations, one with +n and one with &minus;n.</p>
+          <div class="steps">
+            <p>|x &minus; 3| = 5</p>
+            <p class="steps-note">x &minus; 3 = 5 &nbsp; or &nbsp; x &minus; 3 = &minus;5</p>
+            <p>x = 3 + 5 &nbsp; or &nbsp; x = 3 &minus; 5</p>
+            <p class="steps-result">x = 8 &nbsp; or &nbsp; x = &minus;2</p>
+          </div>
+          <p class="trap">A common mistake is only solving x &minus; 3 = 5 and stopping, missing the second solution entirely. Absolute value equations almost always have two answers &mdash; don't forget the negative case.</p>
+          <p class="why-it-matters">This shows up whenever you need a range around a target &mdash; an acceptable margin of error, a tolerance in manufacturing, a temperature range.</p>
+        </div>
+
         <div class="practice" data-practice="absolute-value">
           <div class="practice-controls">
             <button class="generate-btn" data-topic="absolute-value">New Problems</button>
             <span class="score"></span>
           </div>
           <div class="problem-list"></div>
+          <p class="hint">For &quot;distance from 0&quot; problems, enter a single number. For &quot;solve for x&quot; problems, enter both solutions separated by a comma, e.g. <code>8, -2</code> (either order is fine).</p>
         </div>
       </section>
 

@@ -30,6 +30,21 @@
     return v;
   }
 
+  function parseFractionOrDecimal(text) {
+    text = String(text).trim();
+    if (!text) return NaN;
+    if (text.includes("/")) {
+      const parts = text.split("/");
+      if (parts.length !== 2) return NaN;
+      const num = Number(parts[0].trim());
+      const den = Number(parts[1].trim());
+      if (!Number.isFinite(num) || !Number.isFinite(den) || den === 0) return NaN;
+      return num / den;
+    }
+    const val = Number(text);
+    return Number.isFinite(val) ? val : NaN;
+  }
+
   // ---------- problem generators ----------
   // Each generator returns an array of problem objects:
   // { question: string, checkAnswer(rawInput) -> boolean, correctAnswerText: string }
@@ -68,45 +83,80 @@
     return problems;
   }
 
+  function fractionCheckAnswer(correctNum, correctDen) {
+    return function checkAnswer(raw) {
+      const text = String(raw).trim();
+      if (!text) return false;
+      let userNum, userDen;
+      if (text.includes("/")) {
+        const parts = text.split("/");
+        if (parts.length !== 2) return false;
+        userNum = Number(parts[0].trim());
+        userDen = Number(parts[1].trim());
+      } else {
+        userNum = Number(text);
+        userDen = 1;
+      }
+      if (!Number.isFinite(userNum) || !Number.isFinite(userDen) || userDen === 0) {
+        return false;
+      }
+      // Cross-multiply to check the fraction is equivalent,
+      // regardless of whether the user simplified it.
+      return userNum * correctDen === correctNum * userDen;
+    };
+  }
+
+  function fractionAnswerText(correctNum, correctDen) {
+    return correctDen === 1 ? String(correctNum) : `${correctNum}/${correctDen}`;
+  }
+
   function generateFractionsProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const d1 = randInt(2, 10);
-      const d2 = randInt(2, 10);
-      const n1 = randInt(1, d1 - 1);
-      const n2 = randInt(1, d2 - 1);
+      if (Math.random() < 0.5) {
+        // Type 1: adding fractions.
+        const d1 = randInt(2, 10);
+        const d2 = randInt(2, 10);
+        const n1 = randInt(1, d1 - 1);
+        const n2 = randInt(1, d2 - 1);
 
-      // sum = n1/d1 + n2/d2 = (n1*d2 + n2*d1) / (d1*d2)
-      const sumNum = n1 * d2 + n2 * d1;
-      const sumDen = d1 * d2;
-      const g = gcd(sumNum, sumDen);
-      const correctNum = sumNum / g;
-      const correctDen = sumDen / g;
+        // sum = n1/d1 + n2/d2 = (n1*d2 + n2*d1) / (d1*d2)
+        const sumNum = n1 * d2 + n2 * d1;
+        const sumDen = d1 * d2;
+        const g = gcd(sumNum, sumDen);
+        const correctNum = sumNum / g;
+        const correctDen = sumDen / g;
 
-      problems.push({
-        question: `${n1}/${d1} + ${n2}/${d2} = ?`,
-        checkAnswer(raw) {
-          const text = String(raw).trim();
-          if (!text) return false;
-          let userNum, userDen;
-          if (text.includes("/")) {
-            const parts = text.split("/");
-            if (parts.length !== 2) return false;
-            userNum = Number(parts[0].trim());
-            userDen = Number(parts[1].trim());
-          } else {
-            userNum = Number(text);
-            userDen = 1;
-          }
-          if (!Number.isFinite(userNum) || !Number.isFinite(userDen) || userDen === 0) {
-            return false;
-          }
-          // Cross-multiply to check the fraction is equivalent,
-          // regardless of whether the user simplified it.
-          return userNum * correctDen === correctNum * userDen;
-        },
-        correctAnswerText: correctDen === 1 ? String(correctNum) : `${correctNum}/${correctDen}`,
-      });
+        problems.push({
+          question: `${n1}/${d1} + ${n2}/${d2} = ?`,
+          checkAnswer: fractionCheckAnswer(correctNum, correctDen),
+          correctAnswerText: fractionAnswerText(correctNum, correctDen),
+        });
+      } else {
+        // Type 2: subtracting fractions (first fraction is always >= second).
+        let d1 = randInt(2, 10);
+        let d2 = randInt(2, 10);
+        let n1 = randInt(1, d1 - 1);
+        let n2 = randInt(1, d2 - 1);
+
+        if (n1 * d2 < n2 * d1) {
+          [d1, d2] = [d2, d1];
+          [n1, n2] = [n2, n1];
+        }
+
+        // diff = n1/d1 - n2/d2 = (n1*d2 - n2*d1) / (d1*d2)
+        const diffNum = n1 * d2 - n2 * d1;
+        const diffDen = d1 * d2;
+        const g = gcd(diffNum, diffDen);
+        const correctNum = diffNum / g;
+        const correctDen = diffDen / g;
+
+        problems.push({
+          question: `${n1}/${d1} − ${n2}/${d2} = ?`,
+          checkAnswer: fractionCheckAnswer(correctNum, correctDen),
+          correctAnswerText: fractionAnswerText(correctNum, correctDen),
+        });
+      }
     }
     return problems;
   }
@@ -114,20 +164,42 @@
   function generateAlgebraProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const a = randInt(2, 9);
-      const x = randInt(1, 12);
-      const b = randInt(-10, 10);
-      const c = a * x + b;
-      const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
+      if (Math.random() < 0.5) {
+        // Type 1: ax + b = c
+        const a = randInt(2, 9);
+        const x = randInt(1, 12);
+        const b = randInt(-10, 10);
+        const c = a * x + b;
+        const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
 
-      problems.push({
-        question: `Solve for x: ${a}x ${bText} = ${c}`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && val === x;
-        },
-        correctAnswerText: String(x),
-      });
+        problems.push({
+          question: `Solve for x: ${a}x ${bText} = ${c}`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === x;
+          },
+          correctAnswerText: String(x),
+        });
+      } else {
+        // Type 2: a1*x + b1 = a2*x + b2, with a1 != a2.
+        const x = randInt(1, 10);
+        let a1 = randInt(1, 9);
+        let a2 = randInt(1, 9);
+        while (a2 === a1) a2 = randInt(1, 9);
+        const b1 = randInt(-10, 10);
+        const b2 = a1 * x + b1 - a2 * x;
+        const b1Text = b1 >= 0 ? `+ ${b1}` : `− ${Math.abs(b1)}`;
+        const b2Text = b2 >= 0 ? `+ ${b2}` : `− ${Math.abs(b2)}`;
+
+        problems.push({
+          question: `Solve for x: ${a1}x ${b1Text} = ${a2}x ${b2Text}`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === x;
+          },
+          correctAnswerText: String(x),
+        });
+      }
     }
     return problems;
   }
@@ -178,24 +250,50 @@
   function generateQuadraticProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const r1 = randInt(-8, 8);
-      const r2 = randInt(-8, 8);
-      const b = -(r1 + r2);
-      const c = r1 * r2;
-      const bText = b >= 0 ? `+ ${b}x` : `− ${Math.abs(b)}x`;
-      const cText = c >= 0 ? `+ ${c}` : `− ${Math.abs(c)}`;
-      const correctSorted = [r1, r2].sort((x, y) => x - y);
+      if (Math.random() < 0.5) {
+        // Type 1: factor x² + bx + c = 0 (both roots are clean integers).
+        const r1 = randInt(-8, 8);
+        const r2 = randInt(-8, 8);
+        const b = -(r1 + r2);
+        const c = r1 * r2;
+        const bText = b >= 0 ? `+ ${b}x` : `− ${Math.abs(b)}x`;
+        const cText = c >= 0 ? `+ ${c}` : `− ${Math.abs(c)}`;
+        const correctSorted = [r1, r2].sort((x, y) => x - y);
 
-      problems.push({
-        question: `x² ${bText} ${cText} = 0. Find x.`,
-        checkAnswer(raw) {
-          const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
-          if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
-          const sorted = parts.sort((x, y) => x - y);
-          return sorted[0] === correctSorted[0] && sorted[1] === correctSorted[1];
-        },
-        correctAnswerText: correctSorted.join(", "),
-      });
+        problems.push({
+          question: `x² ${bText} ${cText} = 0. Find x.`,
+          checkAnswer(raw) {
+            const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
+            if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+            const sorted = parts.sort((x, y) => x - y);
+            return sorted[0] === correctSorted[0] && sorted[1] === correctSorted[1];
+          },
+          correctAnswerText: correctSorted.join(", "),
+        });
+      } else {
+        // Type 2: the quadratic formula, leading coefficient != 1 (one root is a
+        // clean fraction — a is a power of 2 so m/a always terminates exactly).
+        const a = Math.random() < 0.5 ? 2 : 4;
+        let m = randInt(1, 3 * a);
+        while (m % a === 0) m = randInt(1, 3 * a);
+        const n = randInt(-6, 6);
+        const b = -(a * n + m);
+        const c = m * n;
+        const bText = b >= 0 ? `+ ${b}x` : `− ${Math.abs(b)}x`;
+        const cText = c >= 0 ? `+ ${c}` : `− ${Math.abs(c)}`;
+        const correctSorted = [m / a, n].sort((x, y) => x - y);
+
+        problems.push({
+          question: `${a}x² ${bText} ${cText} = 0. Find x.`,
+          checkAnswer(raw) {
+            const parts = String(raw).trim().split(",").map((p) => parseFractionOrDecimal(p));
+            if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+            const sorted = parts.slice().sort((x, y) => x - y);
+            return Math.abs(sorted[0] - correctSorted[0]) < 1e-9 && Math.abs(sorted[1] - correctSorted[1]) < 1e-9;
+          },
+          correctAnswerText: correctSorted.join(", "),
+        });
+      }
     }
     return problems;
   }
@@ -225,18 +323,36 @@
   function generateExponentsProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const base = randInt(2, 9);
-      const exp = randInt(2, 4);
-      const answer = Math.pow(base, exp);
+      if (Math.random() < 0.5) {
+        // Type 1: basic repeated multiplication.
+        const base = randInt(2, 9);
+        const exp = randInt(2, 4);
+        const answer = Math.pow(base, exp);
 
-      problems.push({
-        question: `${base}^${exp} = ?`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && val === answer;
-        },
-        correctAnswerText: String(answer),
-      });
+        problems.push({
+          question: `${base}^${exp} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else {
+        // Type 2: multiplying powers with the same base (add the exponents).
+        const base = randInt(2, 6);
+        const exp1 = randInt(1, 4);
+        const exp2 = randInt(1, Math.max(1, 6 - exp1));
+        const answer = Math.pow(base, exp1 + exp2);
+
+        problems.push({
+          question: `${base}^${exp1} × ${base}^${exp2} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      }
     }
     return problems;
   }
@@ -273,19 +389,38 @@
     const problems = [];
     const PERCENTS = [5, 10, 20, 25, 50];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const p = PERCENTS[randInt(0, PERCENTS.length - 1)];
-      const m = 100 / p;
-      const k = randInt(1, 15);
-      const n = k * m;
+      if (Math.random() < 0.5) {
+        // Type 1: find p% of a number.
+        const p = PERCENTS[randInt(0, PERCENTS.length - 1)];
+        const m = 100 / p;
+        const k = randInt(1, 15);
+        const n = k * m;
 
-      problems.push({
-        question: `Find ${p}% of ${n}.`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && val === k;
-        },
-        correctAnswerText: String(k),
-      });
+        problems.push({
+          question: `Find ${p}% of ${n}.`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === k;
+          },
+          correctAnswerText: String(k),
+        });
+      } else {
+        // Type 2: reverse percentage — given the discounted price, find the original.
+        const p = PERCENTS[randInt(0, PERCENTS.length - 1)];
+        const m = 100 / p;
+        const k = randInt(1, 15);
+        const original = k * m;
+        const salePrice = original - k;
+
+        problems.push({
+          question: `After a ${p}% discount, an item costs ${salePrice}. What was the original price?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === original;
+          },
+          correctAnswerText: String(original),
+        });
+      }
     }
     return problems;
   }
@@ -311,17 +446,37 @@
   function generateAbsoluteValueProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const n = nonZeroRandInt(-20, 20);
-      const answer = Math.abs(n);
+      if (Math.random() < 0.5) {
+        // Type 1: distance from 0.
+        const n = nonZeroRandInt(-20, 20);
+        const answer = Math.abs(n);
 
-      problems.push({
-        question: `|${n}| = ?`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && val === answer;
-        },
-        correctAnswerText: String(answer),
-      });
+        problems.push({
+          question: `|${n}| = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else {
+        // Type 2: solve |x - k| = n (distance from k, usually two solutions).
+        const k = nonZeroRandInt(-8, 8);
+        const n = randInt(1, 12);
+        const kText = k >= 0 ? `− ${k}` : `+ ${Math.abs(k)}`;
+        const correctSorted = [k + n, k - n].sort((x, y) => x - y);
+
+        problems.push({
+          question: `|x ${kText}| = ${n}. Find x.`,
+          checkAnswer(raw) {
+            const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
+            if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+            const sorted = parts.sort((x, y) => x - y);
+            return sorted[0] === correctSorted[0] && sorted[1] === correctSorted[1];
+          },
+          correctAnswerText: correctSorted.join(", "),
+        });
+      }
     }
     return problems;
   }
@@ -329,19 +484,50 @@
   function generateNegativeNumbersProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const a = nonZeroRandInt(-20, 20);
-      const b = nonZeroRandInt(-20, 20);
-      const answer = a + b;
-      const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
+      if (Math.random() < 0.5) {
+        // Type 1: adding/subtracting negatives.
+        const a = nonZeroRandInt(-20, 20);
+        const b = nonZeroRandInt(-20, 20);
+        const answer = a + b;
+        const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
 
-      problems.push({
-        question: `${a} ${bText} = ?`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && val === answer;
-        },
-        correctAnswerText: String(answer),
-      });
+        problems.push({
+          question: `${a} ${bText} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else if (Math.random() < 0.5) {
+        // Type 2a: multiplying negatives.
+        const a = nonZeroRandInt(-12, 12);
+        const b = nonZeroRandInt(-12, 12);
+        const answer = a * b;
+
+        problems.push({
+          question: `${a} × ${b} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else {
+        // Type 2b: dividing negatives (constructed to divide evenly).
+        const divisor = nonZeroRandInt(-12, 12);
+        const quotient = nonZeroRandInt(-12, 12);
+        const dividend = divisor * quotient;
+
+        problems.push({
+          question: `${dividend} ÷ ${divisor} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === quotient;
+          },
+          correctAnswerText: String(quotient),
+        });
+      }
     }
     return problems;
   }
@@ -442,17 +628,35 @@
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const triple = TRIPLES[randInt(0, TRIPLES.length - 1)];
       const k = randInt(1, 3);
-      const legs = Math.random() < 0.5 ? [triple[0] * k, triple[1] * k] : [triple[1] * k, triple[0] * k];
-      const c = triple[2] * k;
+      if (Math.random() < 0.5) {
+        // Type 1: given both legs, find the hypotenuse.
+        const legs = Math.random() < 0.5 ? [triple[0] * k, triple[1] * k] : [triple[1] * k, triple[0] * k];
+        const c = triple[2] * k;
 
-      problems.push({
-        question: `A right triangle has legs ${legs[0]} and ${legs[1]}. Find the hypotenuse c.`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && val === c;
-        },
-        correctAnswerText: String(c),
-      });
+        problems.push({
+          question: `A right triangle has legs ${legs[0]} and ${legs[1]}. Find the hypotenuse c.`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === c;
+          },
+          correctAnswerText: String(c),
+        });
+      } else {
+        // Type 2: given the hypotenuse and one leg, find the other leg.
+        const knownIsFirst = Math.random() < 0.5;
+        const knownLeg = (knownIsFirst ? triple[0] : triple[1]) * k;
+        const missingLeg = (knownIsFirst ? triple[1] : triple[0]) * k;
+        const c = triple[2] * k;
+
+        problems.push({
+          question: `A right triangle has hypotenuse ${c} and one leg ${knownLeg}. Find the other leg.`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === missingLeg;
+          },
+          correctAnswerText: String(missingLeg),
+        });
+      }
     }
     return problems;
   }

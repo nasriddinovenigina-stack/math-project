@@ -55,6 +55,7 @@
       <section class="topic active">
         <h2>Pythagorean Theorem</h2>
         <div class="explanation">
+          <h3 class="section-title">Finding the Hypotenuse</h3>
           <p class="hook">A ladder leans against a wall. Its base is 3 meters from the wall, and it reaches 4 meters up the wall. How long is the ladder?</p>
           <p>For a right triangle with legs a and b and hypotenuse c: <strong>a&sup2; + b&sup2; = c&sup2;</strong>.</p>
           <p class="one-liner">In one line: square both legs, add them, then take the square root.</p>
@@ -66,6 +67,21 @@
           </div>
           <p class="trap">A common mistake is adding the legs first and then squaring &mdash; (3 + 4)&sup2; = 49, not 25. You have to square each leg separately before adding.</p>
           <p class="why-it-matters">This is how carpenters check a corner is truly square, and how GPS and screen sizes calculate straight-line distance.</p>
+        </div>
+
+        <div class="explanation">
+          <h3 class="section-title">Finding a Missing Leg</h3>
+          <p class="hook">This time you know the ladder itself is 5 meters long, and its base is 3 meters from the wall. How high up the wall does it reach?</p>
+          <p>If you know the hypotenuse c and one leg, you can rearrange the theorem to find the other leg: <strong>leg = &radic;(c&sup2; &minus; a&sup2;)</strong>.</p>
+          <p class="one-liner">In one line: square the hypotenuse, subtract the known leg squared, then take the square root.</p>
+          <div class="steps">
+            <p>hypotenuse 5, known leg 3</p>
+            <p class="steps-note">5&sup2; &minus; 3&sup2; = 25 &minus; 9 = 16</p>
+            <p>missing leg = &radic;16</p>
+            <p class="steps-result">= 4</p>
+          </div>
+          <p class="trap">A common mistake is adding the squares instead of subtracting &mdash; 5&sup2; + 3&sup2; = 34, which is wrong. When you're missing a leg (not the hypotenuse), you subtract, not add.</p>
+          <p class="why-it-matters">This is how you'd figure out how far a ladder's base needs to sit from a wall to safely reach a certain height.</p>
         </div>
 
         <div class="practice" data-practice="pythagorean">
