@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Average (Mean) — Math Practice</title>
-  <meta name="description" content="Learn how to calculate the average (mean) of a set of numbers step by step, then practice." />
-  <link rel="canonical" href="https://mathpractise.netlify.app/average" />
-  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/average" />
-  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/average" />
-  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/average" />
+  <title>Probability — Math Practice</title>
+  <meta name="description" content="Learn how to find the probability of an event step by step, then practice." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/probability" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/probability" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/probability" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/probability" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/styles.css" />
   <meta name="application-name" content="Math Practice" />
   <meta property="og:site_name" content="Math Practice" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Average (Mean) — Math Practice" />
-  <meta property="og:description" content="Learn how to calculate the average (mean) of a set of numbers step by step, then practice." />
-  <meta property="og:url" content="https://mathpractise.netlify.app/average" />
+  <meta property="og:title" content="Probability — Math Practice" />
+  <meta property="og:description" content="Learn how to find the probability of an event step by step, then practice." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/probability" />
   <meta property="og:locale" content="en_US" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNDQEKH5SK"></script>
   <script>
@@ -26,15 +26,15 @@
     gtag('config', 'G-VNDQEKH5SK');
   </script>
 </head>
-<body data-topic="average">
+<body data-topic="probability">
   <div class="app">
     <aside class="sidebar">
       <div class="sidebar-header">
         <h1><a class="site-title" href="/">Math Practice</a></h1>
         <p class="subtitle">Learn the idea, then practice it.</p>
         <div class="lang-switch">
-          <a class="lang-link active" href="/average">EN</a>
-          <a class="lang-link" href="/ru/average">RU</a>
+          <a class="lang-link active" href="/probability">EN</a>
+          <a class="lang-link" href="/ru/probability">RU</a>
         </div>
       </div>
       <nav class="topic-nav">
@@ -47,8 +47,8 @@
         <a class="tab-btn" href="/lcm">LCM</a>
         <a class="tab-btn" href="/percentages">Percentages</a>
         <a class="tab-btn" href="/ratios">Ratios & Proportions</a>
-        <a class="tab-btn" href="/probability">Probability</a>
-        <a class="tab-btn active" href="/average">Average (Mean)</a>
+        <a class="tab-btn active" href="/probability">Probability</a>
+        <a class="tab-btn" href="/average">Average (Mean)</a>
         <a class="tab-btn" href="/mean-median-mode">Mean, Median & Mode</a>
         <a class="tab-btn" href="/algebra">Basic Algebra</a>
         <a class="tab-btn" href="/inequalities">Inequalities</a>
@@ -68,27 +68,28 @@
 
     <main class="content">
       <section class="topic active">
-        <h2>Average (Mean)</h2>
+        <h2>Probability</h2>
         <div class="explanation">
-          <p class="hook">You scored 4, 8, and 6 points in three mini-games at a fair. What's your average score?</p>
-          <p>To find the <strong>average</strong>, add up all the numbers, then divide by how many numbers there are.</p>
-          <p class="one-liner">In one line: add them all up, divide by how many there are.</p>
+          <p class="hook">A bag has 3 red marbles and 2 blue marbles. If you pick one without looking, what's the probability it's red?</p>
+          <p><strong>Probability</strong> measures how likely something is, from 0 (impossible) to 1 (certain). P(event) = number of favorable outcomes &divide; total number of outcomes.</p>
+          <p class="one-liner">In one line: probability = favorable outcomes &divide; total outcomes.</p>
           <div class="steps">
-            <p>4, 8, 6</p>
-            <p class="steps-note">add them: 4 + 8 + 6 = 18</p>
-            <p>18 &divide; 3</p>
-            <p class="steps-result">= 6</p>
+            <p>3 red marbles, 2 blue marbles &rarr; 5 total</p>
+            <p class="steps-note">P(red) = favorable &divide; total</p>
+            <p>P(red) = 3 &divide; 5</p>
+            <p class="steps-result">P(red) = 0.6 (or 3/5, or 60%)</p>
           </div>
-          <p class="trap">A common mistake is dividing by the wrong count &mdash; forgetting one of the numbers, or dividing by 2 instead of 3. Always count exactly how many numbers you added.</p>
-          <p class="why-it-matters">Averages summarize a whole set of numbers with one &mdash; test scores, prices, ratings, sports stats.</p>
+          <p class="trap">A common mistake is dividing by the number of OTHER outcomes instead of the TOTAL &mdash; for example, writing 3/2 (red vs blue) instead of 3/5 (red out of everything). Always divide by the total number of possible outcomes, not just the other category.</p>
+          <p class="why-it-matters">Probability is behind weather forecasts, game odds, insurance, and predicting outcomes in everyday decisions.</p>
         </div>
 
-        <div class="practice" data-practice="average">
+        <div class="practice" data-practice="probability">
           <div class="practice-controls">
-            <button class="generate-btn" data-topic="average">New Problems</button>
+            <button class="generate-btn" data-topic="probability">New Problems</button>
             <span class="score"></span>
           </div>
           <div class="problem-list"></div>
+          <p class="hint">Enter your answer as a fraction (like 3/5) or a decimal (like 0.6).</p>
         </div>
       </section>
 

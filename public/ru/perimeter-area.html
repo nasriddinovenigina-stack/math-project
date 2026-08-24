@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Периметр и площадь — Практика по математике</title>
+  <meta name="description" content="Узнайте, как находить периметр и площадь прямоугольника и треугольника шаг за шагом, а затем потренируйтесь." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/ru/perimeter-area" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/perimeter-area" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/perimeter-area" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/perimeter-area" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Практика по математике" />
+  <meta property="og:site_name" content="Практика по математике" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Периметр и площадь — Практика по математике" />
+  <meta property="og:description" content="Узнайте, как находить периметр и площадь прямоугольника и треугольника шаг за шагом, а затем потренируйтесь." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/ru/perimeter-area" />
+  <meta property="og:locale" content="ru_RU" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNDQEKH5SK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNDQEKH5SK');
+  </script>
+</head>
+<body data-topic="perimeter-area">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><a class="site-title" href="/ru/">Практика по математике</a></h1>
+        <p class="subtitle">Изучи идею — затем закрепи её на практике.</p>
+        <div class="lang-switch">
+          <a class="lang-link" href="/perimeter-area">EN</a>
+          <a class="lang-link active" href="/ru/perimeter-area">RU</a>
+        </div>
+      </div>
+      <nav class="topic-nav">
+        <a class="tab-btn" href="/ru/arithmetic">Арифметика</a>
+        <a class="tab-btn" href="/ru/negative-numbers">Отрицательные числа</a>
+        <a class="tab-btn" href="/ru/order-of-operations">Порядок действий</a>
+        <a class="tab-btn" href="/ru/fractions">Дроби</a>
+        <a class="tab-btn" href="/ru/decimals">Десятичные дроби</a>
+        <a class="tab-btn" href="/ru/gcf">НОД</a>
+        <a class="tab-btn" href="/ru/lcm">НОК</a>
+        <a class="tab-btn" href="/ru/percentages">Проценты</a>
+        <a class="tab-btn" href="/ru/ratios">Отношения и пропорции</a>
+        <a class="tab-btn" href="/ru/probability">Вероятность</a>
+        <a class="tab-btn" href="/ru/average">Среднее арифметическое</a>
+        <a class="tab-btn" href="/ru/mean-median-mode">Среднее, медиана и мода</a>
+        <a class="tab-btn" href="/ru/algebra">Основы алгебры</a>
+        <a class="tab-btn" href="/ru/inequalities">Неравенства</a>
+        <a class="tab-btn" href="/ru/functions">Функции</a>
+        <a class="tab-btn" href="/ru/systems">Системы уравнений</a>
+        <a class="tab-btn" href="/ru/slope">Наклон прямой</a>
+        <a class="tab-btn" href="/ru/quadratic">Квадратные уравнения</a>
+        <a class="tab-btn" href="/ru/parabola">Парабола</a>
+        <a class="tab-btn active" href="/ru/perimeter-area">Периметр и площадь</a>
+        <a class="tab-btn" href="/ru/pythagorean">Теорема Пифагора</a>
+        <a class="tab-btn" href="/ru/circles">Окружность</a>
+        <a class="tab-btn" href="/ru/exponents">Степени</a>
+        <a class="tab-btn" href="/ru/square-roots">Квадратный корень</a>
+        <a class="tab-btn" href="/ru/absolute-value">Модуль числа</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="topic active">
+        <h2>Периметр и площадь</h2>
+        <div class="explanation">
+          <p class="hook">Прямоугольная комната имеет ширину 4 метра и длину 6 метров. Сколько нужно напольного покрытия (площадь) и сколько плинтуса вокруг стен (периметр)?</p>
+          <p><strong>Периметр</strong> — это расстояние вокруг фигуры: сложите все стороны. <strong>Площадь</strong> — это пространство внутри фигуры: для прямоугольника умножьте длину на ширину.</p>
+          <p class="one-liner">Одной фразой: периметр = сложите все стороны, площадь = длина &times; ширина (для прямоугольника).</p>
+          <div class="steps">
+            <p>длина = 6 м, ширина = 4 м</p>
+            <p class="steps-note">периметр = сложите все 4 стороны &rarr; 2&times;длина + 2&times;ширина</p>
+            <p>P = 2(6) + 2(4)</p>
+            <p>P = 12 + 8</p>
+            <p class="steps-result">P = 20 м</p>
+            <p class="steps-note">площадь = длина &times; ширина</p>
+            <p>S = 6 &times; 4</p>
+            <p class="steps-result">S = 24 м&sup2;</p>
+          </div>
+          <p class="trap">Частая ошибка — перепутать периметр и площадь: периметр — это просто расстояние (например, в метрах), а площадь измеряется в квадратных единицах (например, м&sup2;), потому что она покрывает двумерное пространство. Если в ответе нет знака "&sup2;", проверьте, не перепутали ли вы их.</p>
+          <p class="why-it-matters">Периметр и площадь нужны при установке забора, укладке пола, изготовлении рамок для картин — везде, где надо измерить край или пространство чего-либо.</p>
+        </div>
+
+        <div class="practice" data-practice="perimeter-area">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="perimeter-area">Новые примеры</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.</p>
+        <p class="site-domain">mathpractise.netlify.app</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

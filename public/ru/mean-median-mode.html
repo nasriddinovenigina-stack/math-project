@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Среднее, медиана и мода — Практика по математике</title>
+  <meta name="description" content="Узнайте, как находить среднее значение, медиану и моду набора чисел шаг за шагом, а затем потренируйтесь." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/ru/mean-median-mode" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/mean-median-mode" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/mean-median-mode" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/mean-median-mode" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Практика по математике" />
+  <meta property="og:site_name" content="Практика по математике" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Среднее, медиана и мода — Практика по математике" />
+  <meta property="og:description" content="Узнайте, как находить среднее значение, медиану и моду набора чисел шаг за шагом, а затем потренируйтесь." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/ru/mean-median-mode" />
+  <meta property="og:locale" content="ru_RU" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNDQEKH5SK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNDQEKH5SK');
+  </script>
+</head>
+<body data-topic="mean-median-mode">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><a class="site-title" href="/ru/">Практика по математике</a></h1>
+        <p class="subtitle">Изучи идею — затем закрепи её на практике.</p>
+        <div class="lang-switch">
+          <a class="lang-link" href="/mean-median-mode">EN</a>
+          <a class="lang-link active" href="/ru/mean-median-mode">RU</a>
+        </div>
+      </div>
+      <nav class="topic-nav">
+        <a class="tab-btn" href="/ru/arithmetic">Арифметика</a>
+        <a class="tab-btn" href="/ru/negative-numbers">Отрицательные числа</a>
+        <a class="tab-btn" href="/ru/order-of-operations">Порядок действий</a>
+        <a class="tab-btn" href="/ru/fractions">Дроби</a>
+        <a class="tab-btn" href="/ru/decimals">Десятичные дроби</a>
+        <a class="tab-btn" href="/ru/gcf">НОД</a>
+        <a class="tab-btn" href="/ru/lcm">НОК</a>
+        <a class="tab-btn" href="/ru/percentages">Проценты</a>
+        <a class="tab-btn" href="/ru/ratios">Отношения и пропорции</a>
+        <a class="tab-btn" href="/ru/probability">Вероятность</a>
+        <a class="tab-btn" href="/ru/average">Среднее арифметическое</a>
+        <a class="tab-btn active" href="/ru/mean-median-mode">Среднее, медиана и мода</a>
+        <a class="tab-btn" href="/ru/algebra">Основы алгебры</a>
+        <a class="tab-btn" href="/ru/inequalities">Неравенства</a>
+        <a class="tab-btn" href="/ru/functions">Функции</a>
+        <a class="tab-btn" href="/ru/systems">Системы уравнений</a>
+        <a class="tab-btn" href="/ru/slope">Наклон прямой</a>
+        <a class="tab-btn" href="/ru/quadratic">Квадратные уравнения</a>
+        <a class="tab-btn" href="/ru/parabola">Парабола</a>
+        <a class="tab-btn" href="/ru/perimeter-area">Периметр и площадь</a>
+        <a class="tab-btn" href="/ru/pythagorean">Теорема Пифагора</a>
+        <a class="tab-btn" href="/ru/circles">Окружность</a>
+        <a class="tab-btn" href="/ru/exponents">Степени</a>
+        <a class="tab-btn" href="/ru/square-roots">Квадратный корень</a>
+        <a class="tab-btn" href="/ru/absolute-value">Модуль числа</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="topic active">
+        <h2>Среднее, медиана и мода</h2>
+        <div class="explanation">
+          <p class="hook">Ваши оценки за месяц: 80, 90, 70, 90, 85. Каковы среднее значение, медиана и мода?</p>
+          <p><strong>Среднее</strong> — это сумма чисел, делённая на их количество. <strong>Медиана</strong> — это среднее значение при сортировке по порядку. <strong>Мода</strong> — значение, которое встречается чаще всего.</p>
+          <p class="one-liner">Одной фразой: среднее = сложить и разделить, медиана = отсортировать и найти середину, мода = самое частое значение.</p>
+          <div class="steps">
+            <p>Оценки: 80, 90, 70, 90, 85</p>
+            <p class="steps-note">среднее: сложите все, разделите на 5</p>
+            <p>(80+90+70+90+85) &divide; 5 = 415 &divide; 5</p>
+            <p class="steps-result">среднее = 83</p>
+            <p class="steps-note">медиана: отсортируйте оценки &rarr; 70, 80, 85, 90, 90 &rarr; возьмите среднее значение</p>
+            <p class="steps-result">медиана = 85</p>
+            <p class="steps-note">мода: какая оценка встречается чаще всего?</p>
+            <p class="steps-result">мода = 90</p>
+          </div>
+          <p class="trap">Частая ошибка с медианой — забыть отсортировать числа перед поиском середины: середина ИСХОДНОГО списка не является медианой, если он не отсортирован. Всегда сначала сортируйте от меньшего к большему.</p>
+          <p class="why-it-matters">Эти три числа по-разному описывают набор данных: среднее показывает типичный размер, медиана устойчива к выбросам, а мода показывает самое распространённое значение.</p>
+        </div>
+
+        <div class="practice" data-practice="mean-median-mode">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="mean-median-mode">Новые примеры</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.</p>
+        <p class="site-domain">mathpractise.netlify.app</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -61,6 +61,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/fractions"/>
   </url>
   <url>
+    <loc>https://mathpractise.netlify.app/decimals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/decimals"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/decimals"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/decimals"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/decimals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/decimals"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/decimals"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/decimals"/>
+  </url>
+  <url>
     <loc>https://mathpractise.netlify.app/gcf</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/gcf"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/gcf"/>
@@ -109,6 +121,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/ratios"/>
   </url>
   <url>
+    <loc>https://mathpractise.netlify.app/probability</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/probability"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/probability"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/probability"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/probability</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/probability"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/probability"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/probability"/>
+  </url>
+  <url>
     <loc>https://mathpractise.netlify.app/average</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/average"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/average"/>
@@ -119,6 +143,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/average"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/average"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/average"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/mean-median-mode</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/mean-median-mode"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/mean-median-mode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/mean-median-mode"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/mean-median-mode</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/mean-median-mode"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/mean-median-mode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/mean-median-mode"/>
   </url>
   <url>
     <loc>https://mathpractise.netlify.app/algebra</loc>
@@ -203,6 +239,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/parabola"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/parabola"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/parabola"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/perimeter-area</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/perimeter-area"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/perimeter-area"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/perimeter-area"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/perimeter-area</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/perimeter-area"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/perimeter-area"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/perimeter-area"/>
   </url>
   <url>
     <loc>https://mathpractise.netlify.app/pythagorean</loc>

@@ -757,16 +757,163 @@
     return problems;
   }
 
+  function generateDecimalsProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const precision = Math.random() < 0.5 ? 1 : 2;
+      const scale = precision === 1 ? 10 : 100;
+      const isAdd = Math.random() < 0.5;
+      let aInt = randInt(scale, scale * 20);
+      let bInt = randInt(scale, scale * 20);
+      if (!isAdd && bInt > aInt) {
+        [aInt, bInt] = [bInt, aInt];
+      }
+      const answerInt = isAdd ? aInt + bInt : aInt - bInt;
+      const opSymbol = isAdd ? "+" : "−";
+
+      problems.push({
+        question: `${(aInt / scale).toFixed(precision)} ${opSymbol} ${(bInt / scale).toFixed(precision)} = ?`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && Math.round(val * scale) === answerInt;
+        },
+        correctAnswerText: (answerInt / scale).toFixed(precision),
+      });
+    }
+    return problems;
+  }
+
+  function generateProbabilityProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const favorable = randInt(1, 9);
+      const other = randInt(1, 9);
+      const total = favorable + other;
+
+      problems.push({
+        question: `A bag has ${favorable} red marbles and ${other} blue marbles. If you pick one at random, what is the probability it's red?`,
+        checkAnswer(raw) {
+          const val = parseFractionOrDecimal(raw);
+          return Number.isFinite(val) && Math.abs(val - favorable / total) < 0.0051;
+        },
+        correctAnswerText: `${favorable}/${total}`,
+      });
+    }
+    return problems;
+  }
+
+  function generatePerimeterAreaProblems() {
+    const problems = [];
+    const SUBTYPES = ["rect-perimeter", "rect-area", "triangle-area"];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const subtype = SUBTYPES[randInt(0, SUBTYPES.length - 1)];
+
+      if (subtype === "rect-perimeter" || subtype === "rect-area") {
+        const length = randInt(2, 15);
+        const width = randInt(2, 15);
+        const answer = subtype === "rect-perimeter" ? 2 * length + 2 * width : length * width;
+        const question =
+          subtype === "rect-perimeter"
+            ? `A rectangle has length ${length} and width ${width}. Find its perimeter.`
+            : `A rectangle has length ${length} and width ${width}. Find its area.`;
+
+        problems.push({
+          question,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else {
+        const height = randInt(1, 8) * 2;
+        const base = randInt(2, 15);
+        const answer = base * (height / 2);
+
+        problems.push({
+          question: `A triangle has a base of ${base} and a height of ${height}. Find its area.`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      }
+    }
+    return problems;
+  }
+
+  function generateMeanMedianModeProblems() {
+    const problems = [];
+    const lang = document.documentElement.lang === "ru" ? "ru" : "en";
+    const LABELS = {
+      en: { mean: "mean", median: "median", mode: "mode" },
+      ru: { mean: "среднее", median: "медиану", mode: "моду" },
+    };
+    const QUESTION_TEMPLATE = {
+      en: (values, label) => `Data set: ${values.join(", ")}. Find the ${label}.`,
+      ru: (values, label) => `Набор данных: ${values.join(", ")}. Найдите ${label}.`,
+    };
+    const SUBTYPES = ["mean", "median", "mode"];
+
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const subtype = SUBTYPES[randInt(0, SUBTYPES.length - 1)];
+      let values, answer;
+
+      if (subtype === "mean") {
+        const m = randInt(50, 100);
+        const d1 = randInt(-10, 10);
+        const d2 = randInt(-10, 10);
+        const d3 = randInt(-10, 10);
+        const d4 = randInt(-10, 10);
+        const d5 = -(d1 + d2 + d3 + d4);
+        values = [m + d1, m + d2, m + d3, m + d4, m + d5];
+        answer = m;
+      } else if (subtype === "median") {
+        values = [randInt(1, 50), randInt(1, 50), randInt(1, 50), randInt(1, 50), randInt(1, 50)];
+        answer = values.slice().sort((a, b) => a - b)[2];
+      } else {
+        const modeVal = randInt(1, 50);
+        const others = [];
+        while (others.length < 3) {
+          const candidate = randInt(1, 50);
+          if (candidate !== modeVal && !others.includes(candidate)) {
+            others.push(candidate);
+          }
+        }
+        values = [modeVal, modeVal, others[0], others[1], others[2]];
+        for (let j = values.length - 1; j > 0; j--) {
+          const k = randInt(0, j);
+          [values[j], values[k]] = [values[k], values[j]];
+        }
+        answer = modeVal;
+      }
+
+      problems.push({
+        question: QUESTION_TEMPLATE[lang](values, LABELS[lang][subtype]),
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
   const GENERATORS = {
     arithmetic: generateArithmeticProblems,
     "negative-numbers": generateNegativeNumbersProblems,
     "order-of-operations": generateOrderOfOperationsProblems,
     fractions: generateFractionsProblems,
+    decimals: generateDecimalsProblems,
     gcf: generateGcfProblems,
     lcm: generateLcmProblems,
     percentages: generatePercentagesProblems,
     ratios: generateRatiosProblems,
+    probability: generateProbabilityProblems,
     average: generateAverageProblems,
+    "mean-median-mode": generateMeanMedianModeProblems,
     algebra: generateAlgebraProblems,
     inequalities: generateInequalitiesProblems,
     functions: generateFunctionsProblems,
@@ -774,6 +921,7 @@
     slope: generateSlopeProblems,
     quadratic: generateQuadraticProblems,
     parabola: generateParabolaProblems,
+    "perimeter-area": generatePerimeterAreaProblems,
     pythagorean: generatePythagoreanProblems,
     circles: generateCirclesProblems,
     exponents: generateExponentsProblems,

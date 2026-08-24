@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Average (Mean) — Math Practice</title>
-  <meta name="description" content="Learn how to calculate the average (mean) of a set of numbers step by step, then practice." />
-  <link rel="canonical" href="https://mathpractise.netlify.app/average" />
-  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/average" />
-  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/average" />
-  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/average" />
+  <title>Mean, Median & Mode — Math Practice</title>
+  <meta name="description" content="Learn how to find the mean, median, and mode of a data set step by step, then practice." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/mean-median-mode" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/mean-median-mode" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/mean-median-mode" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/mean-median-mode" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/styles.css" />
   <meta name="application-name" content="Math Practice" />
   <meta property="og:site_name" content="Math Practice" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Average (Mean) — Math Practice" />
-  <meta property="og:description" content="Learn how to calculate the average (mean) of a set of numbers step by step, then practice." />
-  <meta property="og:url" content="https://mathpractise.netlify.app/average" />
+  <meta property="og:title" content="Mean, Median & Mode — Math Practice" />
+  <meta property="og:description" content="Learn how to find the mean, median, and mode of a data set step by step, then practice." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/mean-median-mode" />
   <meta property="og:locale" content="en_US" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNDQEKH5SK"></script>
   <script>
@@ -26,15 +26,15 @@
     gtag('config', 'G-VNDQEKH5SK');
   </script>
 </head>
-<body data-topic="average">
+<body data-topic="mean-median-mode">
   <div class="app">
     <aside class="sidebar">
       <div class="sidebar-header">
         <h1><a class="site-title" href="/">Math Practice</a></h1>
         <p class="subtitle">Learn the idea, then practice it.</p>
         <div class="lang-switch">
-          <a class="lang-link active" href="/average">EN</a>
-          <a class="lang-link" href="/ru/average">RU</a>
+          <a class="lang-link active" href="/mean-median-mode">EN</a>
+          <a class="lang-link" href="/ru/mean-median-mode">RU</a>
         </div>
       </div>
       <nav class="topic-nav">
@@ -48,8 +48,8 @@
         <a class="tab-btn" href="/percentages">Percentages</a>
         <a class="tab-btn" href="/ratios">Ratios & Proportions</a>
         <a class="tab-btn" href="/probability">Probability</a>
-        <a class="tab-btn active" href="/average">Average (Mean)</a>
-        <a class="tab-btn" href="/mean-median-mode">Mean, Median & Mode</a>
+        <a class="tab-btn" href="/average">Average (Mean)</a>
+        <a class="tab-btn active" href="/mean-median-mode">Mean, Median & Mode</a>
         <a class="tab-btn" href="/algebra">Basic Algebra</a>
         <a class="tab-btn" href="/inequalities">Inequalities</a>
         <a class="tab-btn" href="/functions">Functions</a>
@@ -68,24 +68,28 @@
 
     <main class="content">
       <section class="topic active">
-        <h2>Average (Mean)</h2>
+        <h2>Mean, Median & Mode</h2>
         <div class="explanation">
-          <p class="hook">You scored 4, 8, and 6 points in three mini-games at a fair. What's your average score?</p>
-          <p>To find the <strong>average</strong>, add up all the numbers, then divide by how many numbers there are.</p>
-          <p class="one-liner">In one line: add them all up, divide by how many there are.</p>
+          <p class="hook">Your test scores this month are 80, 90, 70, 90, 85. What's the mean, median, and mode?</p>
+          <p><strong>Mean</strong> is the average (add them up, divide by how many). <strong>Median</strong> is the middle value when they're sorted in order. <strong>Mode</strong> is the value that appears most often.</p>
+          <p class="one-liner">In one line: mean = add &amp; divide, median = sort &amp; find the middle, mode = the most frequent value.</p>
           <div class="steps">
-            <p>4, 8, 6</p>
-            <p class="steps-note">add them: 4 + 8 + 6 = 18</p>
-            <p>18 &divide; 3</p>
-            <p class="steps-result">= 6</p>
+            <p>Scores: 80, 90, 70, 90, 85</p>
+            <p class="steps-note">mean: add them all, divide by 5</p>
+            <p>(80+90+70+90+85) &divide; 5 = 415 &divide; 5</p>
+            <p class="steps-result">mean = 83</p>
+            <p class="steps-note">median: sort the scores &rarr; 70, 80, 85, 90, 90 &rarr; pick the middle one</p>
+            <p class="steps-result">median = 85</p>
+            <p class="steps-note">mode: which score appears most often?</p>
+            <p class="steps-result">mode = 90</p>
           </div>
-          <p class="trap">A common mistake is dividing by the wrong count &mdash; forgetting one of the numbers, or dividing by 2 instead of 3. Always count exactly how many numbers you added.</p>
-          <p class="why-it-matters">Averages summarize a whole set of numbers with one &mdash; test scores, prices, ratings, sports stats.</p>
+          <p class="trap">A common mistake with median is forgetting to sort the numbers first &mdash; the middle of the ORIGINAL list isn't the median unless it's already in order. Always sort from smallest to largest first.</p>
+          <p class="why-it-matters">These three numbers summarize a whole data set in different ways &mdash; mean is best for typical size, median resists being skewed by extreme outliers, and mode shows what's most common.</p>
         </div>
 
-        <div class="practice" data-practice="average">
+        <div class="practice" data-practice="mean-median-mode">
           <div class="practice-controls">
-            <button class="generate-btn" data-topic="average">New Problems</button>
+            <button class="generate-btn" data-topic="mean-median-mode">New Problems</button>
             <span class="score"></span>
           </div>
           <div class="problem-list"></div>
