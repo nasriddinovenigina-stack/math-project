@@ -35,6 +35,8 @@ function headHtml(lang, slug, title, description) {
   const canonical = `${SITE_URL}${pagePath(lang, slug)}`;
   const enHref = `${SITE_URL}${pagePath("en", slug)}`;
   const ruHref = `${SITE_URL}${pagePath("ru", slug)}`;
+  const siteName = SITE_TITLES[lang];
+  const ogLocale = lang === "ru" ? "ru_RU" : "en_US";
   return `<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${title}</title>
@@ -44,7 +46,14 @@ function headHtml(lang, slug, title, description) {
   <link rel="alternate" hreflang="ru" href="${ruHref}" />
   <link rel="alternate" hreflang="x-default" href="${enHref}" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/styles.css" />`;
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="${siteName}" />
+  <meta property="og:site_name" content="${siteName}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="${title}" />
+  <meta property="og:description" content="${description}" />
+  <meta property="og:url" content="${canonical}" />
+  <meta property="og:locale" content="${ogLocale}" />`;
 }
 
 function sidebarHtml(lang, currentSlug) {
