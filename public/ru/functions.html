@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Функции: вычисление f(x) — Практика по математике</title>
-  <meta name="description" content="Узнайте, как вычислить значение функции f(x) при заданном x, шаг за шагом, а затем потренируйтесь." />
+  <title>Функции: вычисление f(x) и поиск f(x) по точкам — Практика по математике</title>
+  <meta name="description" content="Узнайте, как вычислить значение функции f(x), и как найти f(x) = ax + b по двум точкам, шаг за шагом, а затем потренируйтесь." />
   <link rel="canonical" href="https://mathpractise.netlify.app/ru/functions" />
   <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/functions" />
   <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/functions" />
@@ -14,8 +14,8 @@
   <meta name="application-name" content="Практика по математике" />
   <meta property="og:site_name" content="Практика по математике" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Функции: вычисление f(x) — Практика по математике" />
-  <meta property="og:description" content="Узнайте, как вычислить значение функции f(x) при заданном x, шаг за шагом, а затем потренируйтесь." />
+  <meta property="og:title" content="Функции: вычисление f(x) и поиск f(x) по точкам — Практика по математике" />
+  <meta property="og:description" content="Узнайте, как вычислить значение функции f(x), и как найти f(x) = ax + b по двум точкам, шаг за шагом, а затем потренируйтесь." />
   <meta property="og:url" content="https://mathpractise.netlify.app/ru/functions" />
   <meta property="og:locale" content="ru_RU" />
 </head>
@@ -53,8 +53,9 @@
 
     <main class="content">
       <section class="topic active">
-        <h2>Функции: вычисление f(x)</h2>
+        <h2>Функции: вычисление f(x) и поиск f(x) по двум точкам</h2>
         <div class="explanation">
+          <h3 class="section-title">Вычисление значения функции</h3>
           <p class="hook">Такси берёт базовую плату 3 000 сум плюс 2 000 сум за каждый километр. Если f(x) = 2x + 3 — это стоимость поездки (в тысячах сум) за x километров, сколько будет стоить поездка на 4 км?</p>
           <p><strong>Функция</strong> f(x) — это просто правило, превращающее число x в результат. Чтобы вычислить значение функции, подставьте данное число вместо x и посчитайте.</p>
           <p class="one-liner">Одной фразой: подставьте число вместо x, затем упростите.</p>
@@ -69,12 +70,31 @@
           <p class="why-it-matters">Функции показывают, как одна величина зависит от другой — например, как стоимость поездки зависит от расстояния или зарплата от часов работы.</p>
         </div>
 
+        <div class="explanation">
+          <h3 class="section-title">Нахождение функции по двум точкам</h3>
+          <p class="hook">На этот раз то же такси не говорит вам формулу. Вы знаете только, что поездка на 1 км стоит 5 000 сум, а поездка на 4 км — 11 000 сум. Сможете ли вы сами найти формулу стоимости?</p>
+          <p>Если известны две точки (x&#8321;, y&#8321;) и (x&#8322;, y&#8322;) на прямой, можно восстановить всю функцию f(x) = ax + b. Сначала найдите наклон a (как быстро меняется y), затем подставьте одну точку, чтобы найти b (начальное значение).</p>
+          <p class="one-liner">Одной фразой: найдите наклон между точками, затем подставьте одну точку, чтобы найти b.</p>
+          <div class="steps">
+            <p>Точки: (1, 5) и (4, 11)</p>
+            <p class="steps-note">сначала найдём наклон (a) &rarr; a = (11 &minus; 5) &divide; (4 &minus; 1)</p>
+            <p>a = 6 &divide; 3</p>
+            <p>a = 2</p>
+            <p class="steps-note">подставим одну точку, чтобы найти b &rarr; 5 = 2(1) + b</p>
+            <p>5 = 2 + b</p>
+            <p class="steps-result">b = 3, значит f(x) = 2x + 3</p>
+          </div>
+          <p class="trap">Частая ошибка — найти a и остановиться. a показывает только скорость изменения — без b вы не знаете начальную стоимость (значение при x = 0). Всегда подставляйте точку обратно, чтобы найти b.</p>
+          <p class="why-it-matters">Именно так строятся тарифы такси и другие цены на основе реальных данных — сначала измеряют две точки, а потом восстанавливают формулу.</p>
+        </div>
+
         <div class="practice" data-practice="functions">
           <div class="practice-controls">
             <button class="generate-btn" data-topic="functions">Новые примеры</button>
             <span class="score"></span>
           </div>
           <div class="problem-list"></div>
+          <p class="hint">Для задач на вычисление значения введите одно число. Для задач на поиск a и b введите два числа через запятую, например <code>2, 3</code> (то есть a = 2, b = 3).</p>
         </div>
       </section>
 

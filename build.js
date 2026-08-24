@@ -89,9 +89,28 @@ function stepsHtml(steps) {
     .join("\n");
 }
 
+function explanationSectionHtml(entry, sectionTitle) {
+  const titleHtml = sectionTitle ? `          <h3 class="section-title">${sectionTitle}</h3>\n` : "";
+  return `        <div class="explanation">
+${titleHtml}          <p class="hook">${entry.hookHtml}</p>
+          <p>${entry.ruleHtml}</p>
+          <p class="one-liner">${entry.oneLinerHtml}</p>
+          <div class="steps">
+${stepsHtml(entry.steps)}
+          </div>
+          <p class="trap">${entry.trapHtml}</p>
+          <p class="why-it-matters">${entry.whyItMattersHtml}</p>
+        </div>`;
+}
+
 function topicPageHtml(lang, topic) {
   const t = topic[lang];
   const hintBlock = t.hintHtml ? `\n          <p class="hint">${t.hintHtml}</p>` : "";
+  const primaryTitle = t.secondary ? t.title : null;
+  let explanationHtml = explanationSectionHtml(t, primaryTitle);
+  if (t.secondary) {
+    explanationHtml += `\n\n` + explanationSectionHtml(t.secondary, t.secondary.title);
+  }
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -105,16 +124,7 @@ ${sidebarHtml(lang, topic.slug)}
     <main class="content">
       <section class="topic active">
         <h2>${t.h1}</h2>
-        <div class="explanation">
-          <p class="hook">${t.hookHtml}</p>
-          <p>${t.ruleHtml}</p>
-          <p class="one-liner">${t.oneLinerHtml}</p>
-          <div class="steps">
-${stepsHtml(t.steps)}
-          </div>
-          <p class="trap">${t.trapHtml}</p>
-          <p class="why-it-matters">${t.whyItMattersHtml}</p>
-        </div>
+${explanationHtml}
 
         <div class="practice" data-practice="${topic.slug}">
           <div class="practice-controls">

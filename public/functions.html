@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Functions: Evaluating f(x) — Math Practice</title>
-  <meta name="description" content="Learn how to evaluate a function f(x) at a given value step by step, then practice." />
+  <title>Functions: Evaluating f(x) & Finding f(x) from Points — Math Practice</title>
+  <meta name="description" content="Learn how to evaluate a function f(x) at a given value, and how to find f(x) = ax + b from two points, step by step, then practice both." />
   <link rel="canonical" href="https://mathpractise.netlify.app/functions" />
   <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/functions" />
   <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/functions" />
@@ -14,8 +14,8 @@
   <meta name="application-name" content="Math Practice" />
   <meta property="og:site_name" content="Math Practice" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Functions: Evaluating f(x) — Math Practice" />
-  <meta property="og:description" content="Learn how to evaluate a function f(x) at a given value step by step, then practice." />
+  <meta property="og:title" content="Functions: Evaluating f(x) & Finding f(x) from Points — Math Practice" />
+  <meta property="og:description" content="Learn how to evaluate a function f(x) at a given value, and how to find f(x) = ax + b from two points, step by step, then practice both." />
   <meta property="og:url" content="https://mathpractise.netlify.app/functions" />
   <meta property="og:locale" content="en_US" />
 </head>
@@ -53,8 +53,9 @@
 
     <main class="content">
       <section class="topic active">
-        <h2>Functions: Evaluating f(x)</h2>
+        <h2>Functions: Evaluating f(x) & Finding f(x) from Two Points</h2>
         <div class="explanation">
+          <h3 class="section-title">Evaluating a Function</h3>
           <p class="hook">A taxi charges a 3,000 so'm base fee plus 2,000 so'm per kilometer. If f(x) = 2x + 3 gives the fare (in thousands) for x kilometers, what's the fare for a 4 km ride?</p>
           <p>A <strong>function</strong> f(x) is just a rule for turning an input x into an output. To evaluate it, put the given number everywhere you see x, then work it out.</p>
           <p class="one-liner">In one line: swap x for the given number, then simplify.</p>
@@ -69,12 +70,31 @@
           <p class="why-it-matters">Functions describe how one thing depends on another &mdash; like how a taxi fare depends on distance, or how your pay depends on hours worked.</p>
         </div>
 
+        <div class="explanation">
+          <h3 class="section-title">Finding a Function from Two Points</h3>
+          <p class="hook">That same taxi company won't tell you the formula this time. You just know a 1 km ride costs 5,000 so'm and a 4 km ride costs 11,000 so'm. Can you figure out the fare formula yourself?</p>
+          <p>Given two points (x&#8321;, y&#8321;) and (x&#8322;, y&#8322;) on a line, you can rebuild the whole function f(x) = ax + b. First find the slope a (how fast y changes), then use one point to find b (the starting value).</p>
+          <p class="one-liner">In one line: find the slope between the points, then plug one point back in to find b.</p>
+          <div class="steps">
+            <p>Points: (1, 5) and (4, 11)</p>
+            <p class="steps-note">find the slope (a) first &rarr; a = (11 &minus; 5) &divide; (4 &minus; 1)</p>
+            <p>a = 6 &divide; 3</p>
+            <p>a = 2</p>
+            <p class="steps-note">use one point to find b &rarr; 5 = 2(1) + b</p>
+            <p>5 = 2 + b</p>
+            <p class="steps-result">b = 3, so f(x) = 2x + 3</p>
+          </div>
+          <p class="trap">A common mistake is finding a and stopping there. a only tells you the rate of change &mdash; without b, you don't know the starting fare (the value at x = 0). Always plug a point back in to solve for b.</p>
+          <p class="why-it-matters">This is exactly how pricing plans and taxi fares get built from real data &mdash; a company measures two data points and works backward to the formula.</p>
+        </div>
+
         <div class="practice" data-practice="functions">
           <div class="practice-controls">
             <button class="generate-btn" data-topic="functions">New Problems</button>
             <span class="score"></span>
           </div>
           <div class="problem-list"></div>
+          <p class="hint">For "evaluate" problems, enter a single number. For "find a and b" problems, enter two numbers separated by a comma, like <code>2, 3</code> (meaning a = 2, b = 3).</p>
         </div>
       </section>
 

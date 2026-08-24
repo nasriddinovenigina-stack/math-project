@@ -135,20 +135,42 @@
   function generateFunctionsProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const a = nonZeroRandInt(-6, 6);
-      const b = randInt(-10, 10);
-      const x = randInt(-8, 8);
-      const answer = a * x + b;
-      const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
+      if (Math.random() < 0.5) {
+        // Type 1: evaluate f(x) at a given input.
+        const a = nonZeroRandInt(-6, 6);
+        const b = randInt(-10, 10);
+        const x = randInt(-8, 8);
+        const answer = a * x + b;
+        const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
 
-      problems.push({
-        question: `f(x) = ${a}x ${bText}. Find f(${x}).`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && val === answer;
-        },
-        correctAnswerText: String(answer),
-      });
+        problems.push({
+          question: `f(x) = ${a}x ${bText}. Find f(${x}).`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else {
+        // Type 2: find a and b in f(x) = ax + b from two points.
+        const a = nonZeroRandInt(-8, 8);
+        const b = randInt(-15, 15);
+        const x1 = randInt(-6, 6);
+        let x2 = randInt(-6, 6);
+        while (x2 === x1) x2 = randInt(-6, 6);
+        const y1 = a * x1 + b;
+        const y2 = a * x2 + b;
+
+        problems.push({
+          question: `A line passes through (${x1}, ${y1}) and (${x2}, ${y2}). Find a and b in f(x) = ax + b.`,
+          checkAnswer(raw) {
+            const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
+            if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+            return parts[0] === a && parts[1] === b;
+          },
+          correctAnswerText: `a = ${a}, b = ${b}`,
+        });
+      }
     }
     return problems;
   }
