@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Отношения и пропорции — Практика по математике</title>
+  <meta name="description" content="Узнайте, как решать пропорции шаг за шагом (находить неизвестное значение, когда два отношения равны), а затем потренируйтесь." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/ru/ratios" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/ratios" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/ratios" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/ratios" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Практика по математике" />
+  <meta property="og:site_name" content="Практика по математике" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Отношения и пропорции — Практика по математике" />
+  <meta property="og:description" content="Узнайте, как решать пропорции шаг за шагом (находить неизвестное значение, когда два отношения равны), а затем потренируйтесь." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/ru/ratios" />
+  <meta property="og:locale" content="ru_RU" />
+</head>
+<body data-topic="ratios">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><a class="site-title" href="/ru/">Практика по математике</a></h1>
+        <p class="subtitle">Изучи идею — затем закрепи её на практике.</p>
+        <div class="lang-switch">
+          <a class="lang-link" href="/ratios">EN</a>
+          <a class="lang-link active" href="/ru/ratios">RU</a>
+        </div>
+      </div>
+      <nav class="topic-nav">
+        <a class="tab-btn" href="/ru/arithmetic">Арифметика</a>
+        <a class="tab-btn" href="/ru/negative-numbers">Отрицательные числа</a>
+        <a class="tab-btn" href="/ru/order-of-operations">Порядок действий</a>
+        <a class="tab-btn" href="/ru/fractions">Дроби</a>
+        <a class="tab-btn" href="/ru/gcf">НОД</a>
+        <a class="tab-btn" href="/ru/lcm">НОК</a>
+        <a class="tab-btn" href="/ru/percentages">Проценты</a>
+        <a class="tab-btn active" href="/ru/ratios">Отношения и пропорции</a>
+        <a class="tab-btn" href="/ru/average">Среднее арифметическое</a>
+        <a class="tab-btn" href="/ru/algebra">Основы алгебры</a>
+        <a class="tab-btn" href="/ru/inequalities">Неравенства</a>
+        <a class="tab-btn" href="/ru/functions">Функции</a>
+        <a class="tab-btn" href="/ru/systems">Системы уравнений</a>
+        <a class="tab-btn" href="/ru/slope">Наклон прямой</a>
+        <a class="tab-btn" href="/ru/quadratic">Квадратные уравнения</a>
+        <a class="tab-btn" href="/ru/parabola">Парабола</a>
+        <a class="tab-btn" href="/ru/pythagorean">Теорема Пифагора</a>
+        <a class="tab-btn" href="/ru/circles">Окружность</a>
+        <a class="tab-btn" href="/ru/exponents">Степени</a>
+        <a class="tab-btn" href="/ru/square-roots">Квадратный корень</a>
+        <a class="tab-btn" href="/ru/absolute-value">Модуль числа</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="topic active">
+        <h2>Отношения и пропорции</h2>
+        <div class="explanation">
+          <p class="hook">3 яблока стоят 15 000 сум. Если цена остаётся пропорциональной, сколько будут стоить 5 яблок?</p>
+          <p><strong>Отношение</strong> сравнивает две величины. Когда два отношения равны, это называется <strong>пропорцией</strong> — и неизвестное значение можно найти через перекрёстное умножение.</p>
+          <p class="one-liner">Одной фразой: перемножьте крест-накрест, затем разделите, чтобы найти неизвестное число.</p>
+          <div class="steps">
+            <p>3 яблока &rarr; 15 000 сум</p>
+            <p>5 яблок &rarr; x сум</p>
+            <p class="steps-note">перемножаем крест-накрест: 3 &times; x = 15 000 &times; 5</p>
+            <p>3x = 75 000</p>
+            <p>x = 75 000 &divide; 3</p>
+            <p class="steps-result">x = 25 000 сум</p>
+          </div>
+          <p class="trap">Частая ошибка — перемножить не те пары чисел, перепутав, что стоит сверху, а что снизу. Держите одинаковые единицы на одинаковых местах в обоих отношениях — яблоки с яблоками, сумы с сумами.</p>
+          <p class="why-it-matters">Отношения и пропорции встречаются повсюду — в рецептах, на картах, при обмене валют и при масштабировании чертежей.</p>
+        </div>
+
+        <div class="practice" data-practice="ratios">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="ratios">Новые примеры</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

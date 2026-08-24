@@ -570,6 +570,102 @@
     return problems;
   }
 
+  function generateRatiosProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const unitPrice = randInt(1, 9) * 1000;
+      const n1 = randInt(2, 9);
+      let n2 = randInt(2, 9);
+      while (n2 === n1) n2 = randInt(2, 9);
+      const price1 = unitPrice * n1;
+      const answer = unitPrice * n2;
+
+      problems.push({
+        question: `${n1} items cost ${price1} so'm. How much do ${n2} items cost at the same price each?`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
+  function generateInequalitiesProblems() {
+    const problems = [];
+    const CMPS = ["<", ">", "≤", "≥"];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const a = randInt(2, 9);
+      const xBoundary = randInt(-10, 10);
+      const b = randInt(-10, 10);
+      const c = a * xBoundary + b;
+      const cmp = CMPS[randInt(0, CMPS.length - 1)];
+      const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
+
+      problems.push({
+        question: `${a}x ${bText} ${cmp} ${c}. Find the value of x.`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === xBoundary;
+        },
+        correctAnswerText: `x ${cmp} ${xBoundary}`,
+      });
+    }
+    return problems;
+  }
+
+  function generateSystemsProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const xVal = randInt(-8, 8);
+      const yVal = randInt(-8, 8);
+      let a1, b1, a2, b2;
+      do {
+        a1 = randInt(1, 6);
+        b1 = randInt(1, 6);
+        a2 = randInt(1, 6);
+        b2 = randInt(1, 6);
+      } while (a1 * b2 - a2 * b1 === 0);
+      const c1 = a1 * xVal + b1 * yVal;
+      const c2 = a2 * xVal + b2 * yVal;
+
+      problems.push({
+        question: `${a1}x + ${b1}y = ${c1} and ${a2}x + ${b2}y = ${c2}. Find x and y.`,
+        checkAnswer(raw) {
+          const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
+          if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+          return parts[0] === xVal && parts[1] === yVal;
+        },
+        correctAnswerText: `x = ${xVal}, y = ${yVal}`,
+      });
+    }
+    return problems;
+  }
+
+  function generateCirclesProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const r = randInt(2, 12);
+      const isCircumference = Math.random() < 0.5;
+      const raw = isCircumference ? 2 * 3.14 * r : 3.14 * r * r;
+      const answer = Math.round(raw * 10) / 10;
+      const question = isCircumference
+        ? `A circle has a radius of ${r}. Find its circumference (use π ≈ 3.14).`
+        : `A circle has a radius of ${r}. Find its area (use π ≈ 3.14).`;
+
+      problems.push({
+        question,
+        checkAnswer(rawInput) {
+          const val = Number(String(rawInput).trim());
+          return Number.isFinite(val) && Math.abs(val - answer) < 0.05;
+        },
+        correctAnswerText: answer.toFixed(1),
+      });
+    }
+    return problems;
+  }
+
   function generateAverageProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
@@ -669,13 +765,17 @@
     gcf: generateGcfProblems,
     lcm: generateLcmProblems,
     percentages: generatePercentagesProblems,
+    ratios: generateRatiosProblems,
     average: generateAverageProblems,
     algebra: generateAlgebraProblems,
+    inequalities: generateInequalitiesProblems,
     functions: generateFunctionsProblems,
+    systems: generateSystemsProblems,
     slope: generateSlopeProblems,
     quadratic: generateQuadraticProblems,
     parabola: generateParabolaProblems,
     pythagorean: generatePythagoreanProblems,
+    circles: generateCirclesProblems,
     exponents: generateExponentsProblems,
     "square-roots": generateSquareRootsProblems,
     "absolute-value": generateAbsoluteValueProblems,

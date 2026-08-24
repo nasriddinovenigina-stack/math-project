@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Systems of Equations — Math Practice</title>
+  <meta name="description" content="Learn how to solve a system of two linear equations with two unknowns step by step, then practice." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/systems" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/systems" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/systems" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/systems" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Math Practice" />
+  <meta property="og:site_name" content="Math Practice" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Systems of Equations — Math Practice" />
+  <meta property="og:description" content="Learn how to solve a system of two linear equations with two unknowns step by step, then practice." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/systems" />
+  <meta property="og:locale" content="en_US" />
+</head>
+<body data-topic="systems">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><a class="site-title" href="/">Math Practice</a></h1>
+        <p class="subtitle">Learn the idea, then practice it.</p>
+        <div class="lang-switch">
+          <a class="lang-link active" href="/systems">EN</a>
+          <a class="lang-link" href="/ru/systems">RU</a>
+        </div>
+      </div>
+      <nav class="topic-nav">
+        <a class="tab-btn" href="/arithmetic">Arithmetic</a>
+        <a class="tab-btn" href="/negative-numbers">Negative Numbers</a>
+        <a class="tab-btn" href="/order-of-operations">Order of Operations</a>
+        <a class="tab-btn" href="/fractions">Fractions</a>
+        <a class="tab-btn" href="/gcf">GCF</a>
+        <a class="tab-btn" href="/lcm">LCM</a>
+        <a class="tab-btn" href="/percentages">Percentages</a>
+        <a class="tab-btn" href="/ratios">Ratios & Proportions</a>
+        <a class="tab-btn" href="/average">Average (Mean)</a>
+        <a class="tab-btn" href="/algebra">Basic Algebra</a>
+        <a class="tab-btn" href="/inequalities">Inequalities</a>
+        <a class="tab-btn" href="/functions">Functions</a>
+        <a class="tab-btn active" href="/systems">Systems of Equations</a>
+        <a class="tab-btn" href="/slope">Slope of a Line</a>
+        <a class="tab-btn" href="/quadratic">Quadratic Equations</a>
+        <a class="tab-btn" href="/parabola">Parabola</a>
+        <a class="tab-btn" href="/pythagorean">Pythagorean Theorem</a>
+        <a class="tab-btn" href="/circles">Circles</a>
+        <a class="tab-btn" href="/exponents">Exponents</a>
+        <a class="tab-btn" href="/square-roots">Square Roots</a>
+        <a class="tab-btn" href="/absolute-value">Absolute Value</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="topic active">
+        <h2>Systems of Equations</h2>
+        <div class="explanation">
+          <p class="hook">An apple and a banana together cost 12,000 so'm. Two apples and a banana cost 19,000 so'm. What's the price of one apple?</p>
+          <p>A <strong>system of equations</strong> has two unknowns and two equations. Subtract one equation from the other to cancel out one variable, then solve for what's left.</p>
+          <p class="one-liner">In one line: line up the equations, subtract to cancel one variable, then solve for the other.</p>
+          <div class="steps">
+            <p>a + b = 12,000</p>
+            <p>2a + b = 19,000</p>
+            <p class="steps-note">subtract the first equation from the second &rarr; the b's cancel</p>
+            <p>(2a + b) &minus; (a + b) = 19,000 &minus; 12,000</p>
+            <p>a = 7,000</p>
+            <p class="steps-note">plug a back into the first equation to find b</p>
+            <p>7,000 + b = 12,000</p>
+            <p class="steps-result">b = 5,000</p>
+          </div>
+          <p class="trap">A common mistake is subtracting the equations in a mismatched way &mdash; not lining up the same variable's terms before subtracting. Write one equation directly under the other so matching terms are stacked, then subtract straight down.</p>
+          <p class="why-it-matters">Systems of equations let you solve real problems with two unknowns at once &mdash; like finding the price of two items from combo purchases, or two unknown speeds or quantities.</p>
+        </div>
+
+        <div class="practice" data-practice="systems">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="systems">New Problems</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+          <p class="hint">Enter your answer as a, b &mdash; for example, 7000, 5000.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>Practice runs entirely in your browser — no account, no server storage.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

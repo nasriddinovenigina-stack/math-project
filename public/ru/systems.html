@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Системы уравнений — Практика по математике</title>
+  <meta name="description" content="Узнайте, как решать систему двух линейных уравнений с двумя неизвестными шаг за шагом, а затем потренируйтесь." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/ru/systems" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/systems" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/systems" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/systems" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Практика по математике" />
+  <meta property="og:site_name" content="Практика по математике" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Системы уравнений — Практика по математике" />
+  <meta property="og:description" content="Узнайте, как решать систему двух линейных уравнений с двумя неизвестными шаг за шагом, а затем потренируйтесь." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/ru/systems" />
+  <meta property="og:locale" content="ru_RU" />
+</head>
+<body data-topic="systems">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><a class="site-title" href="/ru/">Практика по математике</a></h1>
+        <p class="subtitle">Изучи идею — затем закрепи её на практике.</p>
+        <div class="lang-switch">
+          <a class="lang-link" href="/systems">EN</a>
+          <a class="lang-link active" href="/ru/systems">RU</a>
+        </div>
+      </div>
+      <nav class="topic-nav">
+        <a class="tab-btn" href="/ru/arithmetic">Арифметика</a>
+        <a class="tab-btn" href="/ru/negative-numbers">Отрицательные числа</a>
+        <a class="tab-btn" href="/ru/order-of-operations">Порядок действий</a>
+        <a class="tab-btn" href="/ru/fractions">Дроби</a>
+        <a class="tab-btn" href="/ru/gcf">НОД</a>
+        <a class="tab-btn" href="/ru/lcm">НОК</a>
+        <a class="tab-btn" href="/ru/percentages">Проценты</a>
+        <a class="tab-btn" href="/ru/ratios">Отношения и пропорции</a>
+        <a class="tab-btn" href="/ru/average">Среднее арифметическое</a>
+        <a class="tab-btn" href="/ru/algebra">Основы алгебры</a>
+        <a class="tab-btn" href="/ru/inequalities">Неравенства</a>
+        <a class="tab-btn" href="/ru/functions">Функции</a>
+        <a class="tab-btn active" href="/ru/systems">Системы уравнений</a>
+        <a class="tab-btn" href="/ru/slope">Наклон прямой</a>
+        <a class="tab-btn" href="/ru/quadratic">Квадратные уравнения</a>
+        <a class="tab-btn" href="/ru/parabola">Парабола</a>
+        <a class="tab-btn" href="/ru/pythagorean">Теорема Пифагора</a>
+        <a class="tab-btn" href="/ru/circles">Окружность</a>
+        <a class="tab-btn" href="/ru/exponents">Степени</a>
+        <a class="tab-btn" href="/ru/square-roots">Квадратный корень</a>
+        <a class="tab-btn" href="/ru/absolute-value">Модуль числа</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="topic active">
+        <h2>Системы уравнений</h2>
+        <div class="explanation">
+          <p class="hook">Яблоко и банан вместе стоят 12 000 сум. Два яблока и один банан стоят 19 000 сум. Сколько стоит одно яблоко?</p>
+          <p><strong>Система уравнений</strong> — это два неизвестных и два уравнения. Вычтите одно уравнение из другого, чтобы убрать одну переменную, а затем найдите оставшуюся.</p>
+          <p class="one-liner">Одной фразой: выровняйте уравнения, вычтите, чтобы убрать одну переменную, затем найдите вторую.</p>
+          <div class="steps">
+            <p>a + b = 12 000</p>
+            <p>2a + b = 19 000</p>
+            <p class="steps-note">вычитаем первое уравнение из второго &rarr; b сокращается</p>
+            <p>(2a + b) &minus; (a + b) = 19 000 &minus; 12 000</p>
+            <p>a = 7 000</p>
+            <p class="steps-note">подставляем a в первое уравнение, чтобы найти b</p>
+            <p>7 000 + b = 12 000</p>
+            <p class="steps-result">b = 5 000</p>
+          </div>
+          <p class="trap">Частая ошибка — вычитать уравнения вразнобой, не выровняв одинаковые переменные перед вычитанием. Записывайте одно уравнение точно под другим, чтобы совпадающие члены стояли друг под другом, и вычитайте по столбцам.</p>
+          <p class="why-it-matters">Системы уравнений позволяют решать реальные задачи сразу с двумя неизвестными — например, находить цену двух товаров по комбинированным покупкам или две неизвестные скорости или величины.</p>
+        </div>
+
+        <div class="practice" data-practice="systems">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="systems">Новые примеры</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+          <p class="hint">Введите ответ как a, b — например, 7000, 5000.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
