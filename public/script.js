@@ -30,6 +30,10 @@
     return v;
   }
 
+  function getLang() {
+    return document.documentElement.lang === "ru" ? "ru" : "en";
+  }
+
   function parseFractionOrDecimal(text) {
     text = String(text).trim();
     if (!text) return NaN;
@@ -163,6 +167,7 @@
 
   function generateAlgebraProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       if (Math.random() < 0.5) {
         // Type 1: ax + b = c
@@ -173,7 +178,10 @@
         const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
 
         problems.push({
-          question: `Solve for x: ${a}x ${bText} = ${c}`,
+          question:
+            lang === "ru"
+              ? `Решите уравнение: ${a}x ${bText} = ${c}`
+              : `Solve for x: ${a}x ${bText} = ${c}`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === x;
@@ -192,7 +200,10 @@
         const b2Text = b2 >= 0 ? `+ ${b2}` : `− ${Math.abs(b2)}`;
 
         problems.push({
-          question: `Solve for x: ${a1}x ${b1Text} = ${a2}x ${b2Text}`,
+          question:
+            lang === "ru"
+              ? `Решите уравнение: ${a1}x ${b1Text} = ${a2}x ${b2Text}`
+              : `Solve for x: ${a1}x ${b1Text} = ${a2}x ${b2Text}`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === x;
@@ -206,6 +217,7 @@
 
   function generateFunctionsProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       if (Math.random() < 0.5) {
         // Type 1: evaluate f(x) at a given input.
@@ -216,7 +228,8 @@
         const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
 
         problems.push({
-          question: `f(x) = ${a}x ${bText}. Find f(${x}).`,
+          question:
+            lang === "ru" ? `f(x) = ${a}x ${bText}. Найдите f(${x}).` : `f(x) = ${a}x ${bText}. Find f(${x}).`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === answer;
@@ -234,7 +247,10 @@
         const y2 = a * x2 + b;
 
         problems.push({
-          question: `A line passes through (${x1}, ${y1}) and (${x2}, ${y2}). Find a and b in f(x) = ax + b.`,
+          question:
+            lang === "ru"
+              ? `Прямая проходит через точки (${x1}, ${y1}) и (${x2}, ${y2}). Найдите a и b в f(x) = ax + b.`
+              : `A line passes through (${x1}, ${y1}) and (${x2}, ${y2}). Find a and b in f(x) = ax + b.`,
           checkAnswer(raw) {
             const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
             if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
@@ -249,6 +265,7 @@
 
   function generateQuadraticProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       if (Math.random() < 0.5) {
         // Type 1: factor x² + bx + c = 0 (both roots are clean integers).
@@ -261,7 +278,7 @@
         const correctSorted = [r1, r2].sort((x, y) => x - y);
 
         problems.push({
-          question: `x² ${bText} ${cText} = 0. Find x.`,
+          question: lang === "ru" ? `x² ${bText} ${cText} = 0. Найдите x.` : `x² ${bText} ${cText} = 0. Find x.`,
           checkAnswer(raw) {
             const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
             if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
@@ -284,7 +301,8 @@
         const correctSorted = [m / a, n].sort((x, y) => x - y);
 
         problems.push({
-          question: `${a}x² ${bText} ${cText} = 0. Find x.`,
+          question:
+            lang === "ru" ? `${a}x² ${bText} ${cText} = 0. Найдите x.` : `${a}x² ${bText} ${cText} = 0. Find x.`,
           checkAnswer(raw) {
             const parts = String(raw).trim().split(",").map((p) => parseFractionOrDecimal(p));
             if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
@@ -300,6 +318,7 @@
 
   function generateParabolaProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const a = nonZeroRandInt(-3, 3);
       const vertexX = randInt(-6, 6);
@@ -309,7 +328,10 @@
       const cText = c >= 0 ? `+ ${c}` : `− ${Math.abs(c)}`;
 
       problems.push({
-        question: `For y = ${a}x² ${bText} ${cText}, what is the x-coordinate of the vertex?`,
+        question:
+          lang === "ru"
+            ? `Для y = ${a}x² ${bText} ${cText} найдите x-координату вершины.`
+            : `For y = ${a}x² ${bText} ${cText}, what is the x-coordinate of the vertex?`,
         checkAnswer(raw) {
           const val = Number(String(raw).trim());
           return Number.isFinite(val) && val === vertexX;
@@ -387,6 +409,7 @@
 
   function generatePercentagesProblems() {
     const problems = [];
+    const lang = getLang();
     const PERCENTS = [5, 10, 20, 25, 50];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       if (Math.random() < 0.5) {
@@ -397,7 +420,7 @@
         const n = k * m;
 
         problems.push({
-          question: `Find ${p}% of ${n}.`,
+          question: lang === "ru" ? `Найдите ${p}% от ${n}.` : `Find ${p}% of ${n}.`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === k;
@@ -413,7 +436,10 @@
         const salePrice = original - k;
 
         problems.push({
-          question: `After a ${p}% discount, an item costs ${salePrice}. What was the original price?`,
+          question:
+            lang === "ru"
+              ? `После скидки ${p}% товар стоит ${salePrice}. Какой была первоначальная цена?`
+              : `After a ${p}% discount, an item costs ${salePrice}. What was the original price?`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === original;
@@ -445,6 +471,7 @@
 
   function generateAbsoluteValueProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       if (Math.random() < 0.5) {
         // Type 1: distance from 0.
@@ -467,7 +494,7 @@
         const correctSorted = [k + n, k - n].sort((x, y) => x - y);
 
         problems.push({
-          question: `|x ${kText}| = ${n}. Find x.`,
+          question: lang === "ru" ? `|x ${kText}| = ${n}. Найдите x.` : `|x ${kText}| = ${n}. Find x.`,
           checkAnswer(raw) {
             const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
             if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
@@ -534,13 +561,14 @@
 
   function generateGcfProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const a = randInt(6, 60);
       const b = randInt(6, 60);
       const answer = gcd(a, b);
 
       problems.push({
-        question: `GCF(${a}, ${b}) = ?`,
+        question: lang === "ru" ? `НОД(${a}, ${b}) = ?` : `GCF(${a}, ${b}) = ?`,
         checkAnswer(raw) {
           const val = Number(String(raw).trim());
           return Number.isFinite(val) && val === answer;
@@ -553,13 +581,14 @@
 
   function generateLcmProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const a = randInt(2, 12);
       const b = randInt(2, 12);
       const answer = (a * b) / gcd(a, b);
 
       problems.push({
-        question: `LCM(${a}, ${b}) = ?`,
+        question: lang === "ru" ? `НОК(${a}, ${b}) = ?` : `LCM(${a}, ${b}) = ?`,
         checkAnswer(raw) {
           const val = Number(String(raw).trim());
           return Number.isFinite(val) && val === answer;
@@ -572,6 +601,7 @@
 
   function generateRatiosProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const unitPrice = randInt(1, 9) * 1000;
       const n1 = randInt(2, 9);
@@ -581,7 +611,10 @@
       const answer = unitPrice * n2;
 
       problems.push({
-        question: `${n1} items cost ${price1} so'm. How much do ${n2} items cost at the same price each?`,
+        question:
+          lang === "ru"
+            ? `${n1} предметов стоят ${price1} сум. Сколько будут стоить ${n2} предметов по той же цене?`
+            : `${n1} items cost ${price1} so'm. How much do ${n2} items cost at the same price each?`,
         checkAnswer(raw) {
           const val = Number(String(raw).trim());
           return Number.isFinite(val) && val === answer;
@@ -594,6 +627,7 @@
 
   function generateInequalitiesProblems() {
     const problems = [];
+    const lang = getLang();
     const CMPS = ["<", ">", "≤", "≥"];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const a = randInt(2, 9);
@@ -604,7 +638,10 @@
       const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
 
       problems.push({
-        question: `${a}x ${bText} ${cmp} ${c}. Find the value of x.`,
+        question:
+          lang === "ru"
+            ? `${a}x ${bText} ${cmp} ${c}. Найдите значение x.`
+            : `${a}x ${bText} ${cmp} ${c}. Find the value of x.`,
         checkAnswer(raw) {
           const val = Number(String(raw).trim());
           return Number.isFinite(val) && val === xBoundary;
@@ -617,6 +654,7 @@
 
   function generateSystemsProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const xVal = randInt(-8, 8);
       const yVal = randInt(-8, 8);
@@ -631,7 +669,10 @@
       const c2 = a2 * xVal + b2 * yVal;
 
       problems.push({
-        question: `${a1}x + ${b1}y = ${c1} and ${a2}x + ${b2}y = ${c2}. Find x and y.`,
+        question:
+          lang === "ru"
+            ? `${a1}x + ${b1}y = ${c1} и ${a2}x + ${b2}y = ${c2}. Найдите x и y.`
+            : `${a1}x + ${b1}y = ${c1} and ${a2}x + ${b2}y = ${c2}. Find x and y.`,
         checkAnswer(raw) {
           const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
           if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
@@ -645,14 +686,20 @@
 
   function generateCirclesProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const r = randInt(2, 12);
       const isCircumference = Math.random() < 0.5;
       const raw = isCircumference ? 2 * 3.14 * r : 3.14 * r * r;
       const answer = Math.round(raw * 10) / 10;
-      const question = isCircumference
-        ? `A circle has a radius of ${r}. Find its circumference (use π ≈ 3.14).`
-        : `A circle has a radius of ${r}. Find its area (use π ≈ 3.14).`;
+      const question =
+        lang === "ru"
+          ? isCircumference
+            ? `Радиус круга равен ${r}. Найдите длину окружности (используйте π ≈ 3,14).`
+            : `Радиус круга равен ${r}. Найдите площадь (используйте π ≈ 3,14).`
+          : isCircumference
+          ? `A circle has a radius of ${r}. Find its circumference (use π ≈ 3.14).`
+          : `A circle has a radius of ${r}. Find its area (use π ≈ 3.14).`;
 
       problems.push({
         question,
@@ -668,6 +715,7 @@
 
   function generateAverageProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const k = randInt(10, 30);
       const d1 = randInt(-5, 5);
@@ -678,7 +726,10 @@
       const n3 = k + d3;
 
       problems.push({
-        question: `Find the average (mean) of ${n1}, ${n2}, ${n3}.`,
+        question:
+          lang === "ru"
+            ? `Найдите среднее арифметическое чисел ${n1}, ${n2}, ${n3}.`
+            : `Find the average (mean) of ${n1}, ${n2}, ${n3}.`,
         checkAnswer(raw) {
           const val = Number(String(raw).trim());
           return Number.isFinite(val) && val === k;
@@ -691,6 +742,7 @@
 
   function generateSlopeProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const x1 = randInt(-8, 8);
       const y1 = randInt(-8, 8);
@@ -700,7 +752,10 @@
       const y2 = y1 + m * run;
 
       problems.push({
-        question: `Points (${x1}, ${y1}) and (${x2}, ${y2}). Find the slope.`,
+        question:
+          lang === "ru"
+            ? `Точки (${x1}, ${y1}) и (${x2}, ${y2}). Найдите наклон.`
+            : `Points (${x1}, ${y1}) and (${x2}, ${y2}). Find the slope.`,
         checkAnswer(raw) {
           const val = Number(String(raw).trim());
           return Number.isFinite(val) && val === m;
@@ -713,6 +768,7 @@
 
   function generatePythagoreanProblems() {
     const problems = [];
+    const lang = getLang();
     const TRIPLES = [
       [3, 4, 5],
       [5, 12, 13],
@@ -730,7 +786,10 @@
         const c = triple[2] * k;
 
         problems.push({
-          question: `A right triangle has legs ${legs[0]} and ${legs[1]}. Find the hypotenuse c.`,
+          question:
+            lang === "ru"
+              ? `Прямоугольный треугольник имеет катеты ${legs[0]} и ${legs[1]}. Найдите гипотенузу c.`
+              : `A right triangle has legs ${legs[0]} and ${legs[1]}. Find the hypotenuse c.`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === c;
@@ -745,7 +804,10 @@
         const c = triple[2] * k;
 
         problems.push({
-          question: `A right triangle has hypotenuse ${c} and one leg ${knownLeg}. Find the other leg.`,
+          question:
+            lang === "ru"
+              ? `Прямоугольный треугольник имеет гипотенузу ${c} и один катет ${knownLeg}. Найдите второй катет.`
+              : `A right triangle has hypotenuse ${c} and one leg ${knownLeg}. Find the other leg.`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === missingLeg;
@@ -785,13 +847,17 @@
 
   function generateProbabilityProblems() {
     const problems = [];
+    const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const favorable = randInt(1, 9);
       const other = randInt(1, 9);
       const total = favorable + other;
 
       problems.push({
-        question: `A bag has ${favorable} red marbles and ${other} blue marbles. If you pick one at random, what is the probability it's red?`,
+        question:
+          lang === "ru"
+            ? `В мешке ${favorable} красных шариков и ${other} синих. Если вы наугад достанете один, какова вероятность, что он красный?`
+            : `A bag has ${favorable} red marbles and ${other} blue marbles. If you pick one at random, what is the probability it's red?`,
         checkAnswer(raw) {
           const val = parseFractionOrDecimal(raw);
           return Number.isFinite(val) && Math.abs(val - favorable / total) < 0.0051;
@@ -804,6 +870,7 @@
 
   function generatePerimeterAreaProblems() {
     const problems = [];
+    const lang = getLang();
     const SUBTYPES = ["rect-perimeter", "rect-area", "triangle-area"];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const subtype = SUBTYPES[randInt(0, SUBTYPES.length - 1)];
@@ -813,7 +880,11 @@
         const width = randInt(2, 15);
         const answer = subtype === "rect-perimeter" ? 2 * length + 2 * width : length * width;
         const question =
-          subtype === "rect-perimeter"
+          lang === "ru"
+            ? subtype === "rect-perimeter"
+              ? `Прямоугольник имеет длину ${length} и ширину ${width}. Найдите его периметр.`
+              : `Прямоугольник имеет длину ${length} и ширину ${width}. Найдите его площадь.`
+            : subtype === "rect-perimeter"
             ? `A rectangle has length ${length} and width ${width}. Find its perimeter.`
             : `A rectangle has length ${length} and width ${width}. Find its area.`;
 
@@ -831,7 +902,10 @@
         const answer = base * (height / 2);
 
         problems.push({
-          question: `A triangle has a base of ${base} and a height of ${height}. Find its area.`,
+          question:
+            lang === "ru"
+              ? `Треугольник имеет основание ${base} и высоту ${height}. Найдите его площадь.`
+              : `A triangle has a base of ${base} and a height of ${height}. Find its area.`,
           checkAnswer(raw) {
             const val = Number(String(raw).trim());
             return Number.isFinite(val) && val === answer;
