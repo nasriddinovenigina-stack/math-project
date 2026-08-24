@@ -43,6 +43,7 @@ function headHtml(lang, slug, title, description) {
   <link rel="alternate" hreflang="en" href="${enHref}" />
   <link rel="alternate" hreflang="ru" href="${ruHref}" />
   <link rel="alternate" hreflang="x-default" href="${enHref}" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/styles.css" />`;
 }
 
