@@ -156,7 +156,7 @@ const TOPICS = [
   },
   {
     slug: "fractions",
-    grade: 5,
+    grade: 6,
     en: {
       navLabel: `Fractions`,
       pageTitle: `Fractions: Adding Fractions — Math Practice`,
