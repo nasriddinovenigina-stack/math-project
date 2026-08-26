@@ -114,6 +114,10 @@
     return correctDen === 1 ? String(correctNum) : `${correctNum}/${correctDen}`;
   }
 
+  function fracHtml(num, den) {
+    return `<span class="frac"><span class="num">${num}</span><span class="den">${den}</span></span>`;
+  }
+
   function generateFractionsProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
@@ -133,8 +137,10 @@
 
         problems.push({
           question: `${n1}/${d1} + ${n2}/${d2} = ?`,
+          questionHtml: `${fracHtml(n1, d1)} + ${fracHtml(n2, d2)} = ?`,
           checkAnswer: fractionCheckAnswer(correctNum, correctDen),
           correctAnswerText: fractionAnswerText(correctNum, correctDen),
+          correctAnswerHtml: fracHtml(correctNum, correctDen),
         });
       } else {
         // Type 2: subtracting fractions (first fraction is always >= second).
@@ -157,8 +163,10 @@
 
         problems.push({
           question: `${n1}/${d1} − ${n2}/${d2} = ?`,
+          questionHtml: `${fracHtml(n1, d1)} − ${fracHtml(n2, d2)} = ?`,
           checkAnswer: fractionCheckAnswer(correctNum, correctDen),
           correctAnswerText: fractionAnswerText(correctNum, correctDen),
+          correctAnswerHtml: fracHtml(correctNum, correctDen),
         });
       }
     }
@@ -1603,7 +1611,11 @@
 
         const questionEl = document.createElement("span");
         questionEl.className = "problem-question";
-        questionEl.textContent = problem.question;
+        if (problem.questionHtml) {
+          questionEl.innerHTML = problem.questionHtml;
+        } else {
+          questionEl.textContent = problem.question;
+        }
 
         const input = document.createElement("input");
         input.type = "text";
@@ -1628,7 +1640,11 @@
             feedback.className = "feedback correct";
             row.classList.add("correct");
           } else {
-            feedback.textContent = strings.wrong(problem.correctAnswerText);
+            if (problem.correctAnswerHtml) {
+              feedback.innerHTML = strings.wrong(problem.correctAnswerHtml);
+            } else {
+              feedback.textContent = strings.wrong(problem.correctAnswerText);
+            }
             feedback.className = "feedback wrong";
             row.classList.add("wrong");
           }

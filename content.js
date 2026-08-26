@@ -5,6 +5,12 @@
 // Update it (and re-run `npm run build`) if the domain ever changes.
 const SITE_URL = "https://mathpracticehub.netlify.app";
 
+// Renders a fraction as a stacked numerator-over-denominator span (see .frac in styles.css)
+// instead of plain "3/5" text, for use inside explanation content (hookHtml, steps, trapHtml, etc).
+function frac(num, den) {
+  return `<span class="frac"><span class="num">${num}</span><span class="den">${den}</span></span>`;
+}
+
 const TOPICS = [
   {
     slug: "arithmetic",
@@ -163,31 +169,31 @@ const TOPICS = [
       metaDescription: `Learn how to add fractions with different denominators step by step, then practice.`,
       h1: `Fractions: Adding Fractions`,
       title: `Adding Fractions`,
-      hookHtml: `You eat 1/4 of a pizza, then 1/6 of another pizza. How much pizza did you eat in total?`,
+      hookHtml: `You eat ${frac(1, 4)} of a pizza, then ${frac(1, 6)} of another pizza. How much pizza did you eat in total?`,
       ruleHtml: `To add fractions, they first need the <strong>same bottom number</strong> (denominator). Then just add the top numbers.`,
       oneLinerHtml: `In one line: same bottom number first, then add the tops.`,
       steps: [
-        { type: "plain", text: `1/4 + 1/6` },
+        { type: "plain", text: `${frac(1, 4)} + ${frac(1, 6)}` },
         { type: "note", text: `give both fractions the same denominator &rarr; 12` },
-        { type: "plain", text: `1/4 = 3/12` },
-        { type: "plain", text: `1/6 = 2/12` },
-        { type: "result", text: `3/12 + 2/12 = 5/12` },
+        { type: "plain", text: `${frac(1, 4)} = ${frac(3, 12)}` },
+        { type: "plain", text: `${frac(1, 6)} = ${frac(2, 12)}` },
+        { type: "result", text: `${frac(3, 12)} + ${frac(2, 12)} = ${frac(5, 12)}` },
       ],
-      trapHtml: `The most common mistake is adding the denominators too &mdash; 1/4 + 1/6 is NOT 2/10. You can only add the top numbers once the bottom numbers match.`,
+      trapHtml: `The most common mistake is adding the denominators too &mdash; ${frac(1, 4)} + ${frac(1, 6)} is NOT ${frac(2, 10)}. You can only add the top numbers once the bottom numbers match.`,
       whyItMattersHtml: `Fractions come up anywhere something is split into parts &mdash; recipes, time, money, sharing.`,
       hintHtml: `Enter answers as a fraction, like <code>3/4</code>, or a whole number if it simplifies to one.`,
       secondary: {
         title: `Subtracting Fractions`,
-        hookHtml: `You have 5/6 of a bottle of water left. You drink 1/3 of the original bottle. How much water is left?`,
+        hookHtml: `You have ${frac(5, 6)} of a bottle of water left. You drink ${frac(1, 3)} of the original bottle. How much water is left?`,
         ruleHtml: `Subtracting fractions works the same way as adding &mdash; get a <strong>common denominator</strong> first, then subtract the top numbers.`,
         oneLinerHtml: `In one line: same bottom number first, then subtract the tops.`,
         steps: [
-          { type: "plain", text: `5/6 &minus; 1/3` },
+          { type: "plain", text: `${frac(5, 6)} &minus; ${frac(1, 3)}` },
           { type: "note", text: `give both fractions the same denominator &rarr; 6` },
-          { type: "plain", text: `1/3 = 2/6` },
-          { type: "result", text: `5/6 &minus; 2/6 = 3/6 = 1/2` },
+          { type: "plain", text: `${frac(1, 3)} = ${frac(2, 6)}` },
+          { type: "result", text: `${frac(5, 6)} &minus; ${frac(2, 6)} = ${frac(3, 6)} = ${frac(1, 2)}` },
         ],
-        trapHtml: `A common mistake is subtracting the denominators too &mdash; 5/6 &minus; 1/3 is NOT 4/3. Only subtract the top numbers once the bottom numbers match.`,
+        trapHtml: `A common mistake is subtracting the denominators too &mdash; ${frac(5, 6)} &minus; ${frac(1, 3)} is NOT ${frac(4, 3)}. Only subtract the top numbers once the bottom numbers match.`,
         whyItMattersHtml: `Subtracting fractions tells you how much is left after using part of something &mdash; leftover ingredients, remaining time, unused budget.`,
       },
     },
@@ -197,31 +203,31 @@ const TOPICS = [
       metaDescription: `Узнайте, как складывать дроби с разными знаменателями, шаг за шагом, а затем потренируйтесь.`,
       h1: `Дроби: сложение дробей`,
       title: `Сложение дробей`,
-      hookHtml: `Вы съели 1/4 одной пиццы и 1/6 другой. Сколько пиццы вы съели всего?`,
+      hookHtml: `Вы съели ${frac(1, 4)} одной пиццы и ${frac(1, 6)} другой. Сколько пиццы вы съели всего?`,
       ruleHtml: `Чтобы сложить дроби, сначала нужно привести их к <strong>общему знаменателю</strong>. Затем просто сложите числители.`,
       oneLinerHtml: `Одной фразой: сначала общий знаменатель, потом складываем числители.`,
       steps: [
-        { type: "plain", text: `1/4 + 1/6` },
+        { type: "plain", text: `${frac(1, 4)} + ${frac(1, 6)}` },
         { type: "note", text: `приводим обе дроби к общему знаменателю &rarr; 12` },
-        { type: "plain", text: `1/4 = 3/12` },
-        { type: "plain", text: `1/6 = 2/12` },
-        { type: "result", text: `3/12 + 2/12 = 5/12` },
+        { type: "plain", text: `${frac(1, 4)} = ${frac(3, 12)}` },
+        { type: "plain", text: `${frac(1, 6)} = ${frac(2, 12)}` },
+        { type: "result", text: `${frac(3, 12)} + ${frac(2, 12)} = ${frac(5, 12)}` },
       ],
-      trapHtml: `Частая ошибка — сложить и знаменатели тоже: 1/4 + 1/6 — это НЕ 2/10. Числители можно складывать только после того, как знаменатели совпали.`,
+      trapHtml: `Частая ошибка — сложить и знаменатели тоже: ${frac(1, 4)} + ${frac(1, 6)} — это НЕ ${frac(2, 10)}. Числители можно складывать только после того, как знаменатели совпали.`,
       whyItMattersHtml: `Дроби встречаются везде, где что-то делится на части — рецепты, время, деньги, доли.`,
       hintHtml: `Введите ответ в виде дроби, например <code>3/4</code>, или целым числом, если дробь сокращается до него.`,
       secondary: {
         title: `Вычитание дробей`,
-        hookHtml: `У вас осталось 5/6 бутылки воды. Вы выпили 1/3 от исходной бутылки. Сколько воды осталось?`,
+        hookHtml: `У вас осталось ${frac(5, 6)} бутылки воды. Вы выпили ${frac(1, 3)} от исходной бутылки. Сколько воды осталось?`,
         ruleHtml: `Вычитание дробей работает так же, как сложение — сначала приведите их к <strong>общему знаменателю</strong>, затем вычтите числители.`,
         oneLinerHtml: `Одной фразой: сначала общий знаменатель, потом вычитаем числители.`,
         steps: [
-          { type: "plain", text: `5/6 &minus; 1/3` },
+          { type: "plain", text: `${frac(5, 6)} &minus; ${frac(1, 3)}` },
           { type: "note", text: `приводим обе дроби к общему знаменателю &rarr; 6` },
-          { type: "plain", text: `1/3 = 2/6` },
-          { type: "result", text: `5/6 &minus; 2/6 = 3/6 = 1/2` },
+          { type: "plain", text: `${frac(1, 3)} = ${frac(2, 6)}` },
+          { type: "result", text: `${frac(5, 6)} &minus; ${frac(2, 6)} = ${frac(3, 6)} = ${frac(1, 2)}` },
         ],
-        trapHtml: `Частая ошибка — вычесть и знаменатели тоже: 5/6 &minus; 1/3 — это НЕ 4/3. Числители вычитаются только после того, как знаменатели совпали.`,
+        trapHtml: `Частая ошибка — вычесть и знаменатели тоже: ${frac(5, 6)} &minus; ${frac(1, 3)} — это НЕ ${frac(4, 3)}. Числители вычитаются только после того, как знаменатели совпали.`,
         whyItMattersHtml: `Вычитание дробей показывает, сколько осталось после использования части чего-либо — остаток продуктов, оставшееся время, неизрасходованный бюджет.`,
       },
     },
