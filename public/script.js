@@ -55,7 +55,7 @@
 
   function generateArithmeticProblems() {
     const problems = [];
-    const ops = ["+", "-", "*"];
+    const ops = ["+", "-", "*", "/"];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
       const op = ops[randInt(0, ops.length - 1)];
       let a, b, answer, symbol;
@@ -69,11 +69,16 @@
         b = randInt(1, a); // avoid negative results
         answer = a - b;
         symbol = "−";
-      } else {
+      } else if (op === "*") {
         a = randInt(2, 12);
         b = randInt(2, 12);
         answer = a * b;
         symbol = "×";
+      } else {
+        b = randInt(2, 12);
+        answer = randInt(2, 12);
+        a = b * answer; // ensures a clean, remainder-free division
+        symbol = "÷";
       }
       problems.push({
         question: `${a} ${symbol} ${b} = ?`,
