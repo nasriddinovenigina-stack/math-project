@@ -126,8 +126,9 @@
   function generateFractionsProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      if (Math.random() < 0.5) {
-        // Type 1: adding fractions.
+      const op = randInt(0, 3); // 0 = add, 1 = subtract, 2 = multiply, 3 = divide
+
+      if (op === 0) {
         const d1 = randInt(2, 10);
         const d2 = randInt(2, 10);
         const n1 = randInt(1, d1 - 1);
@@ -147,8 +148,8 @@
           correctAnswerText: fractionAnswerText(correctNum, correctDen),
           correctAnswerHtml: fracHtml(correctNum, correctDen),
         });
-      } else {
-        // Type 2: subtracting fractions (first fraction is always >= second).
+      } else if (op === 1) {
+        // Subtracting fractions (first fraction is always >= second).
         let d1 = randInt(2, 10);
         let d2 = randInt(2, 10);
         let n1 = randInt(1, d1 - 1);
@@ -169,6 +170,44 @@
         problems.push({
           question: `${n1}/${d1} − ${n2}/${d2} = ?`,
           questionHtml: `${fracHtml(n1, d1)} − ${fracHtml(n2, d2)} = ?`,
+          checkAnswer: fractionCheckAnswer(correctNum, correctDen),
+          correctAnswerText: fractionAnswerText(correctNum, correctDen),
+          correctAnswerHtml: fracHtml(correctNum, correctDen),
+        });
+      } else if (op === 2) {
+        // Multiplying fractions.
+        const d1 = randInt(2, 9);
+        const n1 = randInt(1, d1 - 1);
+        const d2 = randInt(2, 9);
+        const n2 = randInt(1, d2 - 1);
+        const num = n1 * n2;
+        const den = d1 * d2;
+        const g = gcd(num, den);
+        const correctNum = num / g;
+        const correctDen = den / g;
+
+        problems.push({
+          question: `${n1}/${d1} × ${n2}/${d2} = ?`,
+          questionHtml: `${fracHtml(n1, d1)} &times; ${fracHtml(n2, d2)} = ?`,
+          checkAnswer: fractionCheckAnswer(correctNum, correctDen),
+          correctAnswerText: fractionAnswerText(correctNum, correctDen),
+          correctAnswerHtml: fracHtml(correctNum, correctDen),
+        });
+      } else {
+        // Dividing fractions.
+        const d1 = randInt(2, 9);
+        const n1 = randInt(1, d1 - 1);
+        const d2 = randInt(2, 9);
+        const n2 = randInt(1, d2 - 1);
+        const num = n1 * d2;
+        const den = d1 * n2;
+        const g = gcd(num, den);
+        const correctNum = num / g;
+        const correctDen = den / g;
+
+        problems.push({
+          question: `${n1}/${d1} ÷ ${n2}/${d2} = ?`,
+          questionHtml: `${fracHtml(n1, d1)} &divide; ${fracHtml(n2, d2)} = ?`,
           checkAnswer: fractionCheckAnswer(correctNum, correctDen),
           correctAnswerText: fractionAnswerText(correctNum, correctDen),
           correctAnswerHtml: fracHtml(correctNum, correctDen),
@@ -1272,45 +1311,6 @@
     return problems;
   }
 
-  function generateMultiplyingFractionsProblems() {
-    const problems = [];
-    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const d1 = randInt(2, 9);
-      const n1 = randInt(1, d1 - 1);
-      const d2 = randInt(2, 9);
-      const n2 = randInt(1, d2 - 1);
-
-      if (Math.random() < 0.5) {
-        // Type 1: multiply fractions.
-        const num = n1 * n2;
-        const den = d1 * d2;
-        const g = gcd(num, den);
-        const sn = num / g;
-        const sd = den / g;
-
-        problems.push({
-          question: `${n1}/${d1} × ${n2}/${d2} = ?`,
-          checkAnswer: fractionCheckAnswer(sn, sd),
-          correctAnswerText: fractionAnswerText(sn, sd),
-        });
-      } else {
-        // Type 2: divide fractions.
-        const num = n1 * d2;
-        const den = d1 * n2;
-        const g = gcd(num, den);
-        const sn = num / g;
-        const sd = den / g;
-
-        problems.push({
-          question: `${n1}/${d1} ÷ ${n2}/${d2} = ?`,
-          checkAnswer: fractionCheckAnswer(sn, sd),
-          correctAnswerText: fractionAnswerText(sn, sd),
-        });
-      }
-    }
-    return problems;
-  }
-
   function generateUnitRateProblems() {
     const problems = [];
     const lang = getLang();
@@ -1745,7 +1745,6 @@
     "absolute-value": generateAbsoluteValueProblems,
     rounding: generateRoundingProblems,
     "prime-factorization": generatePrimeFactorizationProblems,
-    "multiplying-fractions": generateMultiplyingFractionsProblems,
     "unit-rate": generateUnitRateProblems,
     "simple-interest": generateSimpleInterestProblems,
     "surface-area": generateSurfaceAreaProblems,

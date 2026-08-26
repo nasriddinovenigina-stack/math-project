@@ -397,18 +397,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/prime-factorization"/>
   </url>
   <url>
-    <loc>https://mathpracticehub.netlify.app/multiplying-fractions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/multiplying-fractions"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/multiplying-fractions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/multiplying-fractions"/>
-  </url>
-  <url>
-    <loc>https://mathpracticehub.netlify.app/ru/multiplying-fractions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/multiplying-fractions"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/multiplying-fractions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/multiplying-fractions"/>
-  </url>
-  <url>
     <loc>https://mathpracticehub.netlify.app/unit-rate</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/unit-rate"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/unit-rate"/>

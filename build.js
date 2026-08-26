@@ -68,7 +68,6 @@ const TOPIC_ICONS = {
   "absolute-value": `↔️`,
   rounding: `🔵`,
   "prime-factorization": `🌳`,
-  "multiplying-fractions": `🍰`,
   "unit-rate": `🏷️`,
   "simple-interest": `🏦`,
   "surface-area": `🎁`,
@@ -214,10 +213,19 @@ ${stepsHtml(entry.steps)}
 function topicPageHtml(lang, topic) {
   const t = topic[lang];
   const hintBlock = t.hintHtml ? `\n          <p class="hint">${t.hintHtml}</p>` : "";
-  const primaryTitle = t.secondary ? t.title : null;
-  let explanationHtml = explanationSectionHtml(lang, t, primaryTitle);
-  if (t.secondary) {
-    explanationHtml += `\n\n` + explanationSectionHtml(lang, t.secondary, t.secondary.title);
+
+  // Most topics have one explanation section (optionally plus a "secondary" one).
+  // A topic can instead provide `sections: [...]` directly for 3+ full sections
+  // (e.g. a topic covering all four arithmetic operations on fractions).
+  let explanationHtml;
+  if (t.sections) {
+    explanationHtml = t.sections.map((s) => explanationSectionHtml(lang, s, s.title)).join("\n\n");
+  } else {
+    const primaryTitle = t.secondary ? t.title : null;
+    explanationHtml = explanationSectionHtml(lang, t, primaryTitle);
+    if (t.secondary) {
+      explanationHtml += `\n\n` + explanationSectionHtml(lang, t.secondary, t.secondary.title);
+    }
   }
 
   const label = gradeLabel(lang, topic.grade);
