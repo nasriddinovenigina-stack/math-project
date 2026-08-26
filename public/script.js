@@ -830,25 +830,59 @@
   function generateDecimalsProblems() {
     const problems = [];
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const precision = Math.random() < 0.5 ? 1 : 2;
-      const scale = precision === 1 ? 10 : 100;
-      const isAdd = Math.random() < 0.5;
-      let aInt = randInt(scale, scale * 20);
-      let bInt = randInt(scale, scale * 20);
-      if (!isAdd && bInt > aInt) {
-        [aInt, bInt] = [bInt, aInt];
-      }
-      const answerInt = isAdd ? aInt + bInt : aInt - bInt;
-      const opSymbol = isAdd ? "+" : "−";
+      const op = randInt(0, 3); // 0 = add, 1 = subtract, 2 = multiply, 3 = divide
 
-      problems.push({
-        question: `${(aInt / scale).toFixed(precision)} ${opSymbol} ${(bInt / scale).toFixed(precision)} = ?`,
-        checkAnswer(raw) {
-          const val = Number(String(raw).trim());
-          return Number.isFinite(val) && Math.round(val * scale) === answerInt;
-        },
-        correctAnswerText: (answerInt / scale).toFixed(precision),
-      });
+      if (op === 0 || op === 1) {
+        const precision = Math.random() < 0.5 ? 1 : 2;
+        const scale = precision === 1 ? 10 : 100;
+        const isAdd = op === 0;
+        let aInt = randInt(scale, scale * 20);
+        let bInt = randInt(scale, scale * 20);
+        if (!isAdd && bInt > aInt) {
+          [aInt, bInt] = [bInt, aInt];
+        }
+        const answerInt = isAdd ? aInt + bInt : aInt - bInt;
+        const opSymbol = isAdd ? "+" : "−";
+
+        problems.push({
+          question: `${(aInt / scale).toFixed(precision)} ${opSymbol} ${(bInt / scale).toFixed(precision)} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && Math.round(val * scale) === answerInt;
+          },
+          correctAnswerText: (answerInt / scale).toFixed(precision),
+        });
+      } else if (op === 2) {
+        // Multiply: a one-decimal-place number by a small whole number.
+        const scale = 10;
+        const aInt = randInt(11, 199);
+        const b = randInt(2, 9);
+        const answerInt = aInt * b;
+
+        problems.push({
+          question: `${(aInt / scale).toFixed(1)} × ${b} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && Math.round(val * scale) === answerInt;
+          },
+          correctAnswerText: (answerInt / scale).toFixed(1),
+        });
+      } else {
+        // Divide: built from a clean one-decimal-place quotient so it always divides evenly.
+        const scale = 10;
+        const b = randInt(2, 9);
+        const answerInt = randInt(11, 199);
+        const aInt = answerInt * b;
+
+        problems.push({
+          question: `${(aInt / scale).toFixed(1)} ÷ ${b} = ?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && Math.round(val * scale) === answerInt;
+          },
+          correctAnswerText: (answerInt / scale).toFixed(1),
+        });
+      }
     }
     return problems;
   }
