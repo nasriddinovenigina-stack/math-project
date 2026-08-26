@@ -97,29 +97,32 @@
         <div class="explanation slideshow" data-slideshow>
           <div class="slide active">
             <p class="slide-label">The Question</p>
-            <p class="hook">An apple and a banana together cost 12,000 so'm. Two apples and a banana cost 19,000 so'm. What's the price of one apple?</p>
+            <p class="hook">2 apples and 3 bananas together cost 22,000 so'm. 4 apples and 1 banana cost 14,000 so'm. What's the price of one apple, and one banana?</p>
           </div>
           <div class="slide">
             <p class="slide-label">The Idea</p>
-            <p>A <strong>system of equations</strong> has two unknowns and two equations. Subtract one equation from the other to cancel out one variable, then solve for what's left.</p>
-            <p class="one-liner">In one line: line up the equations, subtract to cancel one variable, then solve for the other.</p>
+            <p>A <strong>system of equations</strong> has two unknowns and two equations. If a variable's coefficients don't already match between the two equations, <strong>multiply one whole equation</strong> by a number so they do &mdash; then add or subtract the equations to cancel that variable.</p>
+            <p class="one-liner">In one line: scale an equation so a variable's coefficients match, cancel it out, then solve for what's left.</p>
           </div>
           <div class="slide">
             <p class="slide-label">Watch It Solved</p>
             <div class="steps">
-            <p>a + b = 12,000</p>
-            <p>2a + b = 19,000</p>
-            <p class="steps-note">subtract the first equation from the second &rarr; the b's cancel</p>
-            <p>(2a + b) &minus; (a + b) = 19,000 &minus; 12,000</p>
-            <p>a = 7,000</p>
-            <p class="steps-note">plug a back into the first equation to find b</p>
-            <p>7,000 + b = 12,000</p>
-            <p class="steps-result">b = 5,000</p>
+            <p>2a + 3b = 22,000</p>
+            <p>4a + b = 14,000</p>
+            <p class="steps-note">neither variable's coefficients match yet &mdash; multiply the second equation by 3 so b matches</p>
+            <p>3 &times; (4a + b) = 3 &times; 14,000 &rarr; 12a + 3b = 42,000</p>
+            <p class="steps-note">now subtract the first equation &rarr; the b's cancel</p>
+            <p>(12a + 3b) &minus; (2a + 3b) = 42,000 &minus; 22,000</p>
+            <p>10a = 20,000</p>
+            <p class="steps-result">a = 2,000</p>
+            <p class="steps-note">plug a back into either original equation to find b</p>
+            <p>4(2,000) + b = 14,000</p>
+            <p class="steps-result">b = 6,000</p>
             </div>
           </div>
           <div class="slide">
             <p class="slide-label">Watch Out</p>
-            <p class="trap">A common mistake is subtracting the equations in a mismatched way &mdash; not lining up the same variable's terms before subtracting. Write one equation directly under the other so matching terms are stacked, then subtract straight down.</p>
+            <p class="trap">A common mistake is subtracting the equations before any coefficients match &mdash; that only cancels a variable if both equations already have the exact same coefficient for it. Always scale one equation first so a variable's coefficients line up.</p>
           </div>
           <div class="slide">
             <p class="slide-label">Why It Matters</p>
@@ -139,7 +142,7 @@
             <span class="score"></span>
           </div>
           <div class="problem-list"></div>
-          <p class="hint">Enter your answer as a, b &mdash; for example, 7000, 5000.</p>
+          <p class="hint">Enter your answer as x, y &mdash; for example, 2000, 6000.</p>
         </div>
       </section>
 
