@@ -1164,6 +1164,347 @@
     return problems;
   }
 
+  function generateRoundingProblems() {
+    const problems = [];
+    const lang = getLang();
+    const PLACES = [10, 100, 1000];
+    const PHRASE_EN = { 10: "to the nearest ten", 100: "to the nearest hundred", 1000: "to the nearest thousand" };
+    const PHRASE_RU = {
+      10: "до ближайшего десятка",
+      100: "до ближайшей сотни",
+      1000: "до ближайшей тысячи",
+    };
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const place = PLACES[randInt(0, PLACES.length - 1)];
+      const n = randInt(place * 2, place * 97);
+      const answer = Math.round(n / place) * place;
+
+      problems.push({
+        question:
+          lang === "ru" ? `Округлите ${n} ${PHRASE_RU[place]}.` : `Round ${n} ${PHRASE_EN[place]}.`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
+  function generatePrimeFactorizationProblems() {
+    const problems = [];
+    const PRIME_POOL = [2, 3, 5, 7];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const count = randInt(2, 3);
+      const factors = [];
+      let n = 1;
+      for (let k = 0; k < count; k++) {
+        const p = PRIME_POOL[randInt(0, PRIME_POOL.length - 1)];
+        factors.push(p);
+        n *= p;
+      }
+      factors.sort((a, b) => a - b);
+
+      problems.push({
+        question: `${n} = ?`,
+        checkAnswer(raw) {
+          const text = String(raw).trim();
+          if (!text) return false;
+          const parts = text
+            .split(/[×x*]/i)
+            .map((s) => Number(s.trim()))
+            .filter((v) => Number.isFinite(v));
+          if (parts.length !== factors.length) return false;
+          const sorted = [...parts].sort((a, b) => a - b);
+          return sorted.every((v, idx) => v === factors[idx]);
+        },
+        correctAnswerText: factors.join("×"),
+      });
+    }
+    return problems;
+  }
+
+  function generateMultiplyingFractionsProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const d1 = randInt(2, 9);
+      const n1 = randInt(1, d1 - 1);
+      const d2 = randInt(2, 9);
+      const n2 = randInt(1, d2 - 1);
+
+      if (Math.random() < 0.5) {
+        // Type 1: multiply fractions.
+        const num = n1 * n2;
+        const den = d1 * d2;
+        const g = gcd(num, den);
+        const sn = num / g;
+        const sd = den / g;
+
+        problems.push({
+          question: `${n1}/${d1} × ${n2}/${d2} = ?`,
+          checkAnswer: fractionCheckAnswer(sn, sd),
+          correctAnswerText: fractionAnswerText(sn, sd),
+        });
+      } else {
+        // Type 2: divide fractions.
+        const num = n1 * d2;
+        const den = d1 * n2;
+        const g = gcd(num, den);
+        const sn = num / g;
+        const sd = den / g;
+
+        problems.push({
+          question: `${n1}/${d1} ÷ ${n2}/${d2} = ?`,
+          checkAnswer: fractionCheckAnswer(sn, sd),
+          correctAnswerText: fractionAnswerText(sn, sd),
+        });
+      }
+    }
+    return problems;
+  }
+
+  function generateUnitRateProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const rate = randInt(2, 20) * 500;
+      const units = randInt(2, 9);
+      const total = rate * units;
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `${units} кг стоят ${total} сум. Сколько стоит 1 кг?`
+            : `${units} kg cost ${total} so'm. What is the price per kg?`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === rate;
+        },
+        correctAnswerText: String(rate),
+      });
+    }
+    return problems;
+  }
+
+  function yearsLabelRu(years) {
+    if (years === 1) return "год";
+    if (years >= 2 && years <= 4) return "года";
+    return "лет";
+  }
+
+  function generateSimpleInterestProblems() {
+    const problems = [];
+    const lang = getLang();
+    const RATES = [2, 4, 5, 10, 20];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const rate = RATES[randInt(0, RATES.length - 1)];
+      const m = 100 / rate;
+      const k = randInt(1, 15);
+      const principal = k * m * 1000;
+      const years = randInt(1, 5);
+      const interest = k * 1000 * years;
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Вклад ${principal} сум под ${rate}% простых годовых на ${years} ${yearsLabelRu(years)}. Сколько процентов будет заработано?`
+            : `${principal} so'm invested at ${rate}% simple interest for ${years} year${years === 1 ? "" : "s"}. How much interest is earned?`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === interest;
+        },
+        correctAnswerText: String(interest),
+      });
+    }
+    return problems;
+  }
+
+  function generateSurfaceAreaProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const l = randInt(2, 12);
+      const w = randInt(2, 12);
+      const h = randInt(2, 12);
+      const answer = 2 * (l * w + l * h + w * h);
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Прямоугольный параллелепипед: длина ${l}, ширина ${w}, высота ${h}. Найдите площадь поверхности.`
+            : `A rectangular prism has length ${l}, width ${w}, and height ${h}. Find its surface area.`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
+  function generateAnglesProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      if (Math.random() < 0.5) {
+        // Type 1: complementary or supplementary angle.
+        const total = Math.random() < 0.5 ? 90 : 180;
+        const a = randInt(10, total - 10);
+        const answer = total - a;
+        const kindEn = total === 90 ? "complementary" : "supplementary";
+        const kindRu = total === 90 ? "дополнительные" : "смежные";
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Два угла — ${kindRu}, один из них ${a}°. Чему равен другой?`
+              : `Two angles are ${kindEn}, one measures ${a}°. What is the other?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).replace("°", "").trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: `${answer}°`,
+        });
+      } else {
+        // Type 2: triangle angle sum.
+        let a, b;
+        do {
+          a = randInt(20, 120);
+          b = randInt(20, 120);
+        } while (a + b >= 170);
+        const answer = 180 - a - b;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `В треугольнике два угла равны ${a}° и ${b}°. Чему равен третий угол?`
+              : `A triangle has two angles of ${a}° and ${b}°. What is the third angle?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).replace("°", "").trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: `${answer}°`,
+        });
+      }
+    }
+    return problems;
+  }
+
+  function generateFoilProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const a = nonZeroRandInt(-9, 9);
+      const b = nonZeroRandInt(-9, 9);
+      const bCoef = a + b;
+      const c = a * b;
+      const aText = a >= 0 ? `+ ${a}` : `− ${Math.abs(a)}`;
+      const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
+      const absBCoef = Math.abs(bCoef);
+      const bCoefText = bCoef === 0 ? "" : bCoef > 0 ? `+ ${absBCoef === 1 ? "" : absBCoef}x` : `− ${absBCoef === 1 ? "" : absBCoef}x`;
+      const cText = c >= 0 ? `+ ${c}` : `− ${Math.abs(c)}`;
+
+      problems.push({
+        question: `(x ${aText})(x ${bText}) = ?`,
+        checkAnswer(raw) {
+          const parts = String(raw)
+            .split(",")
+            .map((s) => Number(s.trim()));
+          if (parts.length !== 2) return false;
+          const [p1, p2] = parts;
+          return Number.isFinite(p1) && Number.isFinite(p2) && p1 === bCoef && p2 === c;
+        },
+        correctAnswerText: bCoefText ? `x² ${bCoefText} ${cText}` : `x² ${cText}`,
+      });
+    }
+    return problems;
+  }
+
+  function generateDistanceFormulaProblems() {
+    const problems = [];
+    const lang = getLang();
+    const TRIPLES = [
+      [3, 4, 5],
+      [6, 8, 10],
+      [5, 12, 13],
+      [8, 15, 17],
+      [7, 24, 25],
+      [9, 12, 15],
+    ];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const [legA, legB, hyp] = TRIPLES[randInt(0, TRIPLES.length - 1)];
+      const swap = Math.random() < 0.5;
+      const dx = swap ? legB : legA;
+      const dy = swap ? legA : legB;
+      const x1 = randInt(-6, 6);
+      const y1 = randInt(-6, 6);
+      const x2 = x1 + (Math.random() < 0.5 ? dx : -dx);
+      const y2 = y1 + (Math.random() < 0.5 ? dy : -dy);
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Найдите расстояние между точками (${x1}, ${y1}) и (${x2}, ${y2}).`
+            : `Find the distance between (${x1}, ${y1}) and (${x2}, ${y2}).`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === hyp;
+        },
+        correctAnswerText: String(hyp),
+      });
+    }
+    return problems;
+  }
+
+  function generateTrigonometryProblems() {
+    const problems = [];
+    const lang = getLang();
+    const TRIPLES = [
+      [3, 4, 5],
+      [6, 8, 10],
+      [5, 12, 13],
+      [8, 15, 17],
+      [7, 24, 25],
+      [9, 12, 15],
+    ];
+    const RATIOS = ["sin", "cos", "tan"];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const [opp, adj, hyp] = TRIPLES[randInt(0, TRIPLES.length - 1)];
+      const ratio = RATIOS[randInt(0, RATIOS.length - 1)];
+      let num, den, labelEn, labelRu;
+      if (ratio === "sin") {
+        num = opp;
+        den = hyp;
+        labelEn = "sine";
+        labelRu = "синус";
+      } else if (ratio === "cos") {
+        num = adj;
+        den = hyp;
+        labelEn = "cosine";
+        labelRu = "косинус";
+      } else {
+        num = opp;
+        den = adj;
+        labelEn = "tangent";
+        labelRu = "тангенс";
+      }
+      const g = gcd(num, den);
+      const sn = num / g;
+      const sd = den / g;
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `В прямоугольном треугольнике противолежащий катет = ${opp}, прилежащий катет = ${adj}, гипотенуза = ${hyp}. Найдите ${labelRu} угла.`
+            : `In a right triangle, opposite = ${opp}, adjacent = ${adj}, hypotenuse = ${hyp}. Find the ${labelEn} of the angle.`,
+        checkAnswer: fractionCheckAnswer(sn, sd),
+        correctAnswerText: fractionAnswerText(sn, sd),
+      });
+    }
+    return problems;
+  }
+
   const GENERATORS = {
     arithmetic: generateArithmeticProblems,
     "negative-numbers": generateNegativeNumbersProblems,
@@ -1195,6 +1536,16 @@
     exponents: generateExponentsProblems,
     "square-roots": generateSquareRootsProblems,
     "absolute-value": generateAbsoluteValueProblems,
+    rounding: generateRoundingProblems,
+    "prime-factorization": generatePrimeFactorizationProblems,
+    "multiplying-fractions": generateMultiplyingFractionsProblems,
+    "unit-rate": generateUnitRateProblems,
+    "simple-interest": generateSimpleInterestProblems,
+    "surface-area": generateSurfaceAreaProblems,
+    angles: generateAnglesProblems,
+    foil: generateFoilProblems,
+    "distance-formula": generateDistanceFormulaProblems,
+    trigonometry: generateTrigonometryProblems,
   };
 
   // ---------- UI string localization ----------

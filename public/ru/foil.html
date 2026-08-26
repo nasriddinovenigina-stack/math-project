@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Умножение двучленов (метод FOIL) (9 класс) — Практика по математике</title>
+  <meta name="description" content="9 класс: Узнайте, как перемножать два двучлена методом FOIL шаг за шагом, а затем потренируйтесь." />
+  <link rel="canonical" href="https://mathpractise.netlify.app/ru/foil" />
+  <link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/foil" />
+  <link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/foil" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/foil" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Практика по математике" />
+  <meta property="og:site_name" content="Практика по математике" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Умножение двучленов (метод FOIL) (9 класс) — Практика по математике" />
+  <meta property="og:description" content="9 класс: Узнайте, как перемножать два двучлена методом FOIL шаг за шагом, а затем потренируйтесь." />
+  <meta property="og:url" content="https://mathpractise.netlify.app/ru/foil" />
+  <meta property="og:locale" content="ru_RU" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNDQEKH5SK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNDQEKH5SK');
+  </script>
+</head>
+<body data-topic="foil">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><a class="site-title" href="/ru/">Практика по математике</a></h1>
+        <p class="subtitle">Изучи идею — затем закрепи её на практике.</p>
+        <div class="lang-switch">
+          <a class="lang-link" href="/foil">EN</a>
+          <a class="lang-link active" href="/ru/foil">RU</a>
+        </div>
+      </div>
+      <nav class="topic-nav">
+        <a class="tab-btn grade-5" href="/ru/arithmetic"><span class="tab-icon">➕</span>Арифметика</a>
+        <a class="tab-btn grade-6" href="/ru/negative-numbers"><span class="tab-icon">➖</span>Отрицательные числа</a>
+        <a class="tab-btn grade-5" href="/ru/order-of-operations"><span class="tab-icon">🔢</span>Порядок действий</a>
+        <a class="tab-btn grade-6" href="/ru/fractions"><span class="tab-icon">🍕</span>Дроби</a>
+        <a class="tab-btn grade-5" href="/ru/decimals"><span class="tab-icon">🔟</span>Десятичные дроби</a>
+        <a class="tab-btn grade-6" href="/ru/gcf"><span class="tab-icon">🧩</span>НОД</a>
+        <a class="tab-btn grade-6" href="/ru/lcm"><span class="tab-icon">🔗</span>НОК</a>
+        <a class="tab-btn grade-6" href="/ru/percentages"><span class="tab-icon">💯</span>Проценты</a>
+        <a class="tab-btn grade-6" href="/ru/ratios"><span class="tab-icon">⚖️</span>Отношения и пропорции</a>
+        <a class="tab-btn grade-7" href="/ru/probability"><span class="tab-icon">🎲</span>Вероятность</a>
+        <a class="tab-btn grade-6" href="/ru/average"><span class="tab-icon">📊</span>Среднее арифметическое</a>
+        <a class="tab-btn grade-7" href="/ru/mean-median-mode"><span class="tab-icon">📈</span>Среднее, медиана и мода</a>
+        <a class="tab-btn grade-6" href="/ru/like-terms"><span class="tab-icon">🍎</span>Подобные слагаемые</a>
+        <a class="tab-btn grade-7" href="/ru/algebra"><span class="tab-icon">🧮</span>Основы алгебры</a>
+        <a class="tab-btn grade-8" href="/ru/inequalities"><span class="tab-icon">🔀</span>Неравенства</a>
+        <a class="tab-btn grade-6" href="/ru/coordinate-plane"><span class="tab-icon">📍</span>Координатная плоскость</a>
+        <a class="tab-btn grade-7" href="/ru/functions"><span class="tab-icon">🚕</span>Функции</a>
+        <a class="tab-btn grade-7" href="/ru/systems"><span class="tab-icon">🍏</span>Системы уравнений</a>
+        <a class="tab-btn grade-7" href="/ru/slope"><span class="tab-icon">⛰️</span>Наклон прямой</a>
+        <a class="tab-btn grade-8" href="/ru/quadratic"><span class="tab-icon">🎯</span>Квадратные уравнения</a>
+        <a class="tab-btn grade-8" href="/ru/polynomials"><span class="tab-icon">📚</span>Многочлены</a>
+        <a class="tab-btn grade-9" href="/ru/parabola"><span class="tab-icon">🛹</span>Парабола</a>
+        <a class="tab-btn grade-5" href="/ru/perimeter-area"><span class="tab-icon">📐</span>Периметр и площадь</a>
+        <a class="tab-btn grade-6" href="/ru/volume"><span class="tab-icon">📦</span>Объём</a>
+        <a class="tab-btn grade-8" href="/ru/pythagorean"><span class="tab-icon">🪜</span>Теорема Пифагора</a>
+        <a class="tab-btn grade-9" href="/ru/circles"><span class="tab-icon">⭕</span>Окружность</a>
+        <a class="tab-btn grade-8" href="/ru/scientific-notation"><span class="tab-icon">🔬</span>Научная нотация</a>
+        <a class="tab-btn grade-7" href="/ru/exponents"><span class="tab-icon">✖️</span>Степени</a>
+        <a class="tab-btn grade-8" href="/ru/square-roots"><span class="tab-icon">🌱</span>Квадратный корень</a>
+        <a class="tab-btn grade-6" href="/ru/absolute-value"><span class="tab-icon">↔️</span>Модуль числа</a>
+        <a class="tab-btn grade-5" href="/ru/rounding"><span class="tab-icon">🔵</span>Округление чисел</a>
+        <a class="tab-btn grade-6" href="/ru/prime-factorization"><span class="tab-icon">🌳</span>Разложение на простые множители</a>
+        <a class="tab-btn grade-6" href="/ru/multiplying-fractions"><span class="tab-icon">🍰</span>Умножение и деление дробей</a>
+        <a class="tab-btn grade-6" href="/ru/unit-rate"><span class="tab-icon">🏷️</span>Цена за единицу</a>
+        <a class="tab-btn grade-7" href="/ru/simple-interest"><span class="tab-icon">🏦</span>Простые проценты</a>
+        <a class="tab-btn grade-7" href="/ru/surface-area"><span class="tab-icon">🎁</span>Площадь поверхности</a>
+        <a class="tab-btn grade-7" href="/ru/angles"><span class="tab-icon">🔺</span>Углы и их взаимосвязи</a>
+        <a class="tab-btn grade-9 active" href="/ru/foil"><span class="tab-icon">✳️</span>Умножение двучленов (FOIL)</a>
+        <a class="tab-btn grade-9" href="/ru/distance-formula"><span class="tab-icon">🗺️</span>Формула расстояния</a>
+        <a class="tab-btn grade-9" href="/ru/trigonometry"><span class="tab-icon">🧭</span>Тригонометрические отношения</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="topic active grade-9">
+        <span class="grade-badge">9 класс</span>
+        <h2><span class="topic-icon">✳️</span>Умножение двучленов (метод FOIL)</h2>
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">Стороны прямоугольного сада равны (x + 3) и (x + 5). Какое выражение даёт его площадь?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p>Чтобы перемножить два двучлена, используйте метод <strong>FOIL</strong>: перемножьте Первые члены, Внешние, Внутренние и Последние, а затем приведите подобные слагаемые.</p>
+            <p class="one-liner">Одной фразой: первые, внешние, внутренние, последние — затем приводим подобные слагаемые.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
+            <p>(x + 3)(x + 5)</p>
+            <p class="steps-note">Первые: x &times; x = x&sup2;, Внешние: x &times; 5 = 5x, Внутренние: 3 &times; x = 3x, Последние: 3 &times; 5 = 15</p>
+            <p>x&sup2; + 5x + 3x + 15</p>
+            <p class="steps-result">x&sup2; + 8x + 15</p>
+            </div>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — перемножить только первые и последние члены (получив x&sup2; + 15), пропустив внешние и внутренние. Нужны все четыре произведения перед приведением подобных слагаемых.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">Умножение двучленов — это способ раскрыть выражение площади, и оно обратно разложению на множители, что понадобится на протяжении всей алгебры.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
+        </div>
+      </div>
+
+        <div class="practice" data-practice="foil">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="foil">Новые примеры</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+          <p class="hint">Введите ответ в виде двух чисел через запятую: коэффициент при x, затем свободный член — например, <code>8,15</code> для x&sup2; + 8x + 15.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.</p>
+        <p class="site-domain">mathpractise.netlify.app</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

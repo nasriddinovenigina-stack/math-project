@@ -66,6 +66,16 @@ const TOPIC_ICONS = {
   "scientific-notation": `🔬`,
   "square-roots": `🌱`,
   "absolute-value": `↔️`,
+  rounding: `🔵`,
+  "prime-factorization": `🌳`,
+  "multiplying-fractions": `🍰`,
+  "unit-rate": `🏷️`,
+  "simple-interest": `🏦`,
+  "surface-area": `🎁`,
+  angles: `🔺`,
+  foil: `✳️`,
+  "distance-formula": `🗺️`,
+  trigonometry: `🧭`,
 };
 
 function gradeLabel(lang, grade) {

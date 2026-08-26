@@ -372,4 +372,124 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/absolute-value"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/absolute-value"/>
   </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/rounding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/rounding"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/rounding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/rounding"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/rounding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/rounding"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/rounding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/rounding"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/prime-factorization</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/prime-factorization"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/prime-factorization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/prime-factorization"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/prime-factorization</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/prime-factorization"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/prime-factorization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/prime-factorization"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/multiplying-fractions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/multiplying-fractions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/multiplying-fractions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/multiplying-fractions"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/multiplying-fractions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/multiplying-fractions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/multiplying-fractions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/multiplying-fractions"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/unit-rate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/unit-rate"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/unit-rate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/unit-rate"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/unit-rate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/unit-rate"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/unit-rate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/unit-rate"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/simple-interest</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/simple-interest"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/simple-interest"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/simple-interest"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/simple-interest</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/simple-interest"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/simple-interest"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/simple-interest"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/surface-area</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/surface-area"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/surface-area"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/surface-area"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/surface-area</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/surface-area"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/surface-area"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/surface-area"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/angles</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/angles"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/angles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/angles"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/angles</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/angles"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/angles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/angles"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/foil</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/foil"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/foil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/foil"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/foil</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/foil"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/foil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/foil"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/distance-formula</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/distance-formula"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/distance-formula"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/distance-formula"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/distance-formula</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/distance-formula"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/distance-formula"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/distance-formula"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/trigonometry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/trigonometry"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/trigonometry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/trigonometry"/>
+  </url>
+  <url>
+    <loc>https://mathpractise.netlify.app/ru/trigonometry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpractise.netlify.app/trigonometry"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpractise.netlify.app/ru/trigonometry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpractise.netlify.app/trigonometry"/>
+  </url>
 </urlset>
