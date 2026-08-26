@@ -492,4 +492,64 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/trigonometry"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/trigonometry"/>
   </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/long-division</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/long-division"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/long-division"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/long-division"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/long-division</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/long-division"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/long-division"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/long-division"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/divisibility-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/divisibility-rules"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/divisibility-rules"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/divisibility-rules"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/divisibility-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/divisibility-rules"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/divisibility-rules"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/divisibility-rules"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/comparing-fractions-decimals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/comparing-fractions-decimals"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/comparing-fractions-decimals"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/comparing-fractions-decimals"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/comparing-fractions-decimals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/comparing-fractions-decimals"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/comparing-fractions-decimals"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/comparing-fractions-decimals"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/fraction-decimal-percent</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/fraction-decimal-percent"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/fraction-decimal-percent"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/fraction-decimal-percent"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/fraction-decimal-percent</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/fraction-decimal-percent"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/fraction-decimal-percent"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/fraction-decimal-percent"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/unit-conversion</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/unit-conversion"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/unit-conversion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/unit-conversion"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/unit-conversion</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/unit-conversion"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/unit-conversion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/unit-conversion"/>
+  </url>
 </urlset>

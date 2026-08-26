@@ -1513,6 +1513,166 @@
     return problems;
   }
 
+  function generateLongDivisionProblems() {
+    const problems = [];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const divisor = randInt(2, 9);
+      const quotient = randInt(11, 99);
+      const dividend = divisor * quotient;
+
+      problems.push({
+        question: `${dividend} ÷ ${divisor} = ?`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === quotient;
+        },
+        correctAnswerText: String(quotient),
+      });
+    }
+    return problems;
+  }
+
+  function generateDivisibilityRulesProblems() {
+    const problems = [];
+    const lang = getLang();
+    const DIVISORS = [2, 3, 5, 9, 10];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const divisor = DIVISORS[randInt(0, DIVISORS.length - 1)];
+      const n = randInt(100, 999);
+      const answer = n % divisor === 0;
+
+      problems.push({
+        question: lang === "ru" ? `Делится ли ${n} на ${divisor}?` : `Is ${n} divisible by ${divisor}?`,
+        checkAnswer(raw) {
+          const text = String(raw).trim().toLowerCase();
+          const yesValues = ["yes", "y", "true", "да", "д"];
+          const noValues = ["no", "n", "false", "нет", "н"];
+          if (yesValues.includes(text)) return answer === true;
+          if (noValues.includes(text)) return answer === false;
+          return false;
+        },
+        correctAnswerText: answer ? (lang === "ru" ? "да" : "yes") : lang === "ru" ? "нет" : "no",
+      });
+    }
+    return problems;
+  }
+
+  function generateComparingFractionsDecimalsProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const d = randInt(2, 10);
+      const n = randInt(1, d - 1);
+      const fracValue = n / d;
+      const decTenths = randInt(1, 9);
+      const decValue = decTenths / 10;
+      const decText = lang === "ru" ? `0,${decTenths}` : `0.${decTenths}`;
+
+      let answer;
+      if (Math.abs(fracValue - decValue) < 1e-9) answer = "=";
+      else if (fracValue > decValue) answer = ">";
+      else answer = "<";
+
+      problems.push({
+        question: `${n}/${d}   ?   ${decText}`,
+        questionHtml: `${fracHtml(n, d)} &nbsp;&nbsp;?&nbsp;&nbsp; ${decText}`,
+        checkAnswer(raw) {
+          return String(raw).trim() === answer;
+        },
+        correctAnswerText: answer,
+      });
+    }
+    return problems;
+  }
+
+  function generateFractionDecimalPercentProblems() {
+    const problems = [];
+    const lang = getLang();
+    const DENOMS = [2, 4, 5, 10, 20, 25, 50];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const d = DENOMS[randInt(0, DENOMS.length - 1)];
+      const n = randInt(1, d - 1);
+      const decimal = n / d;
+      const percent = Math.round(decimal * 100);
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Переведите ${n}/${d} в десятичную дробь и в проценты.`
+            : `Convert ${n}/${d} to a decimal and a percentage.`,
+        questionHtml:
+          (lang === "ru" ? `Переведите ` : `Convert `) +
+          fracHtml(n, d) +
+          (lang === "ru" ? ` в десятичную дробь и в проценты.` : ` to a decimal and a percentage.`),
+        checkAnswer(raw) {
+          const parts = String(raw)
+            .split(",")
+            .map((s) => s.trim());
+          if (parts.length !== 2) return false;
+          const decVal = Number(parts[0]);
+          const pctVal = Number(parts[1]);
+          return (
+            Number.isFinite(decVal) &&
+            Number.isFinite(pctVal) &&
+            Math.abs(decVal - decimal) < 1e-9 &&
+            pctVal === percent
+          );
+        },
+        correctAnswerText: `${decimal} = ${percent}%`,
+      });
+    }
+    return problems;
+  }
+
+  function generateUnitConversionProblems() {
+    const problems = [];
+    const lang = getLang();
+    const UNIT_PAIRS = [
+      { small: "mm", large: "cm", factor: 10, smallRu: "мм", largeRu: "см" },
+      { small: "cm", large: "m", factor: 100, smallRu: "см", largeRu: "м" },
+      { small: "m", large: "km", factor: 1000, smallRu: "м", largeRu: "км" },
+      { small: "mg", large: "g", factor: 1000, smallRu: "мг", largeRu: "г" },
+      { small: "g", large: "kg", factor: 1000, smallRu: "г", largeRu: "кг" },
+      { small: "ml", large: "l", factor: 1000, smallRu: "мл", largeRu: "л" },
+    ];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const unit = UNIT_PAIRS[randInt(0, UNIT_PAIRS.length - 1)];
+      const toLarge = Math.random() < 0.5;
+      let value, answer, fromUnit, toUnit, fromUnitRu, toUnitRu;
+
+      if (toLarge) {
+        value = randInt(1, 9999);
+        answer = value / unit.factor;
+        fromUnit = unit.small;
+        toUnit = unit.large;
+        fromUnitRu = unit.smallRu;
+        toUnitRu = unit.largeRu;
+      } else {
+        const kTenths = randInt(1, 999);
+        value = kTenths / 10;
+        answer = (kTenths * unit.factor) / 10;
+        fromUnit = unit.large;
+        toUnit = unit.small;
+        fromUnitRu = unit.largeRu;
+        toUnitRu = unit.smallRu;
+      }
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Переведите ${String(value).replace(".", ",")} ${fromUnitRu} в ${toUnitRu}.`
+            : `Convert ${value} ${fromUnit} to ${toUnit}.`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && Math.abs(val - answer) < 0.0001;
+        },
+        correctAnswerText:
+          lang === "ru" ? `${String(answer).replace(".", ",")} ${toUnitRu}` : `${answer} ${toUnit}`,
+      });
+    }
+    return problems;
+  }
+
   const GENERATORS = {
     arithmetic: generateArithmeticProblems,
     "negative-numbers": generateNegativeNumbersProblems,
@@ -1554,6 +1714,11 @@
     foil: generateFoilProblems,
     "distance-formula": generateDistanceFormulaProblems,
     trigonometry: generateTrigonometryProblems,
+    "long-division": generateLongDivisionProblems,
+    "divisibility-rules": generateDivisibilityRulesProblems,
+    "comparing-fractions-decimals": generateComparingFractionsDecimalsProblems,
+    "fraction-decimal-percent": generateFractionDecimalPercentProblems,
+    "unit-conversion": generateUnitConversionProblems,
   };
 
   // ---------- UI string localization ----------

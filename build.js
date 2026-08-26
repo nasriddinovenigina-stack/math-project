@@ -76,6 +76,11 @@ const TOPIC_ICONS = {
   foil: `✳️`,
   "distance-formula": `🗺️`,
   trigonometry: `🧭`,
+  "long-division": `➗`,
+  "divisibility-rules": `🔍`,
+  "comparing-fractions-decimals": `🆚`,
+  "fraction-decimal-percent": `🔄`,
+  "unit-conversion": `📏`,
 };
 
 function gradeLabel(lang, grade) {
