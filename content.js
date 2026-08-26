@@ -3,7 +3,7 @@
 //
 // SITE_URL is used for canonical URLs, hreflang alternates, and the sitemap.
 // Update it (and re-run `npm run build`) if the domain ever changes.
-const SITE_URL = "https://mathpractise.netlify.app";
+const SITE_URL = "https://mathpracticehub.netlify.app";
 
 const TOPICS = [
   {
