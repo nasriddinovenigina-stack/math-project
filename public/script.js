@@ -935,21 +935,75 @@
     const problems = [];
     const lang = getLang();
     for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
-      const favorable = randInt(1, 9);
-      const other = randInt(1, 9);
-      const total = favorable + other;
+      const type = randInt(0, 3);
 
-      problems.push({
-        question:
-          lang === "ru"
-            ? `В мешке ${favorable} красных шариков и ${other} синих. Если вы наугад достанете один, какова вероятность, что он красный?`
-            : `A bag has ${favorable} red marbles and ${other} blue marbles. If you pick one at random, what is the probability it's red?`,
-        checkAnswer(raw) {
-          const val = parseFractionOrDecimal(raw);
-          return Number.isFinite(val) && Math.abs(val - favorable / total) < 0.0051;
-        },
-        correctAnswerText: `${favorable}/${total}`,
-      });
+      if (type === 0) {
+        // Marbles: probability OF the favorable color.
+        const favorable = randInt(1, 9);
+        const other = randInt(1, 9);
+        const total = favorable + other;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `В мешке ${favorable} красных шариков и ${other} синих. Если вы наугад достанете один, какова вероятность, что он красный?`
+              : `A bag has ${favorable} red marbles and ${other} blue marbles. If you pick one at random, what is the probability it's red?`,
+          checkAnswer(raw) {
+            const val = parseFractionOrDecimal(raw);
+            return Number.isFinite(val) && Math.abs(val - favorable / total) < 0.0051;
+          },
+          correctAnswerText: `${favorable}/${total}`,
+        });
+      } else if (type === 1) {
+        // Marbles: probability of NOT the favorable color (complement).
+        const favorable = randInt(1, 9);
+        const other = randInt(1, 9);
+        const total = favorable + other;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `В мешке ${favorable} красных шариков и ${other} синих. Если вы наугад достанете один, какова вероятность, что он НЕ красный?`
+              : `A bag has ${favorable} red marbles and ${other} blue marbles. If you pick one at random, what is the probability it's NOT red?`,
+          checkAnswer(raw) {
+            const val = parseFractionOrDecimal(raw);
+            return Number.isFinite(val) && Math.abs(val - other / total) < 0.0051;
+          },
+          correctAnswerText: `${other}/${total}`,
+        });
+      } else if (type === 2) {
+        // Six-sided die: probability of rolling greater than N.
+        const n = randInt(1, 5);
+        const favorableCount = 6 - n;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Бросают шестигранный кубик один раз. Какова вероятность выпадения числа больше ${n}?`
+              : `A six-sided die is rolled once. What is the probability of rolling a number greater than ${n}?`,
+          checkAnswer(raw) {
+            const val = parseFractionOrDecimal(raw);
+            return Number.isFinite(val) && Math.abs(val - favorableCount / 6) < 0.0051;
+          },
+          correctAnswerText: `${favorableCount}/6`,
+        });
+      } else {
+        // Spinner with K equal sections numbered 1..K: probability of landing on an even number.
+        const k = randInt(4, 12);
+        const favorableCount = Math.floor(k / 2);
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Рулетка разделена на ${k} равных секторов, пронумерованных от 1 до ${k}. Какова вероятность того, что стрелка укажет на чётное число?`
+              : `A spinner is divided into ${k} equal sections numbered 1 to ${k}. What is the probability it lands on an even number?`,
+          checkAnswer(raw) {
+            const val = parseFractionOrDecimal(raw);
+            return Number.isFinite(val) && Math.abs(val - favorableCount / k) < 0.0051;
+          },
+          correctAnswerText: `${favorableCount}/${k}`,
+        });
+      }
     }
     return problems;
   }
