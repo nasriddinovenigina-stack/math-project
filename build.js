@@ -217,7 +217,7 @@ function topicPageHtml(lang, topic) {
 
   const label = gradeLabel(lang, topic.grade);
   const gradedTitle = insertGradeIntoTitle(t.pageTitle, label);
-  const gradedDescription = `${label}: ${t.metaDescription}`;
+  const gradedDescription = `${t.navLabel}, ${label}: ${t.metaDescription}`;
   const icon = TOPIC_ICONS[topic.slug] || "";
 
   return `<!DOCTYPE html>
