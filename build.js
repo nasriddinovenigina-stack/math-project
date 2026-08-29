@@ -8,7 +8,12 @@ const PUBLIC_DIR = path.join(__dirname, "public");
 const RU_DIR = path.join(PUBLIC_DIR, "ru");
 
 const DISPLAY_DOMAIN = SITE_URL.replace(/^https?:\/\//, "");
-const GA_MEASUREMENT_ID = "G-VNDQEKH5SK";
+// This codebase is deployed to two live domains at once (see CLAUDE.md), each tracked
+// under its own separate GA4 property. Which one a visitor's pageview counts toward is
+// decided at runtime by hostname (see the inline script in headHtml below), not at build
+// time, since both domains serve the exact same built files.
+const GA_MEASUREMENT_ID_MATHPRACTISE = "G-VNDQEKH5SK"; // mathpractise.netlify.app (original site)
+const GA_MEASUREMENT_ID_MATHPRACTICEHUB = "G-YEQTQFJQ3P"; // mathpracticehub.netlify.app + any other host (e.g. local dev)
 const SITE_TITLES = { en: `Math Practice`, ru: `Практика по математике` };
 const SITE_SUBTITLES = {
   en: `Learn the idea, then practice it.`,
@@ -120,12 +125,15 @@ function headHtml(lang, slug, title, description) {
   <meta property="og:description" content="${description}" />
   <meta property="og:url" content="${canonical}" />
   <meta property="og:locale" content="${ogLocale}" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID_MATHPRACTICEHUB}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${GA_MEASUREMENT_ID}');
+    var gaId = (window.location.hostname === 'mathpractise.netlify.app')
+      ? '${GA_MEASUREMENT_ID_MATHPRACTISE}'
+      : '${GA_MEASUREMENT_ID_MATHPRACTICEHUB}';
+    gtag('config', gaId);
   </script>`;
 }
 
