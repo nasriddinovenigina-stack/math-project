@@ -15,10 +15,6 @@ const DISPLAY_DOMAIN = SITE_URL.replace(/^https?:\/\//, "");
 const GA_MEASUREMENT_ID_MATHPRACTISE = "G-VNDQEKH5SK"; // mathpractise.netlify.app (original site)
 const GA_MEASUREMENT_ID_MATHPRACTICEHUB = "G-YEQTQFJQ3P"; // mathpracticehub.netlify.app + any other host (e.g. local dev)
 const SITE_TITLES = { en: `Math Practice`, ru: `Практика по математике` };
-const SITE_SUBTITLES = {
-  en: `Learn the idea, then practice it.`,
-  ru: `Изучи идею — затем закрепи её на практике.`,
-};
 const HOME_INTRO = {
   en: `Pick a topic below to learn the idea, then practice it with instant feedback.`,
   ru: `Выберите тему ниже, чтобы изучить идею, а затем отработать её с мгновенной проверкой ответов.`,
@@ -30,6 +26,11 @@ const HOME_META_DESCRIPTION = {
 const FOOTER_TEXT = {
   en: `Practice runs entirely in your browser — no account, no server storage.`,
   ru: `Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.`,
+};
+const HERO_CTA = { en: `Start Your Journey Now`, ru: `Начни свой путь прямо сейчас` };
+const HERO_STAT_LABELS = {
+  en: [`Topics`, `Grades`, `Languages`, `Instant Feedback`],
+  ru: [`Тем`, `Классы`, `Языка`, `Мгновенно`],
 };
 const NEW_PROBLEMS_LABEL = { en: `New Problems`, ru: `Новые примеры` };
 const SLIDE_LABELS = {
@@ -140,28 +141,14 @@ function headHtml(lang, slug, title, description) {
   </script>`;
 }
 
-function sidebarHtml(lang, currentSlug) {
-  const items = TOPICS.map((t) => {
-    const label = t[lang].navLabel;
-    const href = pagePath(lang, t.slug);
-    const active = t.slug === currentSlug ? " active" : "";
-    const icon = TOPIC_ICONS[t.slug] || "";
-    return `        <a class="tab-btn grade-${t.grade}${active}" href="${href}"><span class="tab-icon">${icon}</span>${label}</a>`;
-  }).join("\n");
-
-  return `    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h1><a class="site-title" href="${pagePath(lang, "")}"><span class="logo-mark">🧮</span>${SITE_TITLES[lang]}</a></h1>
-        <p class="subtitle">${SITE_SUBTITLES[lang]}</p>
-        <div class="lang-switch">
-          <a class="lang-link${lang === "en" ? " active" : ""}" href="${pagePath("en", currentSlug)}">EN</a>
-          <a class="lang-link${lang === "ru" ? " active" : ""}" href="${pagePath("ru", currentSlug)}">RU</a>
-        </div>
+function topBarHtml(lang, currentSlug) {
+  return `    <header class="topbar">
+      <a class="site-title" href="${pagePath(lang, "")}"><span class="logo-mark">🧮</span>${SITE_TITLES[lang]}</a>
+      <div class="lang-switch">
+        <a class="lang-link${lang === "en" ? " active" : ""}" href="${pagePath("en", currentSlug)}">EN</a>
+        <a class="lang-link${lang === "ru" ? " active" : ""}" href="${pagePath("ru", currentSlug)}">RU</a>
       </div>
-      <nav class="topic-nav">
-${items}
-      </nav>
-    </aside>`;
+    </header>`;
 }
 
 function stepsHtml(steps) {
@@ -251,7 +238,7 @@ function topicPageHtml(lang, topic) {
 </head>
 <body data-topic="${topic.slug}">
   <div class="app">
-${sidebarHtml(lang, topic.slug)}
+${topBarHtml(lang, topic.slug)}
 
     <main class="content">
       <section class="topic active grade-${topic.grade}">
@@ -281,10 +268,17 @@ ${explanationHtml}
 `;
 }
 
-function homeStatsLabel(lang) {
-  return lang === "ru"
-    ? `${TOPICS.length} тем &middot; 5&ndash;9 классы &middot; мгновенная проверка`
-    : `${TOPICS.length} topics &middot; Grades 5&ndash;9 &middot; Instant feedback`;
+function heroStatsHtml(lang) {
+  const labels = HERO_STAT_LABELS[lang];
+  const values = [`${TOPICS.length}`, `5&ndash;9`, `2`, `100%`];
+  return values
+    .map(
+      (v, i) => `            <div class="stat-block">
+              <span class="stat-number">${v}</span>
+              <span class="stat-label">${labels[i]}</span>
+            </div>`
+    )
+    .join("\n");
 }
 
 function gradeSectionHtml(lang, grade) {
@@ -322,16 +316,27 @@ function homePageHtml(lang) {
 </head>
 <body data-topic="">
   <div class="app">
-${sidebarHtml(lang, "")}
+${topBarHtml(lang, "")}
 
     <main class="content">
       <section class="topic active">
-        <div class="home-hero">
-          <h2>${SITE_TITLES[lang]}</h2>
-          <p class="home-intro">${HOME_INTRO[lang]}</p>
-          <p class="home-stats">${homeStatsLabel(lang)}</p>
+        <div class="space-hero">
+          <div class="planet"></div>
+          <div class="space-hero-content">
+            <p class="space-eyebrow">${SITE_TITLES[lang]}</p>
+            <h2>${HERO_CTA[lang]}</h2>
+            <p class="home-intro">${HOME_INTRO[lang]}</p>
+            <div class="hero-stats">
+${heroStatsHtml(lang)}
+            </div>
+            <a class="scroll-down" href="#topics">
+              <span class="arrow">&darr;</span>
+            </a>
+          </div>
         </div>
+        <div id="topics">
 ${sections}
+        </div>
       </section>
 
       <footer>
