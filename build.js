@@ -117,6 +117,9 @@ function headHtml(lang, slug, title, description) {
   <link rel="alternate" hreflang="ru" href="${ruHref}" />
   <link rel="alternate" hreflang="x-default" href="${enHref}" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <meta name="application-name" content="${siteName}" />
   <meta property="og:site_name" content="${siteName}" />
@@ -148,7 +151,7 @@ function sidebarHtml(lang, currentSlug) {
 
   return `    <aside class="sidebar">
       <div class="sidebar-header">
-        <h1><a class="site-title" href="${pagePath(lang, "")}">${SITE_TITLES[lang]}</a></h1>
+        <h1><a class="site-title" href="${pagePath(lang, "")}"><span class="logo-mark">🧮</span>${SITE_TITLES[lang]}</a></h1>
         <p class="subtitle">${SITE_SUBTITLES[lang]}</p>
         <div class="lang-switch">
           <a class="lang-link${lang === "en" ? " active" : ""}" href="${pagePath("en", currentSlug)}">EN</a>
@@ -278,14 +281,39 @@ ${explanationHtml}
 `;
 }
 
+function homeStatsLabel(lang) {
+  return lang === "ru"
+    ? `${TOPICS.length} тем &middot; 5&ndash;9 классы &middot; мгновенная проверка`
+    : `${TOPICS.length} topics &middot; Grades 5&ndash;9 &middot; Instant feedback`;
+}
+
+function gradeSectionHtml(lang, grade) {
+  const topicsForGrade = TOPICS.filter((t) => t.grade === grade);
+  if (!topicsForGrade.length) return "";
+  const cards = topicsForGrade
+    .map((t) => {
+      const tt = t[lang];
+      const icon = TOPIC_ICONS[t.slug] || "";
+      return `            <li class="topic-card grade-${t.grade}">
+              <a href="${pagePath(lang, t.slug)}">
+                <span class="topic-card-icon">${icon}</span>
+                <span class="topic-card-label">${tt.navLabel}</span>
+              </a>
+            </li>`;
+    })
+    .join("\n");
+
+  return `        <div class="grade-section">
+          <h3 class="grade-section-title grade-${grade}">${gradeLabel(lang, grade)}</h3>
+          <ul class="topic-list">
+${cards}
+          </ul>
+        </div>`;
+}
+
 function homePageHtml(lang) {
   const title = `${SITE_TITLES[lang]}${lang === "en" ? " — Learn Math Step by Step" : " — изучай математику шаг за шагом"}`;
-  const links = TOPICS.map((t) => {
-    const tt = t[lang];
-    const label = gradeLabel(lang, t.grade);
-    const icon = TOPIC_ICONS[t.slug] || "";
-    return `          <li><a href="${pagePath(lang, t.slug)}">${icon} ${tt.navLabel}</a> <span class="grade-badge grade-badge-inline grade-${t.grade}">${label}</span></li>`;
-  }).join("\n");
+  const sections = [5, 6, 7, 8, 9].map((g) => gradeSectionHtml(lang, g)).join("\n\n");
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -298,11 +326,12 @@ ${sidebarHtml(lang, "")}
 
     <main class="content">
       <section class="topic active">
-        <h2>${SITE_TITLES[lang]}</h2>
-        <p class="home-intro">${HOME_INTRO[lang]}</p>
-        <ul class="topic-list">
-${links}
-        </ul>
+        <div class="home-hero">
+          <h2>${SITE_TITLES[lang]}</h2>
+          <p class="home-intro">${HOME_INTRO[lang]}</p>
+          <p class="home-stats">${homeStatsLabel(lang)}</p>
+        </div>
+${sections}
       </section>
 
       <footer>

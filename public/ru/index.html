@@ -10,6 +10,9 @@
   <link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/" />
   <link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <meta name="application-name" content="Практика по математике" />
   <meta property="og:site_name" content="Практика по математике" />
@@ -33,7 +36,7 @@
   <div class="app">
     <aside class="sidebar">
       <div class="sidebar-header">
-        <h1><a class="site-title" href="/ru/">Практика по математике</a></h1>
+        <h1><a class="site-title" href="/ru/"><span class="logo-mark">🧮</span>Практика по математике</a></h1>
         <p class="subtitle">Изучи идею — затем закрепи её на практике.</p>
         <div class="lang-switch">
           <a class="lang-link" href="/">EN</a>
@@ -90,54 +93,304 @@
 
     <main class="content">
       <section class="topic active">
-        <h2>Практика по математике</h2>
-        <p class="home-intro">Выберите тему ниже, чтобы изучить идею, а затем отработать её с мгновенной проверкой ответов.</p>
-        <ul class="topic-list">
-          <li><a href="/ru/arithmetic">➕ Арифметика</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/negative-numbers">➖ Отрицательные числа</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/order-of-operations">🔢 Порядок действий</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/fractions">🍕 Дроби</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/decimals">🔟 Десятичные дроби</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/gcf">🧩 НОД</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/lcm">🔗 НОК</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/percentages">💯 Проценты</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/ratios">⚖️ Отношения и пропорции</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/probability">🎲 Вероятность</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/average">📊 Среднее арифметическое</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/mean-median-mode">📈 Среднее, медиана и мода</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/like-terms">🍎 Подобные слагаемые</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/algebra">🧮 Основы алгебры</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/inequalities">🔀 Неравенства</a> <span class="grade-badge grade-badge-inline grade-8">8 класс</span></li>
-          <li><a href="/ru/coordinate-plane">📍 Координатная плоскость</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/functions">🚕 Функции</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/systems">🍏 Системы уравнений</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/slope">⛰️ Наклон прямой</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/quadratic">🎯 Квадратные уравнения</a> <span class="grade-badge grade-badge-inline grade-8">8 класс</span></li>
-          <li><a href="/ru/polynomials">📚 Многочлены</a> <span class="grade-badge grade-badge-inline grade-8">8 класс</span></li>
-          <li><a href="/ru/parabola">🛹 Парабола</a> <span class="grade-badge grade-badge-inline grade-9">9 класс</span></li>
-          <li><a href="/ru/perimeter-area">📐 Периметр и площадь</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/volume">📦 Объём</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/pythagorean">🪜 Теорема Пифагора</a> <span class="grade-badge grade-badge-inline grade-8">8 класс</span></li>
-          <li><a href="/ru/circles">⭕ Окружность</a> <span class="grade-badge grade-badge-inline grade-9">9 класс</span></li>
-          <li><a href="/ru/scientific-notation">🔬 Научная нотация</a> <span class="grade-badge grade-badge-inline grade-8">8 класс</span></li>
-          <li><a href="/ru/exponents">✖️ Степени</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/square-roots">🌱 Квадратный корень</a> <span class="grade-badge grade-badge-inline grade-8">8 класс</span></li>
-          <li><a href="/ru/absolute-value">↔️ Модуль числа</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/rounding">🔵 Округление чисел</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/prime-factorization">🌳 Разложение на простые множители</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/unit-rate">🏷️ Цена за единицу</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/simple-interest">🏦 Простые проценты</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/surface-area">🎁 Площадь поверхности</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/angles">🔺 Углы и их взаимосвязи</a> <span class="grade-badge grade-badge-inline grade-7">7 класс</span></li>
-          <li><a href="/ru/foil">✳️ Умножение двучленов (FOIL)</a> <span class="grade-badge grade-badge-inline grade-9">9 класс</span></li>
-          <li><a href="/ru/distance-formula">🗺️ Формула расстояния</a> <span class="grade-badge grade-badge-inline grade-9">9 класс</span></li>
-          <li><a href="/ru/trigonometry">🧭 Тригонометрические отношения</a> <span class="grade-badge grade-badge-inline grade-9">9 класс</span></li>
-          <li><a href="/ru/long-division">➗ Деление в столбик</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/divisibility-rules">🔍 Признаки делимости</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/comparing-fractions-decimals">🆚 Сравнение дробей и десятичных дробей</a> <span class="grade-badge grade-badge-inline grade-5">5 класс</span></li>
-          <li><a href="/ru/fraction-decimal-percent">🔄 Дроби, десятичные дроби и проценты</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-          <li><a href="/ru/unit-conversion">📏 Перевод единиц измерения</a> <span class="grade-badge grade-badge-inline grade-6">6 класс</span></li>
-        </ul>
+        <div class="home-hero">
+          <h2>Практика по математике</h2>
+          <p class="home-intro">Выберите тему ниже, чтобы изучить идею, а затем отработать её с мгновенной проверкой ответов.</p>
+          <p class="home-stats">44 тем &middot; 5&ndash;9 классы &middot; мгновенная проверка</p>
+        </div>
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-5">5 класс</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-5">
+              <a href="/ru/arithmetic">
+                <span class="topic-card-icon">➕</span>
+                <span class="topic-card-label">Арифметика</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/ru/order-of-operations">
+                <span class="topic-card-icon">🔢</span>
+                <span class="topic-card-label">Порядок действий</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/ru/decimals">
+                <span class="topic-card-icon">🔟</span>
+                <span class="topic-card-label">Десятичные дроби</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/ru/perimeter-area">
+                <span class="topic-card-icon">📐</span>
+                <span class="topic-card-label">Периметр и площадь</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/ru/rounding">
+                <span class="topic-card-icon">🔵</span>
+                <span class="topic-card-label">Округление чисел</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/ru/long-division">
+                <span class="topic-card-icon">➗</span>
+                <span class="topic-card-label">Деление в столбик</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/ru/divisibility-rules">
+                <span class="topic-card-icon">🔍</span>
+                <span class="topic-card-label">Признаки делимости</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/ru/comparing-fractions-decimals">
+                <span class="topic-card-icon">🆚</span>
+                <span class="topic-card-label">Сравнение дробей и десятичных дробей</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-6">6 класс</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-6">
+              <a href="/ru/negative-numbers">
+                <span class="topic-card-icon">➖</span>
+                <span class="topic-card-label">Отрицательные числа</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/fractions">
+                <span class="topic-card-icon">🍕</span>
+                <span class="topic-card-label">Дроби</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/gcf">
+                <span class="topic-card-icon">🧩</span>
+                <span class="topic-card-label">НОД</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/lcm">
+                <span class="topic-card-icon">🔗</span>
+                <span class="topic-card-label">НОК</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/percentages">
+                <span class="topic-card-icon">💯</span>
+                <span class="topic-card-label">Проценты</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/ratios">
+                <span class="topic-card-icon">⚖️</span>
+                <span class="topic-card-label">Отношения и пропорции</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/average">
+                <span class="topic-card-icon">📊</span>
+                <span class="topic-card-label">Среднее арифметическое</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/like-terms">
+                <span class="topic-card-icon">🍎</span>
+                <span class="topic-card-label">Подобные слагаемые</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/coordinate-plane">
+                <span class="topic-card-icon">📍</span>
+                <span class="topic-card-label">Координатная плоскость</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/volume">
+                <span class="topic-card-icon">📦</span>
+                <span class="topic-card-label">Объём</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/absolute-value">
+                <span class="topic-card-icon">↔️</span>
+                <span class="topic-card-label">Модуль числа</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/prime-factorization">
+                <span class="topic-card-icon">🌳</span>
+                <span class="topic-card-label">Разложение на простые множители</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/unit-rate">
+                <span class="topic-card-icon">🏷️</span>
+                <span class="topic-card-label">Цена за единицу</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/fraction-decimal-percent">
+                <span class="topic-card-icon">🔄</span>
+                <span class="topic-card-label">Дроби, десятичные дроби и проценты</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ru/unit-conversion">
+                <span class="topic-card-icon">📏</span>
+                <span class="topic-card-label">Перевод единиц измерения</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-7">7 класс</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-7">
+              <a href="/ru/probability">
+                <span class="topic-card-icon">🎲</span>
+                <span class="topic-card-label">Вероятность</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/mean-median-mode">
+                <span class="topic-card-icon">📈</span>
+                <span class="topic-card-label">Среднее, медиана и мода</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/algebra">
+                <span class="topic-card-icon">🧮</span>
+                <span class="topic-card-label">Основы алгебры</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/functions">
+                <span class="topic-card-icon">🚕</span>
+                <span class="topic-card-label">Функции</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/systems">
+                <span class="topic-card-icon">🍏</span>
+                <span class="topic-card-label">Системы уравнений</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/slope">
+                <span class="topic-card-icon">⛰️</span>
+                <span class="topic-card-label">Наклон прямой</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/exponents">
+                <span class="topic-card-icon">✖️</span>
+                <span class="topic-card-label">Степени</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/simple-interest">
+                <span class="topic-card-icon">🏦</span>
+                <span class="topic-card-label">Простые проценты</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/surface-area">
+                <span class="topic-card-icon">🎁</span>
+                <span class="topic-card-label">Площадь поверхности</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/ru/angles">
+                <span class="topic-card-icon">🔺</span>
+                <span class="topic-card-label">Углы и их взаимосвязи</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-8">8 класс</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-8">
+              <a href="/ru/inequalities">
+                <span class="topic-card-icon">🔀</span>
+                <span class="topic-card-label">Неравенства</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/ru/quadratic">
+                <span class="topic-card-icon">🎯</span>
+                <span class="topic-card-label">Квадратные уравнения</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/ru/polynomials">
+                <span class="topic-card-icon">📚</span>
+                <span class="topic-card-label">Многочлены</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/ru/pythagorean">
+                <span class="topic-card-icon">🪜</span>
+                <span class="topic-card-label">Теорема Пифагора</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/ru/scientific-notation">
+                <span class="topic-card-icon">🔬</span>
+                <span class="topic-card-label">Научная нотация</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/ru/square-roots">
+                <span class="topic-card-icon">🌱</span>
+                <span class="topic-card-label">Квадратный корень</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-9">9 класс</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-9">
+              <a href="/ru/parabola">
+                <span class="topic-card-icon">🛹</span>
+                <span class="topic-card-label">Парабола</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/ru/circles">
+                <span class="topic-card-icon">⭕</span>
+                <span class="topic-card-label">Окружность</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/ru/foil">
+                <span class="topic-card-icon">✳️</span>
+                <span class="topic-card-label">Умножение двучленов (FOIL)</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/ru/distance-formula">
+                <span class="topic-card-icon">🗺️</span>
+                <span class="topic-card-label">Формула расстояния</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/ru/trigonometry">
+                <span class="topic-card-icon">🧭</span>
+                <span class="topic-card-label">Тригонометрические отношения</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <footer>

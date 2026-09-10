@@ -10,6 +10,9 @@
   <link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/" />
   <link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <meta name="application-name" content="Math Practice" />
   <meta property="og:site_name" content="Math Practice" />
@@ -33,7 +36,7 @@
   <div class="app">
     <aside class="sidebar">
       <div class="sidebar-header">
-        <h1><a class="site-title" href="/">Math Practice</a></h1>
+        <h1><a class="site-title" href="/"><span class="logo-mark">🧮</span>Math Practice</a></h1>
         <p class="subtitle">Learn the idea, then practice it.</p>
         <div class="lang-switch">
           <a class="lang-link active" href="/">EN</a>
@@ -90,54 +93,304 @@
 
     <main class="content">
       <section class="topic active">
-        <h2>Math Practice</h2>
-        <p class="home-intro">Pick a topic below to learn the idea, then practice it with instant feedback.</p>
-        <ul class="topic-list">
-          <li><a href="/arithmetic">➕ Arithmetic</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/negative-numbers">➖ Negative Numbers</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/order-of-operations">🔢 Order of Operations</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/fractions">🍕 Fractions</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/decimals">🔟 Decimals</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/gcf">🧩 GCF</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/lcm">🔗 LCM</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/percentages">💯 Percentages</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/ratios">⚖️ Ratios & Proportions</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/probability">🎲 Probability</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/average">📊 Average (Mean)</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/mean-median-mode">📈 Mean, Median & Mode</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/like-terms">🍎 Combining Like Terms</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/algebra">🧮 Basic Algebra</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/inequalities">🔀 Inequalities</a> <span class="grade-badge grade-badge-inline grade-8">8th Grade</span></li>
-          <li><a href="/coordinate-plane">📍 Coordinate Plane</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/functions">🚕 Functions</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/systems">🍏 Systems of Equations</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/slope">⛰️ Slope of a Line</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/quadratic">🎯 Quadratic Equations</a> <span class="grade-badge grade-badge-inline grade-8">8th Grade</span></li>
-          <li><a href="/polynomials">📚 Polynomials</a> <span class="grade-badge grade-badge-inline grade-8">8th Grade</span></li>
-          <li><a href="/parabola">🛹 Parabola</a> <span class="grade-badge grade-badge-inline grade-9">9th Grade</span></li>
-          <li><a href="/perimeter-area">📐 Perimeter & Area</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/volume">📦 Volume</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/pythagorean">🪜 Pythagorean Theorem</a> <span class="grade-badge grade-badge-inline grade-8">8th Grade</span></li>
-          <li><a href="/circles">⭕ Circles</a> <span class="grade-badge grade-badge-inline grade-9">9th Grade</span></li>
-          <li><a href="/scientific-notation">🔬 Scientific Notation</a> <span class="grade-badge grade-badge-inline grade-8">8th Grade</span></li>
-          <li><a href="/exponents">✖️ Exponents</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/square-roots">🌱 Square Roots</a> <span class="grade-badge grade-badge-inline grade-8">8th Grade</span></li>
-          <li><a href="/absolute-value">↔️ Absolute Value</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/rounding">🔵 Rounding Numbers</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/prime-factorization">🌳 Prime Factorization</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/unit-rate">🏷️ Unit Rate</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/simple-interest">🏦 Simple Interest</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/surface-area">🎁 Surface Area</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/angles">🔺 Angles & Angle Relationships</a> <span class="grade-badge grade-badge-inline grade-7">7th Grade</span></li>
-          <li><a href="/foil">✳️ Multiplying Binomials (FOIL)</a> <span class="grade-badge grade-badge-inline grade-9">9th Grade</span></li>
-          <li><a href="/distance-formula">🗺️ Distance Formula</a> <span class="grade-badge grade-badge-inline grade-9">9th Grade</span></li>
-          <li><a href="/trigonometry">🧭 Trigonometric Ratios</a> <span class="grade-badge grade-badge-inline grade-9">9th Grade</span></li>
-          <li><a href="/long-division">➗ Long Division</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/divisibility-rules">🔍 Divisibility Rules</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/comparing-fractions-decimals">🆚 Comparing Fractions & Decimals</a> <span class="grade-badge grade-badge-inline grade-5">5th Grade</span></li>
-          <li><a href="/fraction-decimal-percent">🔄 Fractions, Decimals & Percentages</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-          <li><a href="/unit-conversion">📏 Unit Conversion</a> <span class="grade-badge grade-badge-inline grade-6">6th Grade</span></li>
-        </ul>
+        <div class="home-hero">
+          <h2>Math Practice</h2>
+          <p class="home-intro">Pick a topic below to learn the idea, then practice it with instant feedback.</p>
+          <p class="home-stats">44 topics &middot; Grades 5&ndash;9 &middot; Instant feedback</p>
+        </div>
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-5">5th Grade</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-5">
+              <a href="/arithmetic">
+                <span class="topic-card-icon">➕</span>
+                <span class="topic-card-label">Arithmetic</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/order-of-operations">
+                <span class="topic-card-icon">🔢</span>
+                <span class="topic-card-label">Order of Operations</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/decimals">
+                <span class="topic-card-icon">🔟</span>
+                <span class="topic-card-label">Decimals</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/perimeter-area">
+                <span class="topic-card-icon">📐</span>
+                <span class="topic-card-label">Perimeter & Area</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/rounding">
+                <span class="topic-card-icon">🔵</span>
+                <span class="topic-card-label">Rounding Numbers</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/long-division">
+                <span class="topic-card-icon">➗</span>
+                <span class="topic-card-label">Long Division</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/divisibility-rules">
+                <span class="topic-card-icon">🔍</span>
+                <span class="topic-card-label">Divisibility Rules</span>
+              </a>
+            </li>
+            <li class="topic-card grade-5">
+              <a href="/comparing-fractions-decimals">
+                <span class="topic-card-icon">🆚</span>
+                <span class="topic-card-label">Comparing Fractions & Decimals</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-6">6th Grade</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-6">
+              <a href="/negative-numbers">
+                <span class="topic-card-icon">➖</span>
+                <span class="topic-card-label">Negative Numbers</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/fractions">
+                <span class="topic-card-icon">🍕</span>
+                <span class="topic-card-label">Fractions</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/gcf">
+                <span class="topic-card-icon">🧩</span>
+                <span class="topic-card-label">GCF</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/lcm">
+                <span class="topic-card-icon">🔗</span>
+                <span class="topic-card-label">LCM</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/percentages">
+                <span class="topic-card-icon">💯</span>
+                <span class="topic-card-label">Percentages</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/ratios">
+                <span class="topic-card-icon">⚖️</span>
+                <span class="topic-card-label">Ratios & Proportions</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/average">
+                <span class="topic-card-icon">📊</span>
+                <span class="topic-card-label">Average (Mean)</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/like-terms">
+                <span class="topic-card-icon">🍎</span>
+                <span class="topic-card-label">Combining Like Terms</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/coordinate-plane">
+                <span class="topic-card-icon">📍</span>
+                <span class="topic-card-label">Coordinate Plane</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/volume">
+                <span class="topic-card-icon">📦</span>
+                <span class="topic-card-label">Volume</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/absolute-value">
+                <span class="topic-card-icon">↔️</span>
+                <span class="topic-card-label">Absolute Value</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/prime-factorization">
+                <span class="topic-card-icon">🌳</span>
+                <span class="topic-card-label">Prime Factorization</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/unit-rate">
+                <span class="topic-card-icon">🏷️</span>
+                <span class="topic-card-label">Unit Rate</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/fraction-decimal-percent">
+                <span class="topic-card-icon">🔄</span>
+                <span class="topic-card-label">Fractions, Decimals & Percentages</span>
+              </a>
+            </li>
+            <li class="topic-card grade-6">
+              <a href="/unit-conversion">
+                <span class="topic-card-icon">📏</span>
+                <span class="topic-card-label">Unit Conversion</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-7">7th Grade</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-7">
+              <a href="/probability">
+                <span class="topic-card-icon">🎲</span>
+                <span class="topic-card-label">Probability</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/mean-median-mode">
+                <span class="topic-card-icon">📈</span>
+                <span class="topic-card-label">Mean, Median & Mode</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/algebra">
+                <span class="topic-card-icon">🧮</span>
+                <span class="topic-card-label">Basic Algebra</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/functions">
+                <span class="topic-card-icon">🚕</span>
+                <span class="topic-card-label">Functions</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/systems">
+                <span class="topic-card-icon">🍏</span>
+                <span class="topic-card-label">Systems of Equations</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/slope">
+                <span class="topic-card-icon">⛰️</span>
+                <span class="topic-card-label">Slope of a Line</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/exponents">
+                <span class="topic-card-icon">✖️</span>
+                <span class="topic-card-label">Exponents</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/simple-interest">
+                <span class="topic-card-icon">🏦</span>
+                <span class="topic-card-label">Simple Interest</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/surface-area">
+                <span class="topic-card-icon">🎁</span>
+                <span class="topic-card-label">Surface Area</span>
+              </a>
+            </li>
+            <li class="topic-card grade-7">
+              <a href="/angles">
+                <span class="topic-card-icon">🔺</span>
+                <span class="topic-card-label">Angles & Angle Relationships</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-8">8th Grade</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-8">
+              <a href="/inequalities">
+                <span class="topic-card-icon">🔀</span>
+                <span class="topic-card-label">Inequalities</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/quadratic">
+                <span class="topic-card-icon">🎯</span>
+                <span class="topic-card-label">Quadratic Equations</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/polynomials">
+                <span class="topic-card-icon">📚</span>
+                <span class="topic-card-label">Polynomials</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/pythagorean">
+                <span class="topic-card-icon">🪜</span>
+                <span class="topic-card-label">Pythagorean Theorem</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/scientific-notation">
+                <span class="topic-card-icon">🔬</span>
+                <span class="topic-card-label">Scientific Notation</span>
+              </a>
+            </li>
+            <li class="topic-card grade-8">
+              <a href="/square-roots">
+                <span class="topic-card-icon">🌱</span>
+                <span class="topic-card-label">Square Roots</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grade-section">
+          <h3 class="grade-section-title grade-9">9th Grade</h3>
+          <ul class="topic-list">
+            <li class="topic-card grade-9">
+              <a href="/parabola">
+                <span class="topic-card-icon">🛹</span>
+                <span class="topic-card-label">Parabola</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/circles">
+                <span class="topic-card-icon">⭕</span>
+                <span class="topic-card-label">Circles</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/foil">
+                <span class="topic-card-icon">✳️</span>
+                <span class="topic-card-label">Multiplying Binomials (FOIL)</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/distance-formula">
+                <span class="topic-card-icon">🗺️</span>
+                <span class="topic-card-label">Distance Formula</span>
+              </a>
+            </li>
+            <li class="topic-card grade-9">
+              <a href="/trigonometry">
+                <span class="topic-card-icon">🧭</span>
+                <span class="topic-card-label">Trigonometric Ratios</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <footer>
