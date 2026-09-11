@@ -156,6 +156,10 @@ h1, h2, h3 {
   padding: 3rem 2rem 4.5rem;
 }
 
+.content-home {
+  max-width: 1180px;
+}
+
 .topic {
   display: none;
 }
@@ -201,9 +205,13 @@ html {
   overflow: hidden;
   isolation: isolate;
   border-radius: var(--radius);
-  padding: 4.5rem 2rem 4rem;
+  padding: 4.5rem 3rem;
   margin-bottom: 2.5rem;
-  text-align: center;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3rem;
   border: 1px solid var(--border);
   background:
     radial-gradient(ellipse 60% 50% at 25% 15%, rgba(155, 109, 255, 0.4), transparent 60%),
@@ -276,18 +284,26 @@ html {
 }
 
 .space-eyebrow {
-  margin: 0 0 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 1.4rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(109, 140, 255, 0.35);
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
 }
 
 .space-hero h2 {
-  margin: 0 auto 0.85rem;
-  max-width: 20ch;
-  font-size: 2.6rem;
+  margin: 0 0 1rem;
+  max-width: none;
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   font-weight: 800;
   background: linear-gradient(135deg, #fff, var(--accent) 60%, var(--accent2));
   -webkit-background-clip: text;
@@ -297,16 +313,16 @@ html {
 
 .home-intro {
   color: var(--muted);
-  margin: 0 auto 2.25rem;
+  margin: 0 0 2.25rem;
   font-size: 1.05rem;
-  max-width: 46ch;
+  max-width: 42ch;
 }
 
 .hero-stats {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 1.75rem;
   margin-bottom: 2.5rem;
 }
 
@@ -317,23 +333,69 @@ html {
 }
 
 .stat-number {
+  width: 4.2rem;
+  height: 4.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
   font-family: var(--font-display);
-  font-size: 2.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(135deg, #fff, var(--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text);
 }
 
 .stat-label {
-  margin-top: 0.5rem;
-  font-size: 0.74rem;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--muted);
+  text-align: center;
+}
+
+.space-hero-visual {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+.hero-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.hero-tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.hero-tile-icon {
+  font-size: 1.9rem;
+}
+
+.hero-tile-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .scroll-down {
@@ -843,6 +905,8 @@ footer {
   color: var(--muted);
   font-size: 0.85rem;
   padding-top: 2.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
 }
 
 .site-domain {
@@ -852,16 +916,21 @@ footer {
 }
 
 .footer-links {
-  margin-top: 0.6rem;
+  margin-top: 0.75rem;
 }
 
 .footer-links a {
   color: var(--muted);
-  text-decoration: underline;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .footer-links a:hover {
   color: var(--text);
+  text-decoration: underline;
 }
 
 /* ---------- legal pages ---------- */
@@ -903,7 +972,9 @@ footer {
   }
 
   .space-hero {
-    padding: 3rem 1.25rem 2.5rem;
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem;
+    gap: 2rem;
   }
 
   .space-hero h2 {
@@ -911,11 +982,29 @@ footer {
   }
 
   .hero-stats {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .stat-number {
-    font-size: 1.8rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    font-size: 1rem;
+  }
+
+  .space-hero-visual {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero-tile {
+    padding: 0.9rem 0.5rem;
+  }
+
+  .hero-tile-icon {
+    font-size: 1.4rem;
+  }
+
+  .hero-tile-label {
+    font-size: 0.65rem;
   }
 
   .space-hero .planet {

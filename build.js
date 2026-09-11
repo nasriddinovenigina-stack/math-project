@@ -410,6 +410,23 @@ ${cards}
         </div>`;
 }
 
+const HERO_VISUAL_SLUGS = ["fractions", "algebra", "pythagorean", "quadratic"];
+
+function heroVisualHtml(lang) {
+  const tiles = HERO_VISUAL_SLUGS.map((slug) => {
+    const topic = TOPICS.find((t) => t.slug === slug);
+    const icon = TOPIC_ICONS[slug] || "";
+    return `          <a class="hero-tile" href="${pagePath(lang, slug)}">
+            <span class="hero-tile-icon">${icon}</span>
+            <span class="hero-tile-label">${topic[lang].navLabel}</span>
+          </a>`;
+  }).join("\n");
+
+  return `        <div class="space-hero-visual">
+${tiles}
+        </div>`;
+}
+
 function homePageHtml(lang) {
   const title = `${SITE_TITLES[lang]}${lang === "en" ? " — Learn Math Step by Step" : " — изучай математику шаг за шагом"}`;
   const sections = [5, 6, 7, 8, 9].map((g) => gradeSectionHtml(lang, g)).join("\n\n");
@@ -423,7 +440,7 @@ function homePageHtml(lang) {
   <div class="app">
 ${topBarHtml(lang, "")}
 
-    <main class="content">
+    <main class="content content-home">
       <section class="topic active">
         <div class="space-hero">
           <div class="planet"></div>
@@ -438,6 +455,7 @@ ${heroStatsHtml(lang)}
               <span class="arrow">&darr;</span>
             </a>
           </div>
+${heroVisualHtml(lang)}
         </div>
         <div id="topics">
 ${sections}
