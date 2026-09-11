@@ -851,6 +851,42 @@ footer {
   opacity: 0.6;
 }
 
+.footer-links {
+  margin-top: 0.6rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+/* ---------- legal pages ---------- */
+
+.legal-page .updated {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.legal-page h3 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-page p {
+  color: var(--muted);
+}
+
+.legal-page a {
+  color: var(--accent);
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 720px) {

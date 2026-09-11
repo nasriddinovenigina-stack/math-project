@@ -27,6 +27,83 @@ const FOOTER_TEXT = {
   en: `Practice runs entirely in your browser — no account, no server storage.`,
   ru: `Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.`,
 };
+const PRIVACY_LINK_LABEL = { en: `Privacy Policy`, ru: `Политика конфиденциальности` };
+const PRIVACY_CONTACT_EMAIL = "saidaliotabekovich@gmail.com";
+const PRIVACY_UPDATED = { en: `Last updated: September 11, 2026`, ru: `Обновлено: 11 сентября 2026 г.` };
+const PRIVACY_META_DESCRIPTION = {
+  en: `How Math Practice handles information: no accounts, no personal data collection, analytics only.`,
+  ru: `Как «Практика по математике» обрабатывает информацию: без аккаунтов, без сбора личных данных, только аналитика.`,
+};
+const PRIVACY_SECTIONS = {
+  en: [
+    {
+      title: `No accounts, no personal data collected by us`,
+      body: `The site has no sign-up, no login, and no server-side database. All the practice problems and answer-checking run entirely in your browser. We do not ask for or store your name, email address, or any other personal information.`,
+    },
+    {
+      title: `Analytics`,
+      body: `We use Google Analytics to understand which topics are popular and how the site is used (for example, which pages are visited and roughly how long people spend on them). Google Analytics may use cookies and collect information such as your approximate location (derived from your IP address), browser type, and device type. This data is aggregated and does not identify you personally. You can learn more at Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy &amp; Terms</a> page, and opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.`,
+    },
+    {
+      title: `Cookies`,
+      body: `The only cookies set on this site are the ones placed by Google Analytics, as described above. You can block or delete cookies through your browser settings at any time; the site's practice features will continue to work normally without them.`,
+    },
+    {
+      title: `Children's privacy`,
+      body: `This site is designed for students in grades 5&ndash;9 and may be used by children. We do not knowingly collect personal information from anyone, including children &mdash; there are no forms, accounts, or fields anywhere on the site that ask a visitor to enter personal details. If you are a parent or guardian with questions, please contact us using the details below.`,
+    },
+    {
+      title: `Third-party services`,
+      body: `Aside from Google Analytics, the site loads fonts from Google Fonts. Loading these fonts may cause your browser to make a request to Google's servers, which can see that the request came from your IP address, as with any resource loaded from a third-party server.`,
+    },
+    {
+      title: `Data security`,
+      body: `Because no personal data is collected or stored &mdash; there's no server-side database and no accounts &mdash; there's no personal data on the site to be exposed. All practice progress lives only in your browser's memory during your visit.`,
+    },
+    {
+      title: `Changes to this policy`,
+      body: `If this policy changes, the updated version will be posted on this page with a new "last updated" date.`,
+    },
+    {
+      title: `Contact`,
+      body: `Questions about this policy can be sent to <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
+    },
+  ],
+  ru: [
+    {
+      title: `Без аккаунтов и без сбора личных данных с нашей стороны`,
+      body: `На сайте нет регистрации, входа в систему и серверной базы данных. Все практические задания и проверка ответов выполняются полностью в вашем браузере. Мы не запрашиваем и не храним ваше имя, адрес электронной почты или любую другую личную информацию.`,
+    },
+    {
+      title: `Аналитика`,
+      body: `Мы используем Google Analytics, чтобы понимать, какие темы популярны и как используется сайт (например, какие страницы посещаются и сколько времени на них проводят). Google Analytics может использовать файлы cookie и собирать такие данные, как приблизительное местоположение (на основе IP-адреса), тип браузера и тип устройства. Эти данные агрегированы и не позволяют установить вашу личность. Подробнее — на странице Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">«Конфиденциальность и условия»</a>, а отказаться от отслеживания можно с помощью <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">надстройки Google Analytics Opt-out Browser Add-on</a>.`,
+    },
+    {
+      title: `Файлы cookie`,
+      body: `Единственные файлы cookie на этом сайте — те, что устанавливает Google Analytics, как описано выше. Вы можете в любой момент заблокировать или удалить файлы cookie в настройках браузера; практические функции сайта продолжат работать в обычном режиме.`,
+    },
+    {
+      title: `Конфиденциальность детей`,
+      body: `Этот сайт предназначен для учащихся 5&ndash;9 классов и может использоваться детьми. Мы сознательно не собираем личную информацию ни от кого, включая детей, — на сайте нет форм, аккаунтов или полей, где посетителю нужно было бы вводить личные данные. Если вы родитель или опекун и у вас есть вопросы, свяжитесь с нами по контактам ниже.`,
+    },
+    {
+      title: `Сторонние сервисы`,
+      body: `Помимо Google Analytics, сайт загружает шрифты с Google Fonts. Загрузка этих шрифтов может привести к тому, что ваш браузер отправит запрос на серверы Google, которые увидят, что запрос пришёл с вашего IP-адреса, — как и при загрузке любого ресурса со стороннего сервера.`,
+    },
+    {
+      title: `Безопасность данных`,
+      body: `Поскольку личные данные не собираются и не хранятся — серверной базы данных и аккаунтов нет, — на сайте нет личных данных, которые могли бы быть раскрыты. Весь прогресс в практике существует только в памяти вашего браузера во время посещения.`,
+    },
+    {
+      title: `Изменения в этой политике`,
+      body: `Если эта политика изменится, обновлённая версия будет опубликована на этой странице с новой датой обновления.`,
+    },
+    {
+      title: `Контакты`,
+      body: `Вопросы по этой политике можно направлять на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
+    },
+  ],
+};
 const HERO_CTA = { en: `Start Your Journey Now`, ru: `Начни свой путь прямо сейчас` };
 const HERO_STAT_LABELS = {
   en: [`Topics`, `Grades`, `Languages`, `Instant Feedback`],
@@ -257,6 +334,7 @@ ${explanationHtml}
 
       <footer>
         <p>${FOOTER_TEXT[lang]}</p>
+        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a></p>
         <p class="site-domain">${DISPLAY_DOMAIN}</p>
       </footer>
     </main>
@@ -341,6 +419,48 @@ ${sections}
 
       <footer>
         <p>${FOOTER_TEXT[lang]}</p>
+        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a></p>
+        <p class="site-domain">${DISPLAY_DOMAIN}</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
+`;
+}
+
+const PRIVACY_INTRO = {
+  en: `Math Practice ("the site", "we", "us") is a free educational website for practicing math skills for grades 5&ndash;9. This policy explains what information is collected when you use the site and how it's handled.`,
+  ru: `«Практика по математике» (далее — «сайт», «мы») — бесплатный образовательный сайт для отработки математических навыков для 5&ndash;9 классов. Эта политика объясняет, какая информация собирается при использовании сайта и как она обрабатывается.`,
+};
+
+function privacyPageHtml(lang) {
+  const title = `${PRIVACY_LINK_LABEL[lang]} — ${SITE_TITLES[lang]}`;
+  const sections = PRIVACY_SECTIONS[lang]
+    .map((s) => `        <h3>${s.title}</h3>\n        <p>${s.body}</p>`)
+    .join("\n\n");
+
+  return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+  ${headHtml(lang, "privacy", title, PRIVACY_META_DESCRIPTION[lang])}
+</head>
+<body data-topic="">
+  <div class="app">
+${topBarHtml(lang, "privacy")}
+
+    <main class="content">
+      <section class="topic active legal-page">
+        <h2>${PRIVACY_LINK_LABEL[lang]}</h2>
+        <p class="updated">${PRIVACY_UPDATED[lang]}</p>
+        <p>${PRIVACY_INTRO[lang]}</p>
+
+${sections}
+      </section>
+
+      <footer>
+        <p>${FOOTER_TEXT[lang]}</p>
+        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a></p>
         <p class="site-domain">${DISPLAY_DOMAIN}</p>
       </footer>
     </main>
@@ -351,7 +471,7 @@ ${sections}
 }
 
 function sitemapXml() {
-  const slugs = ["", ...TOPICS.map((t) => t.slug)];
+  const slugs = ["", "privacy", ...TOPICS.map((t) => t.slug)];
   const entries = slugs
     .map((slug) => {
       const enHref = `${SITE_URL}${pagePath("en", slug)}`;
@@ -397,10 +517,13 @@ function build() {
   fs.writeFileSync(path.join(PUBLIC_DIR, "index.html"), homePageHtml("en"));
   fs.writeFileSync(path.join(RU_DIR, "index.html"), homePageHtml("ru"));
 
+  fs.writeFileSync(path.join(PUBLIC_DIR, "privacy.html"), privacyPageHtml("en"));
+  fs.writeFileSync(path.join(RU_DIR, "privacy.html"), privacyPageHtml("ru"));
+
   fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap.xml"), sitemapXml());
   fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), robotsTxt());
 
-  console.log(`Built ${TOPICS.length} topics x 2 languages + 2 home pages + sitemap.xml + robots.txt`);
+  console.log(`Built ${TOPICS.length} topics x 2 languages + 2 home pages + privacy policy x 2 + sitemap.xml + robots.txt`);
 }
 
 build();
