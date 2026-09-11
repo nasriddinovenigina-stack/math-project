@@ -97,25 +97,9 @@ h1, h2, h3 {
 .site-title {
   color: var(--text);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-}
-
-.logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.05rem;
-  height: 2.05rem;
-  border-radius: 9px;
-  font-size: 1.05rem;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 6px 16px -4px rgba(109, 140, 255, 0.55);
-  flex-shrink: 0;
 }
 
 .lang-switch {
@@ -368,11 +352,9 @@ html {
 
 .hero-tile {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 1.5rem 0.75rem;
+  padding: 1.75rem 0.75rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -388,13 +370,9 @@ html {
   background: rgba(255, 255, 255, 0.09);
 }
 
-.hero-tile-icon {
-  font-size: 1.9rem;
-}
-
 .hero-tile-label {
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -486,18 +464,6 @@ html {
   font-size: 0.95rem;
 }
 
-.topic-card-icon {
-  font-size: 1.25rem;
-  flex-shrink: 0;
-  width: 2.1rem;
-  height: 2.1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: var(--topic-accent-soft, var(--accent-soft));
-}
-
 .topic-card-label {
   flex: 1;
   min-width: 0;
@@ -577,13 +543,6 @@ html {
   color: var(--topic-accent, var(--accent));
   font-weight: 700;
   margin: 0 0 0.9rem;
-}
-
-.topic-icon {
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  display: inline-block;
 }
 
 .slideshow .slide .hook {
@@ -999,12 +958,8 @@ footer {
     padding: 0.9rem 0.5rem;
   }
 
-  .hero-tile-icon {
-    font-size: 1.4rem;
-  }
-
   .hero-tile-label {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
 
   .space-hero .planet {

@@ -145,53 +145,6 @@ const VIEW_TOGGLE_LABELS = {
   en: { slides: `Slides`, text: `Text` },
   ru: { slides: `Слайды`, text: `Текст` },
 };
-const TOPIC_ICONS = {
-  arithmetic: `➕`,
-  "negative-numbers": `➖`,
-  "order-of-operations": `🔢`,
-  fractions: `🍕`,
-  decimals: `🔟`,
-  gcf: `🧩`,
-  lcm: `🔗`,
-  percentages: `💯`,
-  ratios: `⚖️`,
-  probability: `🎲`,
-  average: `📊`,
-  "mean-median-mode": `📈`,
-  "like-terms": `🍎`,
-  algebra: `🧮`,
-  inequalities: `🔀`,
-  "coordinate-plane": `📍`,
-  functions: `🚕`,
-  systems: `🍏`,
-  slope: `⛰️`,
-  quadratic: `🎯`,
-  polynomials: `📚`,
-  parabola: `🛹`,
-  "perimeter-area": `📐`,
-  volume: `📦`,
-  pythagorean: `🪜`,
-  circles: `⭕`,
-  exponents: `✖️`,
-  "scientific-notation": `🔬`,
-  "square-roots": `🌱`,
-  "absolute-value": `↔️`,
-  rounding: `🔵`,
-  "prime-factorization": `🌳`,
-  "unit-rate": `🏷️`,
-  "simple-interest": `🏦`,
-  "surface-area": `🎁`,
-  angles: `🔺`,
-  foil: `✳️`,
-  "distance-formula": `🗺️`,
-  trigonometry: `🧭`,
-  "long-division": `➗`,
-  "divisibility-rules": `🔍`,
-  "comparing-fractions-decimals": `🆚`,
-  "fraction-decimal-percent": `🔄`,
-  "unit-conversion": `📏`,
-};
-
 function gradeLabel(lang, grade) {
   return lang === "ru" ? `${grade} класс` : `${grade}th Grade`;
 }
@@ -247,7 +200,7 @@ function headHtml(lang, slug, title, description) {
 
 function topBarHtml(lang, currentSlug) {
   return `    <header class="topbar">
-      <a class="site-title" href="${pagePath(lang, "")}"><span class="logo-mark">🧮</span>${SITE_TITLES[lang]}</a>
+      <a class="site-title" href="${pagePath(lang, "")}">${SITE_TITLES[lang]}</a>
       <div class="lang-switch">
         <a class="lang-link${lang === "en" ? " active" : ""}" href="${pagePath("en", currentSlug)}">EN</a>
         <a class="lang-link${lang === "ru" ? " active" : ""}" href="${pagePath("ru", currentSlug)}">RU</a>
@@ -333,7 +286,6 @@ function topicPageHtml(lang, topic) {
   const label = gradeLabel(lang, topic.grade);
   const gradedTitle = insertGradeIntoTitle(t.pageTitle, label);
   const gradedDescription = `${t.navLabel}, ${label}: ${t.metaDescription}`;
-  const icon = TOPIC_ICONS[topic.slug] || "";
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -347,7 +299,7 @@ ${topBarHtml(lang, topic.slug)}
     <main class="content">
       <section class="topic active grade-${topic.grade}">
         <span class="grade-badge">${label}</span>
-        <h2><span class="topic-icon">${icon}</span>${t.h1}</h2>
+        <h2>${t.h1}</h2>
 ${explanationHtml}
 
         <div class="practice" data-practice="${topic.slug}">
@@ -392,10 +344,8 @@ function gradeSectionHtml(lang, grade) {
   const cards = topicsForGrade
     .map((t) => {
       const tt = t[lang];
-      const icon = TOPIC_ICONS[t.slug] || "";
       return `            <li class="topic-card grade-${t.grade}">
               <a href="${pagePath(lang, t.slug)}">
-                <span class="topic-card-icon">${icon}</span>
                 <span class="topic-card-label">${tt.navLabel}</span>
               </a>
             </li>`;
@@ -415,9 +365,7 @@ const HERO_VISUAL_SLUGS = ["fractions", "algebra", "pythagorean", "quadratic"];
 function heroVisualHtml(lang) {
   const tiles = HERO_VISUAL_SLUGS.map((slug) => {
     const topic = TOPICS.find((t) => t.slug === slug);
-    const icon = TOPIC_ICONS[slug] || "";
     return `          <a class="hero-tile" href="${pagePath(lang, slug)}">
-            <span class="hero-tile-icon">${icon}</span>
             <span class="hero-tile-label">${topic[lang].navLabel}</span>
           </a>`;
   }).join("\n");
