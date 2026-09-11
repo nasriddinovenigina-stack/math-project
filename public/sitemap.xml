@@ -25,6 +25,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/privacy"/>
   </url>
   <url>
+    <loc>https://mathpracticehub.netlify.app/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/contact"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/contact"/>
+  </url>
+  <url>
     <loc>https://mathpracticehub.netlify.app/arithmetic</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/arithmetic"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/arithmetic"/>

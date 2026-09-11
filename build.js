@@ -28,7 +28,34 @@ const FOOTER_TEXT = {
   ru: `Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.`,
 };
 const PRIVACY_LINK_LABEL = { en: `Privacy Policy`, ru: `Политика конфиденциальности` };
+const CONTACT_LINK_LABEL = { en: `Contact Us`, ru: `Связаться с нами` };
 const PRIVACY_CONTACT_EMAIL = "saidaliotabekovich@gmail.com";
+const CONTACT_META_DESCRIPTION = {
+  en: `Get in touch about Math Practice: questions, corrections, or suggestions.`,
+  ru: `Свяжитесь с нами по «Практике по математике»: вопросы, исправления или предложения.`,
+};
+const CONTACT_SECTIONS = {
+  en: [
+    {
+      title: `Questions or feedback`,
+      body: `Found a mistake in a topic, have a suggestion for a new topic, or just want to say hello? Email us at <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a> and we'll get back to you.`,
+    },
+    {
+      title: `Privacy questions`,
+      body: `For questions about how the site handles information, see our <a href="/privacy">Privacy Policy</a>, or reach out to the same email above.`,
+    },
+  ],
+  ru: [
+    {
+      title: `Вопросы или отзывы`,
+      body: `Нашли ошибку в теме, хотите предложить новую тему или просто хотите поздороваться? Напишите нам на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>, и мы вам ответим.`,
+    },
+    {
+      title: `Вопросы о конфиденциальности`,
+      body: `По вопросам обработки информации на сайте смотрите нашу <a href="/ru/privacy">Политику конфиденциальности</a> или пишите на тот же адрес выше.`,
+    },
+  ],
+};
 const PRIVACY_UPDATED = { en: `Last updated: September 11, 2026`, ru: `Обновлено: 11 сентября 2026 г.` };
 const PRIVACY_META_DESCRIPTION = {
   en: `How Math Practice handles information: no accounts, no personal data collection, analytics only.`,
@@ -334,7 +361,7 @@ ${explanationHtml}
 
       <footer>
         <p>${FOOTER_TEXT[lang]}</p>
-        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a></p>
+        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a> · <a href="${pagePath(lang, "contact")}">${CONTACT_LINK_LABEL[lang]}</a></p>
         <p class="site-domain">${DISPLAY_DOMAIN}</p>
       </footer>
     </main>
@@ -419,7 +446,7 @@ ${sections}
 
       <footer>
         <p>${FOOTER_TEXT[lang]}</p>
-        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a></p>
+        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a> · <a href="${pagePath(lang, "contact")}">${CONTACT_LINK_LABEL[lang]}</a></p>
         <p class="site-domain">${DISPLAY_DOMAIN}</p>
       </footer>
     </main>
@@ -460,7 +487,41 @@ ${sections}
 
       <footer>
         <p>${FOOTER_TEXT[lang]}</p>
-        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a></p>
+        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a> · <a href="${pagePath(lang, "contact")}">${CONTACT_LINK_LABEL[lang]}</a></p>
+        <p class="site-domain">${DISPLAY_DOMAIN}</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
+`;
+}
+
+function contactPageHtml(lang) {
+  const title = `${CONTACT_LINK_LABEL[lang]} — ${SITE_TITLES[lang]}`;
+  const sections = CONTACT_SECTIONS[lang]
+    .map((s) => `        <h3>${s.title}</h3>\n        <p>${s.body}</p>`)
+    .join("\n\n");
+
+  return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+  ${headHtml(lang, "contact", title, CONTACT_META_DESCRIPTION[lang])}
+</head>
+<body data-topic="">
+  <div class="app">
+${topBarHtml(lang, "contact")}
+
+    <main class="content">
+      <section class="topic active legal-page">
+        <h2>${CONTACT_LINK_LABEL[lang]}</h2>
+
+${sections}
+      </section>
+
+      <footer>
+        <p>${FOOTER_TEXT[lang]}</p>
+        <p class="footer-links"><a href="${pagePath(lang, "privacy")}">${PRIVACY_LINK_LABEL[lang]}</a> · <a href="${pagePath(lang, "contact")}">${CONTACT_LINK_LABEL[lang]}</a></p>
         <p class="site-domain">${DISPLAY_DOMAIN}</p>
       </footer>
     </main>
@@ -471,7 +532,7 @@ ${sections}
 }
 
 function sitemapXml() {
-  const slugs = ["", "privacy", ...TOPICS.map((t) => t.slug)];
+  const slugs = ["", "privacy", "contact", ...TOPICS.map((t) => t.slug)];
   const entries = slugs
     .map((slug) => {
       const enHref = `${SITE_URL}${pagePath("en", slug)}`;
@@ -520,10 +581,13 @@ function build() {
   fs.writeFileSync(path.join(PUBLIC_DIR, "privacy.html"), privacyPageHtml("en"));
   fs.writeFileSync(path.join(RU_DIR, "privacy.html"), privacyPageHtml("ru"));
 
+  fs.writeFileSync(path.join(PUBLIC_DIR, "contact.html"), contactPageHtml("en"));
+  fs.writeFileSync(path.join(RU_DIR, "contact.html"), contactPageHtml("ru"));
+
   fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap.xml"), sitemapXml());
   fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), robotsTxt());
 
-  console.log(`Built ${TOPICS.length} topics x 2 languages + 2 home pages + privacy policy x 2 + sitemap.xml + robots.txt`);
+  console.log(`Built ${TOPICS.length} topics x 2 languages + 2 home pages + privacy policy x 2 + contact page x 2 + sitemap.xml + robots.txt`);
 }
 
 build();
