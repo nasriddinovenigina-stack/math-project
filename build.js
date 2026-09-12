@@ -73,7 +73,11 @@ const PRIVACY_SECTIONS = {
     },
     {
       title: `Cookies`,
-      body: `The only cookies set on this site are the ones placed by Google Analytics, as described above. You can block or delete cookies through your browser settings at any time; the site's practice features will continue to work normally without them.`,
+      body: `The only cookies set on this site are the ones placed by Google Analytics and, if enabled, Google AdSense, as described in this policy. You can block or delete cookies through your browser settings at any time; the site's practice features will continue to work normally without them.`,
+    },
+    {
+      title: `Advertising`,
+      body: `This site may show ads through Google AdSense. Google and its advertising partners may use cookies to serve ads based on your visits to this and other websites. You can opt out of personalized advertising through Google's <a href="https://adssettings.google.com" target="_blank" rel="noopener">Ad Settings</a> or at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>.`,
     },
     {
       title: `Children's privacy`,
@@ -107,7 +111,11 @@ const PRIVACY_SECTIONS = {
     },
     {
       title: `Файлы cookie`,
-      body: `Единственные файлы cookie на этом сайте — те, что устанавливает Google Analytics, как описано выше. Вы можете в любой момент заблокировать или удалить файлы cookie в настройках браузера; практические функции сайта продолжат работать в обычном режиме.`,
+      body: `Единственные файлы cookie на этом сайте — те, что устанавливает Google Analytics и, если она включена, Google AdSense, как описано в этой политике. Вы можете в любой момент заблокировать или удалить файлы cookie в настройках браузера; практические функции сайта продолжат работать в обычном режиме.`,
+    },
+    {
+      title: `Реклама`,
+      body: `На этом сайте может показываться реклама через Google AdSense. Google и его рекламные партнёры могут использовать файлы cookie для показа рекламы на основе ваших посещений этого и других сайтов. Вы можете отказаться от персонализированной рекламы в <a href="https://adssettings.google.com" target="_blank" rel="noopener">настройках рекламы Google</a> или на сайте <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>.`,
     },
     {
       title: `Конфиденциальность детей`,
