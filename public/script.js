@@ -1837,6 +1837,33 @@
 
   // ---------- init ----------
 
+  // Generators pick each problem independently, so a round of 5 can land on
+  // the same question twice (e.g. "3 + 3" appearing in two slots). Retry the
+  // whole round a few times to find one with no duplicate questions; if the
+  // topic's problem space is too small to avoid it, fall back to whichever
+  // attempt had the fewest repeats.
+  function generateUniqueProblems(generateProblems) {
+    const MAX_ATTEMPTS = 30;
+    let best = null;
+    let bestDuplicateCount = Infinity;
+    for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+      const problems = generateProblems();
+      const seen = new Set();
+      let duplicates = 0;
+      problems.forEach((p) => {
+        const key = p.questionHtml || p.question;
+        if (seen.has(key)) duplicates++;
+        seen.add(key);
+      });
+      if (duplicates === 0) return problems;
+      if (duplicates < bestDuplicateCount) {
+        bestDuplicateCount = duplicates;
+        best = problems;
+      }
+    }
+    return best;
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const topic = document.body.dataset.topic;
     const generateProblems = GENERATORS[topic];
@@ -1858,7 +1885,7 @@
 
     function renderProblems() {
       list.innerHTML = "";
-      const problems = generateProblems();
+      const problems = generateUniqueProblems(generateProblems);
       score = { correct: 0, total: 0 };
       updateScoreDisplay();
 
