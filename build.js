@@ -14,6 +14,11 @@ const DISPLAY_DOMAIN = SITE_URL.replace(/^https?:\/\//, "");
 // time, since both domains serve the exact same built files.
 const GA_MEASUREMENT_ID_MATHPRACTISE = "G-VNDQEKH5SK"; // mathpractise.netlify.app (original site)
 const GA_MEASUREMENT_ID_MATHPRACTICEHUB = "G-YEQTQFJQ3P"; // mathpracticehub.netlify.app + any other host (e.g. local dev)
+// Set this to your AdSense publisher ID (e.g. "pub-1234567890123456") once your AdSense
+// application is approved — see the "AdSense" section in CLAUDE.md for the full setup flow.
+// Leaving it blank omits the AdSense script/meta tag and ads.txt from the build entirely,
+// so it's safe to leave empty until you actually have an ID.
+const ADSENSE_PUBLISHER_ID = "";
 const SITE_TITLES = { en: `Math Practice`, ru: `Практика по математике` };
 const HOME_INTRO = {
   en: `Pick a topic below to learn the idea, then practice it with instant feedback.`,
@@ -203,7 +208,14 @@ function headHtml(lang, slug, title, description) {
       ? '${GA_MEASUREMENT_ID_MATHPRACTISE}'
       : '${GA_MEASUREMENT_ID_MATHPRACTICEHUB}';
     gtag('config', gaId);
-  </script>`;
+  </script>${adsenseHeadHtml()}`;
+}
+
+function adsenseHeadHtml() {
+  if (!ADSENSE_PUBLISHER_ID) return "";
+  return `
+  <meta name="google-adsense-account" content="ca-${ADSENSE_PUBLISHER_ID}" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${ADSENSE_PUBLISHER_ID}" crossorigin="anonymous"></script>`;
 }
 
 function topBarHtml(lang, currentSlug) {
@@ -540,6 +552,13 @@ Sitemap: ${SITE_URL}/sitemap.xml
 `;
 }
 
+function adsTxt() {
+  // "DIRECT" entry authorizing this publisher ID to sell ad space on this domain.
+  // Required by AdSense once approved, or ad requests will show console warnings /
+  // may not fill. The trailing ID is Google's fixed AdSense certification authority ID.
+  return `google.com, pub-${ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n`;
+}
+
 function build() {
   fs.mkdirSync(PUBLIC_DIR, { recursive: true });
   fs.mkdirSync(RU_DIR, { recursive: true });
@@ -561,7 +580,11 @@ function build() {
   fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap.xml"), sitemapXml());
   fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), robotsTxt());
 
-  console.log(`Built ${TOPICS.length} topics x 2 languages + 2 home pages + privacy policy x 2 + contact page x 2 + sitemap.xml + robots.txt`);
+  if (ADSENSE_PUBLISHER_ID) {
+    fs.writeFileSync(path.join(PUBLIC_DIR, "ads.txt"), adsTxt());
+  }
+
+  console.log(`Built ${TOPICS.length} topics x 2 languages + 2 home pages + privacy policy x 2 + contact page x 2 + sitemap.xml + robots.txt${ADSENSE_PUBLISHER_ID ? " + ads.txt" : ""}`);
 }
 
 build();

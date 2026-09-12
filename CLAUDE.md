@@ -56,6 +56,19 @@ There are **two** Netlify sites deploying from this same GitHub repo, under two 
 
 Both live domains run identical code, so GA routing is decided **at runtime by hostname**, not at build time (see `headHtml()` in `build.js`): if `window.location.hostname === 'mathpractise.netlify.app'`, pageviews go to that domain's original GA4 property (`G-VNDQEKH5SK`, under the `saidali`-linked account); everything else (including `mathpracticehub.netlify.app` and local dev) goes to a separate GA4 property (`G-YEQTQFJQ3P`, property "Math Practice Hub", created 2026-08-30 under the `nasriddinovenigina@gmail.com` Google account) created specifically because we didn't want to touch/reconfigure the original shared tag. If a third domain/preview URL is ever added, decide explicitly which property it should report to and extend the hostname check — don't let it fall through to the hub property by accident if that's not intended.
 
+## AdSense
+
+The site is wired up for Google AdSense but not yet monetized — `ADSENSE_PUBLISHER_ID` in `build.js` is currently empty, which makes `headHtml()` skip the AdSense `<meta>`/script tag entirely and makes `build()` skip writing `public/ads.txt`. Nothing changes on either live site until that ID is filled in.
+
+**To turn ads on, once you have an AdSense account:**
+
+1. Sign up at https://www.google.com/adsense with the Google account you want to own the ads (this can't be automated — it requires accepting AdSense's own policies as the account holder). Add `mathpracticehub.netlify.app` (and later `mathpractise.netlify.app`) as a site under "Sites".
+2. Google gives you a publisher ID shaped like `pub-1234567890123456`. Set `ADSENSE_PUBLISHER_ID = "pub-1234567890123456"` at the top of `build.js` (just the `pub-...` part, no `ca-` prefix — the code adds that).
+3. Run `node build.js` and commit — this injects the `google-adsense-account` meta tag + the AdSense auto-ads script into every page's `<head>`, and generates `public/ads.txt` (the `google.com, pub-..., DIRECT, ...` authorization line ad networks check before serving on this domain).
+4. Push (`git push origin master`) so both Netlify sites pick it up, then in the AdSense dashboard use "Site review" / wait for approval — Google needs to crawl the live site with the tag present before it approves ads. Approval can take anywhere from a day to a couple of weeks.
+5. Once approved, enable "Auto ads" in the AdSense dashboard (Ads > Overview) — since the base script is already on every page, Google will start placing ads automatically without any further code changes. No manual `<ins class="adsbygoogle">` ad-unit placement is needed unless you later want specific fixed ad slots in specific spots.
+6. Because both live domains are separate "sites" under the same AdSense account/publisher ID, add `mathpractise.netlify.app` as a second site in the same dashboard once you're ready to monetize it too — no code change needed, the same publisher ID/ads.txt covers both.
+
 ## SEO / Google Search Console
 
 - Search Console property `https://mathpracticehub.netlify.app` is added and verified (under the `nasriddinovenigina@gmail.com` Google account), with `sitemap.xml` submitted.
