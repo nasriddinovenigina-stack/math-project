@@ -564,4 +564,76 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/unit-conversion"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/unit-conversion"/>
   </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/multi-step-equations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/multi-step-equations"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/multi-step-equations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/multi-step-equations"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/multi-step-equations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/multi-step-equations"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/multi-step-equations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/multi-step-equations"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/direct-inverse-variation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/direct-inverse-variation"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/direct-inverse-variation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/direct-inverse-variation"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/direct-inverse-variation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/direct-inverse-variation"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/direct-inverse-variation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/direct-inverse-variation"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/transformations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/transformations"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/transformations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/transformations"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/transformations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/transformations"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/transformations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/transformations"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/compound-interest</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/compound-interest"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/compound-interest"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/compound-interest"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/compound-interest</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/compound-interest"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/compound-interest"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/compound-interest"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/data-graphs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/data-graphs"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/data-graphs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/data-graphs"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/data-graphs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/data-graphs"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/data-graphs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/data-graphs"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/counting-principle</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/counting-principle"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/counting-principle"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/counting-principle"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/counting-principle</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/counting-principle"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/counting-principle"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/counting-principle"/>
+  </url>
 </urlset>

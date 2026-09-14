@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundamental Counting Principle (7th Grade) — Math Practice</title>
+  <meta name="description" content="Counting Principle, 7th Grade: Learn the counting principle for combining independent choices, then practice." />
+  <link rel="canonical" href="https://mathpracticehub.netlify.app/counting-principle" />
+  <link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/counting-principle" />
+  <link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/counting-principle" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/counting-principle" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Math Practice" />
+  <meta property="og:site_name" content="Math Practice" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fundamental Counting Principle (7th Grade) — Math Practice" />
+  <meta property="og:description" content="Counting Principle, 7th Grade: Learn the counting principle for combining independent choices, then practice." />
+  <meta property="og:url" content="https://mathpracticehub.netlify.app/counting-principle" />
+  <meta property="og:locale" content="en_US" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEQTQFJQ3P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var gaId = (window.location.hostname === 'mathpractise.netlify.app')
+      ? 'G-VNDQEKH5SK'
+      : 'G-YEQTQFJQ3P';
+    gtag('config', gaId);
+  </script>
+</head>
+<body data-topic="counting-principle">
+  <div class="app">
+    <header class="topbar">
+      <a class="site-title" href="/">Math Practice</a>
+      <div class="lang-switch">
+        <a class="lang-link active" href="/counting-principle">EN</a>
+        <a class="lang-link" href="/ru/counting-principle">RU</a>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="topic active grade-7">
+        <span class="grade-badge">7th Grade</span>
+        <h2>Fundamental Counting Principle</h2>
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">A restaurant menu has 3 choices of soup and 4 choices of main dish. If you pick exactly one soup and one main dish, how many different meal combinations are possible?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>The <strong>Counting Principle</strong> says: if one choice can be made in <em>m</em> ways and a second, independent choice can be made in <em>n</em> ways, then together there are <em>m &times; n</em> ways to make both choices.</p>
+            <p class="one-liner">In one line: multiply the number of options at each step.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
+            <p>3 soups, 4 main dishes</p>
+            <p class="steps-note">multiply the number of choices at each step</p>
+            <p>3 &times; 4</p>
+            <p class="steps-result">= 12 different meal combinations</p>
+            </div>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is adding the choices instead of multiplying (3 + 4 = 7) &mdash; adding only works if you're choosing ONE OR the other, not one of EACH.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">This rule is behind counting passwords, outfit combinations, license plates &mdash; anywhere independent choices combine.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
+        </div>
+      </div>
+
+        <div class="practice" data-practice="counting-principle">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="counting-principle">New Problems</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Practice runs entirely in your browser — no account, no server storage.</p>
+        <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/contact">Contact Us</a></p>
+        <p class="site-domain">mathpracticehub.netlify.app</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

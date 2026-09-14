@@ -1766,6 +1766,240 @@
     return problems;
   }
 
+  function generateMultiStepEquationsProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const a = randInt(2, 9);
+      const x = nonZeroRandInt(-12, 12);
+      const b = nonZeroRandInt(-12, 12);
+      const c = a * (x + b);
+      const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Решите уравнение: ${a}(x ${bText}) = ${c}`
+            : `Solve for x: ${a}(x ${bText}) = ${c}`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === x;
+        },
+        correctAnswerText: String(x),
+      });
+    }
+    return problems;
+  }
+
+  function generateDirectInverseVariationProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      if (Math.random() < 0.5) {
+        // Direct variation: y = kx.
+        const k = randInt(2, 12);
+        const x1 = randInt(2, 12);
+        const y1 = k * x1;
+        let x2 = randInt(2, 12);
+        while (x2 === x1) x2 = randInt(2, 12);
+        const answer = k * x2;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `y прямо пропорционально x. Если y = ${y1} при x = ${x1}, найдите y при x = ${x2}.`
+              : `y varies directly with x. If y = ${y1} when x = ${x1}, find y when x = ${x2}.`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else {
+        // Inverse variation: workers × hours = constant.
+        const m = randInt(2, 6);
+        const h2 = randInt(2, 12);
+        const h1 = h2 * m;
+        const w1 = randInt(2, 12);
+        const w2 = w1 * m;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `${w1} рабочих могут выполнить работу за ${h1} часов. Работая с той же скоростью, сколько часов потребуется ${w2} рабочим?`
+              : `${w1} workers can finish a job in ${h1} hours. Working at the same rate, how many hours would ${w2} workers take?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === h2;
+          },
+          correctAnswerText: String(h2),
+        });
+      }
+    }
+    return problems;
+  }
+
+  function generateTransformationsProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      if (Math.random() < 0.5) {
+        // Translation: (x, y) -> (x + a, y + b).
+        const x = randInt(-10, 10);
+        const y = randInt(-10, 10);
+        const a = nonZeroRandInt(-8, 8);
+        const b = nonZeroRandInt(-8, 8);
+        const nx = x + a;
+        const ny = y + b;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Сдвиньте точку (${x}, ${y}) на (${a}, ${b}). Каковы новые координаты?`
+              : `Translate the point (${x}, ${y}) by (${a}, ${b}). What are the new coordinates?`,
+          checkAnswer(raw) {
+            const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
+            if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+            return parts[0] === nx && parts[1] === ny;
+          },
+          correctAnswerText: `(${nx}, ${ny})`,
+        });
+      } else {
+        // Reflection over the x-axis or y-axis.
+        const x = nonZeroRandInt(-10, 10);
+        const y = nonZeroRandInt(-10, 10);
+        const overXAxis = Math.random() < 0.5;
+        const nx = overXAxis ? x : -x;
+        const ny = overXAxis ? -y : y;
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Отразите точку (${x}, ${y}) относительно оси ${overXAxis ? "x" : "y"}. Каковы новые координаты?`
+              : `Reflect the point (${x}, ${y}) over the ${overXAxis ? "x" : "y"}-axis. What are the new coordinates?`,
+          checkAnswer(raw) {
+            const parts = String(raw).trim().split(",").map((p) => Number(p.trim()));
+            if (parts.length !== 2 || parts.some((p) => !Number.isFinite(p))) return false;
+            return parts[0] === nx && parts[1] === ny;
+          },
+          correctAnswerText: `(${nx}, ${ny})`,
+        });
+      }
+    }
+    return problems;
+  }
+
+  function generateCompoundInterestProblems() {
+    const problems = [];
+    const lang = getLang();
+    const RATE_OPTIONS = [
+      { percent: 10, num: 11, den: 10 },
+      { percent: 20, num: 6, den: 5 },
+      { percent: 25, num: 5, den: 4 },
+      { percent: 50, num: 3, den: 2 },
+    ];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const rate = RATE_OPTIONS[randInt(0, RATE_OPTIONS.length - 1)];
+      const t = randInt(2, 3);
+      const k = randInt(2, 9);
+      const principal = Math.pow(rate.den, t) * k * 100;
+      const answer = Math.pow(rate.num, t) * k * 100;
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Вы вкладываете ${principal} сум под ${rate.percent}% годовых, начисляемых раз в год. Сколько будет на счёте через ${t} ${yearsLabelRu(t)}?`
+            : `You deposit ${principal} so'm at ${rate.percent}% interest per year, compounded annually. How much will you have after ${t} years?`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
+  function generateDataGraphsProblems() {
+    const problems = [];
+    const lang = getLang();
+    const namesEn = ["Aziz", "Malika", "Bekzod", "Nodira"];
+    const namesRu = ["Азиз", "Малика", "Бекзод", "Нодира"];
+    const names = lang === "ru" ? namesRu : namesEn;
+
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const values = [randInt(2, 20), randInt(2, 20), randInt(2, 20), randInt(2, 20)];
+      const dataText = names.map((n, idx) => `${n}: ${values[idx]}`).join(", ");
+
+      if (Math.random() < 0.5) {
+        let i1 = randInt(0, 3);
+        let i2 = randInt(0, 3);
+        while (i2 === i1) i2 = randInt(0, 3);
+        const bigIdx = values[i1] >= values[i2] ? i1 : i2;
+        const smallIdx = bigIdx === i1 ? i2 : i1;
+        const answer = values[bigIdx] - values[smallIdx];
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Столбчатая диаграмма показывает количество прочитанных книг: ${dataText}. На сколько больше книг прочитал(а) ${names[bigIdx]}, чем ${names[smallIdx]}?`
+              : `A bar graph shows books read this month: ${dataText}. How many more books did ${names[bigIdx]} read than ${names[smallIdx]}?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      } else {
+        const answer = values.reduce((sum, v) => sum + v, 0);
+
+        problems.push({
+          question:
+            lang === "ru"
+              ? `Столбчатая диаграмма показывает количество прочитанных книг: ${dataText}. Сколько книг всего прочитали все четверо?`
+              : `A bar graph shows books read this month: ${dataText}. How many books did all four read in total?`,
+          checkAnswer(raw) {
+            const val = Number(String(raw).trim());
+            return Number.isFinite(val) && val === answer;
+          },
+          correctAnswerText: String(answer),
+        });
+      }
+    }
+    return problems;
+  }
+
+  function ruCountForm(n, few, many) {
+    return n >= 2 && n <= 4 ? few : many;
+  }
+
+  function generateCountingPrincipleProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const a = randInt(2, 6);
+      const b = randInt(2, 6);
+      const answer = a * b;
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `В меню ресторана ${a} ${ruCountForm(a, "вида супа", "видов супа")} и ${b} ${ruCountForm(
+                b,
+                "основных блюда",
+                "основных блюд"
+              )}. Если выбрать по одному из каждой категории, сколько получится разных комбинаций?`
+            : `A restaurant menu has ${a} choices of soup and ${b} choices of main dish. If you pick exactly one of each, how many different meal combinations are possible?`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
   const GENERATORS = {
     arithmetic: generateArithmeticProblems,
     "negative-numbers": generateNegativeNumbersProblems,
@@ -1811,6 +2045,12 @@
     "comparing-fractions-decimals": generateComparingFractionsDecimalsProblems,
     "fraction-decimal-percent": generateFractionDecimalPercentProblems,
     "unit-conversion": generateUnitConversionProblems,
+    "multi-step-equations": generateMultiStepEquationsProblems,
+    "direct-inverse-variation": generateDirectInverseVariationProblems,
+    transformations: generateTransformationsProblems,
+    "compound-interest": generateCompoundInterestProblems,
+    "data-graphs": generateDataGraphsProblems,
+    "counting-principle": generateCountingPrincipleProblems,
   };
 
   // ---------- UI string localization ----------
