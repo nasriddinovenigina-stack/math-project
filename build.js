@@ -150,6 +150,10 @@ const HERO_STAT_LABELS = {
   ru: [`Тем`, `Классы`, `Языка`, `Мгновенно`],
 };
 const NEW_PROBLEMS_LABEL = { en: `New Problems`, ru: `Новые примеры` };
+const SEARCH_LABELS = {
+  en: { placeholder: `Search topics...`, noResults: `No topics match "%s".` },
+  ru: { placeholder: `Поиск тем...`, noResults: `Темы по запросу «%s» не найдены.` },
+};
 const SLIDE_LABELS = {
   en: [`The Question`, `The Idea`, `Watch It Solved`, `Watch Out`, `Why It Matters`],
   ru: [`Вопрос`, `Идея`, `Смотрим решение`, `Осторожно`, `Почему это важно`],
@@ -425,6 +429,10 @@ ${heroStatsHtml(lang)}
           </div>
 ${heroVisualHtml(lang)}
         </div>
+        <div class="topic-search">
+          <input type="search" id="topic-search-input" class="topic-search-input" placeholder="${SEARCH_LABELS[lang].placeholder}" aria-label="${SEARCH_LABELS[lang].placeholder}" data-no-results-template="${SEARCH_LABELS[lang].noResults}" autocomplete="off" />
+        </div>
+        <p id="topic-search-empty" class="topic-search-empty" hidden></p>
         <div id="topics">
 ${sections}
         </div>

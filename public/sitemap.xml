@@ -636,4 +636,64 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/counting-principle"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/counting-principle"/>
   </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/proportions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/proportions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/proportions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/proportions"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/proportions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/proportions"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/proportions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/proportions"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/box-plots</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/box-plots"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/box-plots"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/box-plots"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/box-plots</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/box-plots"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/box-plots"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/box-plots"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/congruent-similar-figures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/congruent-similar-figures"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/congruent-similar-figures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/congruent-similar-figures"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/congruent-similar-figures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/congruent-similar-figures"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/congruent-similar-figures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/congruent-similar-figures"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/volume-cylinder-cone-sphere</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/volume-cylinder-cone-sphere"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/volume-cylinder-cone-sphere"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/volume-cylinder-cone-sphere"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/volume-cylinder-cone-sphere</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/volume-cylinder-cone-sphere"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/volume-cylinder-cone-sphere"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/volume-cylinder-cone-sphere"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/factoring</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/factoring"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/factoring"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/factoring"/>
+  </url>
+  <url>
+    <loc>https://mathpracticehub.netlify.app/ru/factoring</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/factoring"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/factoring"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/factoring"/>
+  </url>
 </urlset>

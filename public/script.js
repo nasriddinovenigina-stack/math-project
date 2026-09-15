@@ -2000,6 +2000,165 @@
     return problems;
   }
 
+  function generateProportionsProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const p = randInt(2, 9);
+      const q = nonZeroRandInt(2, 9);
+      const k = randInt(2, 9);
+      const vals = [p, q, p * k, q * k];
+      const missingIndex = randInt(0, 3);
+      const answer = vals[missingIndex];
+      const display = vals.map((v, idx) => (idx === missingIndex ? "x" : v));
+      const eq = `${display[0]}/${display[1]} = ${display[2]}/${display[3]}`;
+
+      problems.push({
+        question: lang === "ru" ? `${eq}. Найдите x.` : `${eq}. Find x.`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
+  function generateBoxPlotsProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      let value = randInt(1, 12);
+      const data = [value];
+      for (let j = 0; j < 6; j++) {
+        value += randInt(1, 6);
+        data.push(value);
+      }
+      const q1 = data[1];
+      const q3 = data[5];
+      const iqr = q3 - q1;
+      const dataText = data.join(", ");
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Упорядоченный набор данных: ${dataText}. Найдите межквартильный размах (IQR = Q3 − Q1).`
+            : `A sorted data set: ${dataText}. Find the interquartile range (IQR = Q3 − Q1).`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === iqr;
+        },
+        correctAnswerText: String(iqr),
+      });
+    }
+    return problems;
+  }
+
+  function generateCongruentSimilarProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const scale = randInt(2, 6);
+      const a = randInt(2, 12);
+      const b = randInt(2, 12);
+      const smallToBig = Math.random() < 0.5;
+      const knownSmall = a;
+      const knownBig = a * scale;
+      const answer = smallToBig ? b * scale : b;
+
+      problems.push({
+        question: smallToBig
+          ? lang === "ru"
+            ? `Две фигуры подобны. Меньшая имеет стороны ${knownSmall} и ${b}, соответствующая сторона большей фигуры равна ${knownBig} и x. Найдите x.`
+            : `Two figures are similar. The smaller one has sides ${knownSmall} and ${b}; the corresponding sides of the larger one are ${knownBig} and x. Find x.`
+          : lang === "ru"
+          ? `Две фигуры подобны. Меньшая имеет стороны ${knownSmall} и x, соответствующая сторона большей фигуры равна ${knownBig} и ${b * scale}. Найдите x.`
+          : `Two figures are similar. The smaller one has sides ${knownSmall} and x; the corresponding sides of the larger one are ${knownBig} and ${b * scale}. Find x.`,
+        checkAnswer(raw) {
+          const val = Number(String(raw).trim());
+          return Number.isFinite(val) && val === answer;
+        },
+        correctAnswerText: String(answer),
+      });
+    }
+    return problems;
+  }
+
+  function generateVolumeCylinderConeSphereProblems() {
+    const problems = [];
+    const lang = getLang();
+    const SHAPES = ["cylinder", "cone", "sphere"];
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      const shape = SHAPES[randInt(0, SHAPES.length - 1)];
+      const r = randInt(2, 8);
+      const h = randInt(2, 10);
+      let raw;
+      if (shape === "cylinder") raw = 3.14 * r * r * h;
+      else if (shape === "cone") raw = (3.14 * r * r * h) / 3;
+      else raw = (4 / 3) * 3.14 * r * r * r;
+      const answer = Math.round(raw * 10) / 10;
+
+      const question =
+        lang === "ru"
+          ? shape === "cylinder"
+            ? `Цилиндр имеет радиус основания ${r} и высоту ${h}. Найдите объём (используйте π ≈ 3,14).`
+            : shape === "cone"
+            ? `Конус имеет радиус основания ${r} и высоту ${h}. Найдите объём (используйте π ≈ 3,14).`
+            : `Шар имеет радиус ${r}. Найдите объём (используйте π ≈ 3,14).`
+          : shape === "cylinder"
+          ? `A cylinder has a base radius of ${r} and a height of ${h}. Find its volume (use π ≈ 3.14).`
+          : shape === "cone"
+          ? `A cone has a base radius of ${r} and a height of ${h}. Find its volume (use π ≈ 3.14).`
+          : `A sphere has a radius of ${r}. Find its volume (use π ≈ 3.14).`;
+
+      problems.push({
+        question,
+        checkAnswer(rawInput) {
+          const val = Number(String(rawInput).trim());
+          return Number.isFinite(val) && Math.abs(val - answer) < 0.5;
+        },
+        correctAnswerText: answer.toFixed(1),
+      });
+    }
+    return problems;
+  }
+
+  function generateFactoringProblems() {
+    const problems = [];
+    const lang = getLang();
+    for (let i = 0; i < PROBLEMS_PER_ROUND; i++) {
+      let p, q;
+      do {
+        p = randInt(-9, 9);
+        q = randInt(-9, 9);
+      } while (p === 0 || q === 0);
+      const b = p + q;
+      const c = p * q;
+      const bText = b >= 0 ? `+ ${b}` : `− ${Math.abs(b)}`;
+      const cText = c >= 0 ? `+ ${c}` : `− ${Math.abs(c)}`;
+
+      problems.push({
+        question:
+          lang === "ru"
+            ? `Разложите на множители: x² ${bText}x ${cText} = (x + ?)(x + ?). Введите два числа через запятую (например: 2,3).`
+            : `Factor: x² ${bText}x ${cText} = (x + ?)(x + ?). Enter the two missing numbers separated by a comma (e.g. 2,3).`,
+        checkAnswer(raw) {
+          const parts = String(raw)
+            .trim()
+            .split(",")
+            .map((part) => Number(part.trim()));
+          if (parts.length !== 2 || parts.some((part) => !Number.isFinite(part))) return false;
+          return (
+            (parts[0] === p && parts[1] === q) || (parts[0] === q && parts[1] === p)
+          );
+        },
+        correctAnswerText: `${p},${q}`,
+      });
+    }
+    return problems;
+  }
+
   const GENERATORS = {
     arithmetic: generateArithmeticProblems,
     "negative-numbers": generateNegativeNumbersProblems,
@@ -2051,6 +2210,11 @@
     "compound-interest": generateCompoundInterestProblems,
     "data-graphs": generateDataGraphsProblems,
     "counting-principle": generateCountingPrincipleProblems,
+    proportions: generateProportionsProblems,
+    "box-plots": generateBoxPlotsProblems,
+    "congruent-similar-figures": generateCongruentSimilarProblems,
+    "volume-cylinder-cone-sphere": generateVolumeCylinderConeSphereProblems,
+    factoring: generateFactoringProblems,
   };
 
   // ---------- UI string localization ----------
@@ -2103,6 +2267,49 @@
     }
     return best;
   }
+
+  function initTopicSearch() {
+    const input = document.getElementById("topic-search-input");
+    if (!input) return; // not the home page
+
+    const emptyMessage = document.getElementById("topic-search-empty");
+    const noResultsTemplate = input.dataset.noResultsTemplate || "";
+    const gradeSections = Array.from(document.querySelectorAll(".grade-section"));
+    const cards = gradeSections.flatMap((section) =>
+      Array.from(section.querySelectorAll(".topic-card")).map((card) => ({
+        card,
+        section,
+        label: (card.querySelector(".topic-card-label")?.textContent || "").toLowerCase(),
+      }))
+    );
+
+    function applyFilter() {
+      const query = input.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach(({ card, label }) => {
+        const matches = !query || label.includes(query);
+        card.hidden = !matches;
+        if (matches) visibleCount++;
+      });
+
+      gradeSections.forEach((section) => {
+        const hasVisibleCard = section.querySelectorAll(".topic-card:not([hidden])").length > 0;
+        section.hidden = !hasVisibleCard;
+      });
+
+      if (emptyMessage) {
+        emptyMessage.hidden = visibleCount > 0 || !query;
+        if (query) {
+          emptyMessage.textContent = noResultsTemplate.replace("%s", input.value.trim());
+        }
+      }
+    }
+
+    input.addEventListener("input", applyFilter);
+  }
+
+  document.addEventListener("DOMContentLoaded", initTopicSearch);
 
   document.addEventListener("DOMContentLoaded", () => {
     const topic = document.body.dataset.topic;

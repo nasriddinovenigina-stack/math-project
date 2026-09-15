@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Диаграмма размаха и межквартильный размах (7 класс) — Практика по математике</title>
+  <meta name="description" content="Диаграмма размаха, 7 класс: Узнайте, как находить межквартильный размах (IQR) набора данных, а затем потренируйтесь." />
+  <link rel="canonical" href="https://mathpracticehub.netlify.app/ru/box-plots" />
+  <link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/box-plots" />
+  <link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/box-plots" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/box-plots" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Практика по математике" />
+  <meta property="og:site_name" content="Практика по математике" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Диаграмма размаха и межквартильный размах (7 класс) — Практика по математике" />
+  <meta property="og:description" content="Диаграмма размаха, 7 класс: Узнайте, как находить межквартильный размах (IQR) набора данных, а затем потренируйтесь." />
+  <meta property="og:url" content="https://mathpracticehub.netlify.app/ru/box-plots" />
+  <meta property="og:locale" content="ru_RU" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEQTQFJQ3P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var gaId = (window.location.hostname === 'mathpractise.netlify.app')
+      ? 'G-VNDQEKH5SK'
+      : 'G-YEQTQFJQ3P';
+    gtag('config', gaId);
+  </script>
+</head>
+<body data-topic="box-plots">
+  <div class="app">
+    <header class="topbar">
+      <a class="site-title" href="/ru/">Практика по математике</a>
+      <div class="lang-switch">
+        <a class="lang-link" href="/box-plots">EN</a>
+        <a class="lang-link active" href="/ru/box-plots">RU</a>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="topic active grade-7">
+        <span class="grade-badge">7 класс</span>
+        <h2>Диаграмма размаха и межквартильный размах</h2>
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Слайды</button>
+          <button class="view-toggle-btn" data-view="text">Текст</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">Вопрос</p>
+            <p class="hook">Упорядоченный набор из 7 результатов теста: 58, 63, 70, 75, 80, 88, 95. Чему равен межквартильный размах (IQR)?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Идея</p>
+            <p><strong>Диаграмма размаха</strong> описывает данные пятью числами: минимум, первый квартиль (Q1 — медиана нижней половины), медиана, третий квартиль (Q3 — медиана верхней половины) и максимум. <strong>Межквартильный размах</strong> (IQR = Q3 &minus; Q1) показывает, насколько разбросаны средние 50% данных.</p>
+            <p class="one-liner">Одной фразой: разделите данные на две половины относительно медианы, найдите медиану каждой половины (Q1 и Q3), затем вычтите.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Смотрим решение</p>
+            <div class="steps">
+            <p>данные: 58, 63, 70, 75, 80, 88, 95</p>
+            <p class="steps-note">медиана = 75, нижняя половина = 58, 63, 70; верхняя половина = 80, 88, 95</p>
+            <p>Q1 = 63, Q3 = 88</p>
+            <p class="steps-result">IQR = 88 &minus; 63 = 25</p>
+            </div>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Осторожно</p>
+            <p class="trap">Частая ошибка — включать общую медиану в обе половины при нахождении Q1 и Q3. Если данных нечётное количество, исключите среднее значение из обеих половин перед тем, как искать их медианы.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Почему это важно</p>
+            <p class="why-it-matters">IQR надёжнее показывает «типичный разброс», чем полный размах, потому что игнорирует крайние выбросы — именно на IQR опираются статистики и диаграммы размаха, чтобы описать, насколько данные согласованы.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
+        </div>
+      </div>
+
+        <div class="practice" data-practice="box-plots">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="box-plots">Новые примеры</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Практика полностью работает в вашем браузере — без аккаунта и без хранения данных на сервере.</p>
+        <p class="footer-links"><a href="/ru/privacy">Политика конфиденциальности</a> · <a href="/ru/contact">Связаться с нами</a></p>
+        <p class="site-domain">mathpracticehub.netlify.app</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

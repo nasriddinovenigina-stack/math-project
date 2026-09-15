@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box Plots & Interquartile Range (7th Grade) — Math Practice</title>
+  <meta name="description" content="Box Plots, 7th Grade: Learn how to find the interquartile range (IQR) of a data set, then practice." />
+  <link rel="canonical" href="https://mathpracticehub.netlify.app/box-plots" />
+  <link rel="alternate" hreflang="en" href="https://mathpracticehub.netlify.app/box-plots" />
+  <link rel="alternate" hreflang="ru" href="https://mathpracticehub.netlify.app/ru/box-plots" />
+  <link rel="alternate" hreflang="x-default" href="https://mathpracticehub.netlify.app/box-plots" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <meta name="application-name" content="Math Practice" />
+  <meta property="og:site_name" content="Math Practice" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Box Plots & Interquartile Range (7th Grade) — Math Practice" />
+  <meta property="og:description" content="Box Plots, 7th Grade: Learn how to find the interquartile range (IQR) of a data set, then practice." />
+  <meta property="og:url" content="https://mathpracticehub.netlify.app/box-plots" />
+  <meta property="og:locale" content="en_US" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEQTQFJQ3P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var gaId = (window.location.hostname === 'mathpractise.netlify.app')
+      ? 'G-VNDQEKH5SK'
+      : 'G-YEQTQFJQ3P';
+    gtag('config', gaId);
+  </script>
+</head>
+<body data-topic="box-plots">
+  <div class="app">
+    <header class="topbar">
+      <a class="site-title" href="/">Math Practice</a>
+      <div class="lang-switch">
+        <a class="lang-link active" href="/box-plots">EN</a>
+        <a class="lang-link" href="/ru/box-plots">RU</a>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="topic active grade-7">
+        <span class="grade-badge">7th Grade</span>
+        <h2>Box Plots & Interquartile Range</h2>
+      <div class="explanation-block">
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" data-view="slides">Slides</button>
+          <button class="view-toggle-btn" data-view="text">Text</button>
+        </div>
+        <div class="explanation slideshow" data-slideshow>
+          <div class="slide active">
+            <p class="slide-label">The Question</p>
+            <p class="hook">A sorted data set of 7 test scores is: 58, 63, 70, 75, 80, 88, 95. What is the interquartile range (IQR)?</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">The Idea</p>
+            <p>A <strong>box plot</strong> summarizes data using five numbers: the minimum, the first quartile (Q1, the median of the lower half), the median, the third quartile (Q3, the median of the upper half), and the maximum. The <strong>interquartile range</strong> (IQR = Q3 &minus; Q1) measures how spread out the middle 50% of the data is.</p>
+            <p class="one-liner">In one line: split the data into halves around the median, find the median of each half (Q1 and Q3), then subtract.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch It Solved</p>
+            <div class="steps">
+            <p>data: 58, 63, 70, 75, 80, 88, 95</p>
+            <p class="steps-note">median = 75, lower half = 58, 63, 70; upper half = 80, 88, 95</p>
+            <p>Q1 = 63, Q3 = 88</p>
+            <p class="steps-result">IQR = 88 &minus; 63 = 25</p>
+            </div>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Watch Out</p>
+            <p class="trap">A common mistake is including the overall median in both halves when finding Q1 and Q3 &mdash; for an odd-sized data set, leave the middle value out of both halves before finding their medians.</p>
+          </div>
+          <div class="slide">
+            <p class="slide-label">Why It Matters</p>
+            <p class="why-it-matters">IQR is a more reliable "typical spread" than the full range because it ignores extreme outliers &mdash; it's what statisticians and box plots use to describe how consistent a data set really is.</p>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slide-prev" aria-label="Previous slide">&lsaquo;</button>
+            <div class="slide-dots"><button class="dot active" data-goto="0" aria-label="Slide 1"></button><button class="dot" data-goto="1" aria-label="Slide 2"></button><button class="dot" data-goto="2" aria-label="Slide 3"></button><button class="dot" data-goto="3" aria-label="Slide 4"></button><button class="dot" data-goto="4" aria-label="Slide 5"></button></div>
+            <button class="slide-next" aria-label="Next slide">&rsaquo;</button>
+          </div>
+        </div>
+      </div>
+
+        <div class="practice" data-practice="box-plots">
+          <div class="practice-controls">
+            <button class="generate-btn" data-topic="box-plots">New Problems</button>
+            <span class="score"></span>
+          </div>
+          <div class="problem-list"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Practice runs entirely in your browser — no account, no server storage.</p>
+        <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/contact">Contact Us</a></p>
+        <p class="site-domain">mathpracticehub.netlify.app</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
